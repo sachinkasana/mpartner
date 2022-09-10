@@ -1,0 +1,133 @@
+<app-banner-navigate class="redeemPntsMobile">
+    <div class="d-flex ms-3 mt-2 navBack" (click)="gotoBack()"><span class="me-2">
+            <mat-icon class="">arrow_back</mat-icon>
+        </span> <span class="LatoBoldWhite-3"> Redeem Points</span> </div>
+</app-banner-navigate>
+<div class="d-flex eWar  warranty-header-web redeemPntsWeb">
+    <div class="web-header-title">
+        <span class="me-2 navBackWeb" (click)="gotoBack()">
+            <mat-icon class="">arrow_back</mat-icon>
+        </span>  Redeem Points
+    </div>
+  
+</div>
+<div class="mt-5">
+    <div class="d-flex p-3 web-container ">
+        <div class="p-3  pt-2 justify-center-white greenBg d-flex flex-fill" (click)="redeemBrand()">
+           <span>Redeem as Brand Vouchers <br> Allocated Points <span class="LatoBoldWhite-3">{{brandVoucherAmt}}</span></span>    <span class="ms-2 ms-auto"><img class="image"
+                    src="./../../assets/arrow2.png" alt=""></span>
+
+        </div>
+    </div>
+    <div class="d-flex p-3 web-container">
+        <div class="p-3 pt-2 justify-center-white greenBg d-flex flex-fill" (click)="transferPaytmPoints()">
+         <span>Redeem as Paytm money <br> Allocated Points <span class="LatoBoldWhite-3">{{paytmPoints}}</span> </span>   <span class="ms-2 ms-auto"><img class="image"
+                    src="./../../assets/arrow2.png" alt=""></span>
+
+        </div>
+    </div>
+    <!-- <div class="d-flex p-3 web-container">
+        <div class="p-3 pt-2 justify-center-white yellowBg d-flex flex-fill" (click)="transferPaytmPoints()">
+            Transfer Points between wallets <span class="ms-2 ms-auto"><img class="image"
+                    src="./../../assets/arrow2.png" alt=""></span>
+
+        </div>
+    </div> -->
+</div>
+
+<!-- paytm details popup start -->
+
+<app-popup *ngIf="showPaytmTranfer" (popupClose)="closePaytmPopup()">
+    <div class="d-flex p-2 ps-1 LatoRegularFnt-0_8">
+        Please enter your Paytm mobile number
+    </div>
+    <div class="d-flex p-2 inputfield ">
+        <span class="me-1 LatoRegularFnt-0_8">+91</span>
+        <input matInput [(ngModel)]="paytmMobile" type="number"
+            [placeholder]="'enterMobileNo'|translate" 
+            onKeyPress="if(this.value.length==10) return false;"
+            name="mobile"
+            required
+            >
+            
+       
+    </div>
+    <div *ngIf="formValid && !paytmMobile" class="error">
+        Paytm Mobile Number is required
+      </div>
+      <div *ngIf="formValid && paytmMobile && paytmMobile.toString().length<10" class="error">
+        Paytm Mobile Number should be 10 digits
+      </div>
+    <div class="d-flex p-2 ps-1 LatoRegularFnt-0_8">
+        Available Points: <span class="LatoBoldFnt-0_8">  {{paytmPoints}}</span>
+    </div>
+    <div class="d-flex p-2 ps-1 LatoRegularFnt-0_8">
+        Transfer Amount
+    </div>
+    <div class="d-flex p-2 ps-1  inputfield">
+        <input type="number" [(ngModel)]="paytmTransferAmt" matInput placeholder="Enter Amount">
+    </div>
+    <div *ngIf="formValid && !paytmTransferAmt" class="error">
+        Paytm amount is required
+      </div>
+      <div *ngIf="formValid && paytmTransferAmt && paytmTransferAmt>this.paytmPoints" class="error">
+        Please Enter a value less than or eqal to Available Points
+      </div>
+
+    <div class="p-3 paytmSubmitDiv"><button (click)="submitTransfer()" class="btn paytm-btn-submit">{{'submit' |
+            translate }}</button></div>
+            <span><b>For successful transaction, ensure complete KYC verification on receiver's PayTm account</b></span>
+</app-popup>
+
+<!-- paytm details popup end -->
+
+
+<!-- paytm otp details popup start -->
+
+<app-popup *ngIf="showPaytmOTPAuthPopup" (popupClose)="closePaytmOTPPopup()">
+    <div class="d-flex p-2  LatoRegularFnt-0_8">
+       <span class="wdth">Available Points</span>   :  <span class="ms-3">{{paytmPoints}}</span> 
+    </div>
+    <div class="d-flex p-2 LatoRegularFnt-0_8">
+       <span class="wdth">Transfer to  </span> :  <span class="ms-3">{{paytmMobile}}</span> 
+    </div>
+    <div class="d-flex p-2 LatoRegularFnt-0_8">
+       <span class="wdth">Gross Transfer Amount</span>   :  <span class="ms-3">{{paytmTransferAmt}}</span> 
+    </div>
+    <div class="d-flex p-2 LatoRegularFnt-0_8">
+        <span class="wdth">Applicable TDS <br> (@10% of Gross Transfer Amount)</span>   :  <span class="ms-3">{{tdsValue}}</span> 
+     </div>
+     <div class="d-flex p-2 LatoRegularFnt-0_8">
+        <span class="wdth">Net Transfer Amount</span>   :  <span class="ms-3">{{ netTransferAmt}}</span> 
+     </div>
+
+    <div class="d-flex p-2 mt-4 LatoRegularFnt-0_8">
+        <span>Verify your OTP</span> 
+     </div>
+    <div class="d-flex p-2 ps-1  inputfield">
+        <input type="tel" pattern="[0-9]*" [(ngModel)]="paytmOTPInput" matInput placeholder="Verify your OTP"  onKeyPress="if(this.value.length==6) return false;">
+    </div>
+
+    <div class="p-3 paytmSubmitDiv"><button (click)="verifyPaytmOTP()" class="btn paytm-btn-submit">{{'submit' |
+            translate }}</button></div>
+
+</app-popup>
+
+<!-- paytm otp details popup end -->
+
+<!-- successfull redeem popup start -->
+
+<app-popup *ngIf="showTransferConfirmationPopup" (popupClose)="gotoBack()">
+    <div class="d-flex p-3 pt-1 pb-0 flex-fill justify-content-center">
+        <img class="success-check" src="../../assets/noun_Check_675326.png" alt="">
+    </div>
+    <div class="d-flex p-3 flex-fill justify-content-center thankyou">
+        Thank you!
+    </div>
+    <div class="d-flex p-3 pt-0 pb-0 flex-fill justify-content-center fnt-1 msg">
+        {{paytmConfirmationData.Message}}
+    </div>
+
+</app-popup>
+
+<!-- Successfull redeem popup end -->

@@ -1,0 +1,160 @@
+.totalRewardsBg{
+background-image: url(../../../../assets/banner.png);
+height: 20vh;
+}
+
+
+.totalRewards{
+color: rgb(252 126 81);
+font-size: 2rem;
+justify-content: center;
+align-items: center;
+}
+
+
+.txtRewards{
+    justify-content: center;
+    align-items: center;
+    color: rgb(22 17 19);
+}
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 9.8125rem;
+    grid-gap: 10px;
+  }
+  
+  
+
+  .blueScratchCrd{
+      background-image: url(../../../../assets/blueBg.png);
+      background-size: cover;
+      background-repeat: round;
+  }
+
+  .yellowScratchCrd{
+    background-image: url(../../../../assets/yellowbg.png);
+    background-size: cover;
+    background-repeat: round;
+}
+.orangeScratchCrd{
+    background-image: url(../../../../assets/orngBg.png);
+    background-size: cover;
+    background-repeat: round;
+}
+
+.silverScratchCrd{
+    background-image: url(../../../../assets/silverBg.png);
+    background-size: cover;
+    background-repeat: round;
+}
+
+.silverPopupScratchCrd{
+  background-image: url(../../../../assets/silverReward.png);
+  background-size: cover;
+  background-repeat: round;
+  height: 18.75rem;
+}
+
+.giftWonVer1ScratchCrd{
+  background-image: url(../../../../assets/giftBg-v1.png);
+  background-size: cover;
+  background-repeat: round;
+  text-align: center;
+  padding-top: 3.1875rem;
+}
+
+.giftWonVer1PopupScratchCrd{
+  background-image: url(../../../../assets/giftBg-v1.png);
+  background-size: cover;
+  background-repeat: round;
+  height: 18.75rem;
+}
+
+.giftWonVer2ScratchCrd{
+  background-image: url(../../../../assets/giftBg-v2.png);
+  background-size: cover;
+  background-repeat: round;
+  text-align: center;
+  padding-top: 3.1875rem;
+}
+.giftWonVer3ScratchCrd{
+  background-image: url(../../../../assets/giftBg-v3.png);
+  background-size: cover;
+  background-repeat: round;
+}
+
+  .scratchCardTxt{
+    color:rgb(255 255 255);
+    text-align: center;
+  }
+
+  .scratchCardTxt span{
+    position: relative;
+    top: 85%;
+  }
+
+  .cntainer{
+    margin-bottom:20vh !important;
+  }
+
+  .giftwontextVer1 .rupees{
+    color: rgb(143 143 143);
+    font-size: 1.5625rem;
+  }
+  .giftwontextVer1 .title{
+    color: rgb(155 155 155);
+    font-size: 0.5625rem;
+  }
+  .giftwontextVer1 .code{
+    color: rgb( 74 74 74);
+    font-size: 0.75rem;
+  }
+  .giftwontextVer1 .date{
+    color: rgb(155 155 155);
+    font-size: 0.5625rem;
+  }
+
+
+  .giftwontextVer2 .rupees{
+    color: rgb(213 168 1);
+    font-size: 1.5625rem;
+  }
+  .giftwontextVer2 .title{
+    color: rgb(213 168 1);
+    font-size: 0.5625rem;
+  }
+  .giftwontextVer2 .code{
+    color: rgb(213 168 1);
+    font-size: 0.75rem;
+  }
+  .giftwontextVer2 .date{
+    color: rgb(213 168 1);
+    font-size: 0.5625rem;
+  }
+
+  .giftwontextVer3{
+    font-size: 0.75rem;
+    color: rgb(0 0 0);
+    padding-top: 3.93rem;
+    padding-left: 0.6785rem;
+    padding-right: 0.6785rem;
+    text-align: center;
+    font-family: LatoBold;
+  }
+
+
+  .rewardPop{
+  background-image: url(../../../../assets/silverReward.png);
+  background-size: cover;
+  background-repeat: round;
+  height: 18.75rem;
+  width: 100%;
+  }
+
+  .modal-content{
+    margin-left: 1.18rem !important;
+    width: 90% !important;
+  }

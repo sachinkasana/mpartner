@@ -1,0 +1,132 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+    <mat-sidenav [ngClass]="mobileQuery.matches?'':'webBg'" #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="0" >
+      <div *ngIf="mobileQuery.matches" class="profile-main" >
+        <div class="d-flex p-2 pe-3 alignEnd">
+          <span class="close-icon" (click)="closeNav(snav)"><img src="../../../../assets/cross.png" alt=""></span>
+        </div>
+        <div class="d-flex p-3 pt-1 det-row1 pl1_3">
+          <div class="col1">
+              
+
+
+              <div  >
+                <img class="profile-img" [src]="userData?.profileImg" alt="">
+                
+                
+            </div>
+          </div>
+
+
+          <div class="pt-2">
+             
+            <span class="RobotoMedium nameTxt">{{userData?.Name}}</span>
+            <div class="phoneTxt RobotoRegular">
+                {{userData?.Phone}}
+            </div>
+              
+          </div>
+          
+        </div>
+      
+
+          <div #language class="d-flex p-3 pt-1 pb1_7 pl1_3 profileLanguage" >
+            <mat-form-field appearance="outline" floatLabel="always">
+               <mat-select placeholder="Select Language" [(ngModel)]="selectedLang" (selectionChange)="switchLang($event.value);highlight()">
+                <mat-option  *ngFor="let lang of languageList" [value]="lang.languagecode" (blur)="highlight()">
+                  {{lang.language}}
+                </mat-option>
+                </mat-select>         
+            </mat-form-field>
+          </div>
+
+
+
+      </div>  
+      <div *ngIf="!mobileQuery.matches" class="mb-1 ps-4_5 pt_4_5">
+        <img (click)="redirectToHome()" src="../../../../assets/Luminos.png" alt="">
+      </div>
+
+      <mat-nav-list>
+        <ng-container *ngIf="!mobileQuery.matches && addCreatorMenu !==undefined">
+          <a [ngClass]="mobileQuery.matches?'':'webNavList'" mat-list-item *ngFor="let nav of addCreatorMenu" (click)="onNavClick(nav,snav)">
+            <span><img class="iconImage"
+                src="{{nav.ModuleImage}}" alt="">
+             </span>
+  
+             <span> {{nav.ModuleName}}</span>  </a>
+        </ng-container>
+
+        <ng-container *ngIf="!mobileQuery.matches && Bottom_Menu !==undefined">
+          <a [ngClass]="mobileQuery.matches?'':'webNavList'" mat-list-item *ngFor="let nav of Bottom_Menu[0]" (click)="onNavClick(nav,snav)">
+            <span><img class="iconImage"
+                src="{{nav.ModuleImage}}" alt="">
+             </span>
+  
+             <span> {{nav.ModuleName}}</span>  </a>
+        </ng-container>
+        <a [ngClass]="mobileQuery.matches?'':'webNavList'" mat-list-item *ngFor="let nav of sideMenuList[0]" (click)="onNavClick(nav,snav)">
+          <span><img class="iconImage"
+              src="{{nav.ModuleImage}}" alt="">
+           </span>
+
+           <span> {{nav.ModuleText}}</span>  </a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content [ngclass]="mobileQuery.matches?'':'mat-drawer-content'">
+      <mat-toolbar [ngClass]="mobileQuery.matches?'':'webToolbar'" color="primary" class="example-toolbar">
+        <button mat-icon-button (click)="toggleNav(snav);onSearchClose()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <nav class="nav" *ngIf="mobileQuery.matches">
+    
+          <a *ngIf="mobileQuery.matches" class="nav-link logo-w mb-2 ps-3" (click)="redirectToHome()"><img class="logo" src="../../assets/Luminos.png" alt="">
+          </a>
+          <a class="nav-link icon-w" (click)="onSearch()"><img class="icon-bar" src="../../assets/search.png" alt=""></a>
+          <a class="nav-link icon-w "><img class="icon-bar" src="../../assets/alert.png" alt=""></a>
+          <a class="nav-link" (click)="userProfile()"><img class="icon-bar" src="../../assets/user.png" alt=""></a>
+        </nav>
+        <nav class="nav" *ngIf="!mobileQuery.matches">
+    
+             <div class="iconCol1">
+               <a class="nav-link icon-w" (click)="onSearch()" ><img class="icon-bar" src="../../../../assets/Web/search.png" alt=""></a>
+               <a class="nav-link icon-w" ><img class="icon-bar" src="../../../../assets/giftweb.png" alt=""></a>
+
+               <a class="nav-link icon-w" ><img class="icon-bar" src="../../../../assets/Web/notification.png" alt=""></a>
+               <a class="nav-link icon-w" ><span class="pipe">|</span></a>
+
+            </div>
+            <div class="iconCol2">
+                 <span class="welcomeTxt">Welcome,</span>
+                <span class="name">{{userData?.Name}}</span>
+                <span class="profile-img ps-4"  (click)="userProfile()">
+                  <img class="profile-img" src="../../../../assets/bydefault.png" alt="">
+                  
+                  
+                </span>
+               
+
+               
+            </div>
+           
+        </nav>
+      </mat-toolbar>
+      <div class="mobileContainer">
+        <router-outlet></router-outlet>
+
+      </div>
+      <div *ngIf="Bottom_Menu && mobileQuery.matches">
+          <app-footer [bottom_menu]="Bottom_Menu"></app-footer>
+      </div>
+      <div *ngIf="!mobileQuery.matches" class="footerTxt text-center pb-4">
+            <!-- Luminous India 2022 Copyright. All rights reserved  -->
+       </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<app-popup-confirmation *ngIf="confirmShow" [show]=confirmShow (hide)="logoutConfirm($event)" [message]="'Do you really want to Logout?'"></app-popup-confirmation>

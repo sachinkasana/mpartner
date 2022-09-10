@@ -1,0 +1,44 @@
+<app-banner-navigate class="mobileHeaderContainer">
+    <div class="d-flex navBack p-3  LatoBoldWhite-3" (click)="back()"><span><mat-icon class="arrowbck">arrow_back</mat-icon></span><span class="ms-auto me-auto">SOLAR LOAD CALCULATOR</span> </div>
+</app-banner-navigate>
+<div class="d-flex  webHeaderContainer">
+    <div class="web-header-title">
+       Solar Calculator
+    </div>
+     
+  </div>
+<div class="webContainerBox mobileContainerBox">
+    <div class="webSelectRequire labelTxt ps-3 mt-3 lblWeb">
+        Your perfect Solar Solution
+    </div>
+    <div class="MobileSelectRequire labelTxt text-center pt-3 pb-3">
+        Your perfect Solar Solution
+    </div>
+    <div>
+        <div class="d-flex m-3 solution-row">
+            <div class="col1">SOLAR INVERTER</div>
+            <div class="col2">{{solarSolution.invertor}}</div>
+        </div>
+        <div class="d-flex m-3 solution-row">
+            <div class="col1">SOLAR BATTERY</div>
+            <div class="col2">{{solarSolution.finalBattery}}</div>
+        </div>
+        <div class="d-flex m-3 solution-row">
+            <div class="col1">SOLAR PANELS</div>
+            <div class="col2">{{solarSolution.Panel}}</div>
+        </div>
+        <div class="d-flex m-3 solution-row">
+            <div class="col1 p-0">ROOF TOP AREA REQ(sq ft)</div>
+            <div class="col2">{{solarSolution.RooftopArea}}</div>
+        </div>
+    </div>
+    <div class="nextWrap mt-3 mb-3 text-center">
+        <div class="backBtnWeb"><button class="btn  btn-back" (click)="back()">BACK</button></div>
+        <div><button class="btn btn-knowMre" (click)="knowMore()" >KNOW MORE</button> </div>
+    </div>
+
+    <div class="solarImage"><img src="../../../../assets/solar-onoff.png" alt=""></div>
+
+    
+
+</div>   

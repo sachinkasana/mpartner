@@ -1,0 +1,12 @@
+<div class="schemes-main">
+    <div class="d-flex flex-wrap mb-3 schemes-card ">
+        <div *ngFor="let schemes of schemeList" class="schemes-card-image"><img src="{{schemes?.main_image}}" alt="">
+            <div class="title"><b>{{schemes?.title}}</b> </div>
+            <div class="sub-title">{{schemes?.sub_title}} </div>   
+        </div>
+      </div>
+</div>
+  <div class="d-flex category">
+    <div class="p-3 flex-fill INBT ">DEALER</div>
+    <div class="p-3 flex-fill Solar">DISTRIBUTOR</div>
+  </div>

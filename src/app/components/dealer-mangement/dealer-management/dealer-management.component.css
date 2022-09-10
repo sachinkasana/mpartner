@@ -1,0 +1,40 @@
+.dealer-options{
+    padding:3rem 1rem 2rem 1rem;
+    height: 50vh;
+    background: #e0eff4;
+}
+
+.btn-darkBlue{
+    border-radius: 21px;
+    font-family: LatoRegular;
+    height: 3.125rem;
+}
+
+.dealer-banner{
+    height: 30vh;
+    background-image: url(./../../../../assets/dealer_managment_banner.png);
+    background-repeat: round;
+    background-size: cover;
+}
+
+.plus-icon img,.list-icon img{
+width: 1.1875rem;
+}
+
+.btn-lightBlue-3{
+    font-family: LatoRegular;
+    height: 3.125rem;
+}
+
+@media(min-width:800px){
+    .web-dealer-options{
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .dealer-options{
+        height: 58.5vh;
+    }
+
+}

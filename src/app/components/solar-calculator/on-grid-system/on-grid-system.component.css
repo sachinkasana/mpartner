@@ -1,0 +1,193 @@
+
+@import'./../solar-style.css';
+ 
+
+.row1-container{
+    border-bottom: 1px solid #dbdbdb;
+    padding: 1rem;
+    color: #7d7d7d;
+    font-family: 'LatoRegular';
+    font-size: 1rem;
+}
+
+.row2-container{
+    color: #7d7d7d;
+    border-bottom: 1px solid #dbdbdb;
+
+}
+
+.row3-container,.row4-container,.row5-container,.row6-container{
+    border-bottom: 1px solid #dbdbdb;
+
+}
+.row2-container .row4 .col1{
+    flex:1
+}
+.row2-container .row4 .col1 img{
+    width: 75%;
+}
+.row2-container .row4 .col2{
+    flex:3;
+    display: flex;
+    align-items: center;
+}
+.labelTxtOnGrid{
+    color: #4265a6;
+    font-size:1.2rem ;
+    font-family: LatoRegular;
+}
+
+.sub-label-txt{
+    color: #7d7d7d;
+    font-family: LatoRegular;
+    font-size: 1rem;
+}
+.sub-label-txt2{
+    color: #747474;
+    font-family: LatoBold;
+    font-size: 1.5rem;
+}
+
+
+ 
+.row3-container .row2 .col2 {
+    margin-left: 1.5rem;
+    display:flex;
+    align-items: center;
+}
+
+.row3-container .row4 .col2{
+    display: flex;
+    align-items: center;
+    margin-left: 0.75rem;
+}
+
+ 
+.row4-container .row2 .col2{
+     display: flex;
+    align-items: center;
+}
+
+.row4-container .row2 .col1 img{
+    width: 3.25rem;
+}
+
+.row4-container .row2 .col3{
+    display: flex;
+    align-items: center;
+}
+
+
+.row4-container .row3 .col1 img{
+    width: 3.25em;
+}
+
+
+.row5-container .row3 .col1 img{
+    width: 3.125rem;
+}
+.row5-container .row3 .col2{
+    display: flex;
+    align-items: center;
+}
+
+.row6-container .row2 .col1 img{
+    width: 3.125rem;
+}
+.row6-container .row2 .col2{
+    display: flex;
+    align-items: center;
+}
+
+
+
+.row7-container .row2 .col2{
+     align-items: center;
+    display: flex;
+}
+
+.row7-container .row2 .col3{
+     align-items: center;
+    display: flex;
+}
+ 
+
+.row7-container .row2 .col1 img,.row7-container .row3 .col1 img{
+    width:3.25rem;
+}
+
+.row8-container{
+    text-align: end;
+}
+
+.saveKnwMoreWrap .btn1,.saveKnwMoreWrap .btn2{
+    flex: 1;
+}
+
+.saveKnwMoreWrap .btn-save{
+    width: 95%;
+    color: white;
+    font-family: LatoRegular;
+    font-size: 1rem;
+    border-radius: 49px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: #5291ee;
+}
+.saveKnwMoreWrap .btn-knowmore{
+    background: white;
+    width: 95%;
+    color: #254090;
+    font-family: 'LatoBold';
+    font-size: 1rem;
+    border: 2px solid #5291ee;
+    border-radius: 10px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;    
+
+}
+.share-icon{
+    width:3.40625rem ;
+}
+
+.customer-header-title{
+    color: grey;
+    font-size: 1rem;
+    font-family: 'LatoRegular';
+}
+textarea{
+    outline: none;
+    max-height: 3rem;
+    min-height: 3rem;
+}
+
+.submitSkipWrap .btn1,.submitSkipWrap .btn2{
+    flex: 1;
+}
+
+.submitSkipWrap .btn-submit,.submitSkipWrap .btn-skip{
+    background:#2b72bd;
+    width: 95%;
+    color: white;
+    font-family: LatoRegular;
+    font-size: 0.8rem;
+    border-radius: 21px;
+    padding: 0.5rem;
+}
+ 
+@media(max-width:799px){
+    .mobileContainerBox{
+        height: calc(100vh - 10rem);
+        overflow: auto;
+    }
+}
+
+@media(min-width:800px){
+    .mat-form-field{
+        width: 100%;
+    }
+}
+
+#onGridContainer{
+    background: white;
+}

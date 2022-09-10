@@ -1,0 +1,104 @@
+.toolbarNav {
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    max-height: 4.0625rem;
+    min-height: 4.0625rem;  
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow: 3px 3px 5px 6px #ccc; /* Firefox 3.5 - 3.6 */
+    box-shadow: 2px 2px 4px 5px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+.toolbarNav button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      line-height: 1;
+      margin-top: 0.1rem;
+     
+    }
+    .toolbarNav .button  span {
+        display: block;
+      }
+  
+ 
+
+  .toolbarNav button  img{
+    width: 1.6875rem;
+    height: 1.625rem;  }
+
+
+    
+  
+
+    .catalogActive{
+      background: url(../../../../assets/catalog-icon.png);
+      background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 1.5rem 1.5625rem;
+    }
+
+    .catalog{
+      background: url(../../../../assets/menu-catalog.png);
+      background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 1.5rem 1.5625rem;
+    }
+
+
+    .priceListActive{
+      background: url(../../../../assets/pricelist-active.png);
+      background-position: center top;
+    background-repeat: no-repeat;
+    background-size:  1rem 1.5rem;
+    }
+
+    .priceList{
+      background: url(../../../../assets/pricelist-icon.png);
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: 1rem 1.5rem;
+    }
+
+    .schemeActive{
+      background: url(../../../../assets/schemeActive.png);
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: 1.5rem 1.5rem;
+    }
+
+    .scheme{
+      background: url(../../../../assets/scheme.png);
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: 1.5rem 1.5rem;
+    }
+
+    .eWarrantyActive{
+      background: url(../../../../assets/eWarrantyActive.png);
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: 1.0625rem 1.5rem;
+    }
+
+    .eWarranty{
+      background: url(../../../../assets/eWarrantyIcon.png);
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: 1.0625rem 1.5rem;
+    }
+
+    .activetxt{
+      color: rgb( 34 64 152);
+      font-size: 0.6785rem;
+      font-family: LatoBold;
+     }
+
+     .inactivetxt{
+      color: rgb( 74 74 74);
+      font-size: 0.6785rem;
+      font-family: LatoRegular;
+     }

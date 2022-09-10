@@ -1,0 +1,249 @@
+.brk{
+    border:2px solid rgb(241 241 241);
+    }
+    
+    .mat-form-field{
+        width: 100%;
+        height: 4rem;
+
+    }
+    
+    .saleDate{
+        width: 50%;
+    }
+    
+    
+    .invoiceUpload{
+        height: 2.8125rem;
+        border-radius: 5px;
+        margin-top: 0.25rem;
+        padding-left: 1.25rem !important;
+        display: flex;
+        align-items: center;
+        border: 1px solid gainsboro;
+        margin-bottom: 1rem;
+    }
+    
+    .invoiceUpload label {
+        font-family: 'LATOREGULAR';
+        font-size: 0.9375rem;
+        color: #000;
+    }
+    
+    .previewUpload{
+         
+        min-width: 100%;
+        max-height: 9.75rem;
+        max-width: 50%;
+        min-height: 9.75rem;
+        position: relative;
+         
+    }
+
+    .imagePlaceholderFrnt{
+         
+        min-width: 100%;
+        max-height: 9.75rem;
+        max-width: 50%;
+        min-height: 9.75rem;
+        position: relative;
+        position: absolute;
+        top: 0;
+        z-index: 100;
+         
+    }
+
+    .imagePlaceholderBck{
+         
+        min-width: 100%;
+        max-height: 9.75rem;
+        max-width: 50%;
+        min-height: 9.75rem;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+         
+    }
+    
+    .previewUpload img,.imagePlaceholderFrnt img,.imagePlaceholderBck img{
+        max-width: 100%;
+        max-height: 9.75rem;
+        min-height: 9.75rem;
+    }
+    
+    .previewContainer{
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    .btn-close{
+        background: transparent url(../../../../assets/popupclose.png) center/2em auto no-repeat;
+        width: 15px;
+        height: 15px;
+        padding: 0.25em 0.2em;
+        border-radius: 1.25rem;
+    
+    }
+    
+    .spnclose{
+        background: white;
+        width: 1.3125rem;
+        height: 1.3125rem;
+        border-radius: 1rem;
+        position: absolute;
+        top: 0%;
+        right: 4%;
+    }
+    
+    
+    .main{
+        height: calc(100vh - 11rem);
+        overflow: auto;
+    }
+    
+    .msgInstall{
+        font-family: LatoRegular;
+        font-size: 0.75rem;
+        color: #000;
+    }
+
+    .newDealer-banner{
+        background-image: url('../../../../assets/createNewDealer.png');
+        background-repeat: round;
+        height: 30vh;
+        background-size: cover;
+    }
+
+    .newDealer-form{
+        background: #dcebf0;
+        padding-top: 0.5rem;
+    }
+
+    .newDealer-form form {
+        margin: 0rem 1rem 1rem 1rem;
+        border: 1px solid transparent;
+    }
+
+    .whiteBg{
+        background: white;
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+
+    }
+    .newDealer-form-header{
+        margin: 1rem 1rem 0rem 1rem;
+        padding: 1rem;
+        background:linear-gradient(to right,#9a33fe, #cc01fe);
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        text-align: center;
+        font-size: 1rem;
+        color: white;
+        font-family: 'LatoRegular';
+
+    }
+
+    .detailsHeader{
+        color: #2e447c;
+        font-size: 1rem;
+        font-family: 'LatoBold';
+        background: white;
+        padding: 1rem 0 1rem 1.5rem;
+    }
+
+    .btn-wrap >div{
+        flex: 1 1 50%;
+        margin-right: 0.5rem;
+    }
+
+    .btn-wrap{
+        margin: 1rem 4rem 1rem 4rem;
+        }
+
+    .newDealer-main{
+        height: calc(100vh - 149px);
+        overflow: auto;
+
+    }
+
+    .next,.back{
+        background: #214098;
+        border-radius: 1.625rem;
+    }
+
+    .cancel{
+        background:#8d8d8d;
+        border-radius: 1.625rem;
+
+    }
+
+    .btn-wrap2 >div{
+        flex: 1 1 33.33%;
+        margin-right: 0.5rem;
+    }
+
+    .btn-wrap2{
+    margin: 1rem; 
+       }
+
+       .otp-btn-submit{
+        background: #568bf6;
+        color: white;
+        width: 100%;
+    }
+
+    .paytmSubmitDiv{
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+
+    @media(min-width:800px) 
+    {
+        .newDealer-form{
+            height: 70vh;
+                } 
+
+        .newDealer-main{
+            height: 100%;
+        }
+        .address-details{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .address-details >div{
+            flex:50%;
+            max-width: 50%;
+            width: calc(50% - 0.5rem);
+            margin-right: 0.5rem;
+        }
+        .newDealer-banner{
+            height: 45vh;
+        }
+
+        .btn-wrap,.btn-wrap2{
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .error{
+        color: red;
+    }
+
+    
+    .otp .mat-form-field{
+        height: 3rem;
+    }
+
+    .img-container{
+        width: 100%;
+        position: relative;
+        display: flex;
+    }
+
+    .img-container > div{
+        width: 50%;
+        
+    }

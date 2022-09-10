@@ -1,0 +1,9 @@
+
+iframe{
+    width: 100%;
+    height: calc(100vh - 7.3125rem);
+}
+
+iframe #overlay{
+    background-repeat: round;
+}

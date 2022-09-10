@@ -1,0 +1,115 @@
+@import'./../solar-style.css';
+.applianceLblTxt{
+         color: #2b72bd;
+        font-size:1rem ;
+        font-family: LatoRegular;
+    
+}
+
+
+.mobileContainerBox{
+    height: calc(100vh - 10rem);
+    overflow: auto;
+}
+
+.calcResetWrap .btn1,.calcResetWrap .btn2{
+    flex: 1;
+}
+
+.calcResetWrap .btn-calculate{
+    background:#2b72bd;
+    width: 95%;
+    color: white;
+    font-family: LatoRegular;
+    font-size: 0.8rem;
+    border-radius: 21px;
+    padding: 0.5rem;
+}
+.calcResetWrap .btn-reset{
+    background: #848484;
+    width: 95%;
+    color: white;
+    font-family: LatoRegular;
+    font-size: 0.8rem;
+    border-radius: 21px;
+    padding: 0.5rem;    
+
+}
+
+@media(max-width:799px){
+   
+    .webForm{
+        display: none !important
+    }
+    .mobileForm{
+        display: block
+    }
+
+    .backBtnWeb{
+        display: none !important;
+    }
+    
+}
+@media(min-width:800px){
+    .backBtnWeb{
+        display: block !important;
+    }
+
+    .webForm{
+        display: inline-block
+    }
+    .mobileForm{
+        display: none !important
+    }
+
+    .web-form-wrapper{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .web-form-wrapper .col1{
+        flex: 33%;
+        max-width: 30%;
+
+    }
+
+    .web-form-wrapper .mat-form-field{
+        width: 100%;
+        height: 2rem;
+    }
+
+    .calcResetWrap{
+        position: absolute;
+        bottom: 67px;
+    }
+    .btn-back{
+        width: 107px;
+        height: 50px;
+        border-radius: 3px;
+        background-color: #848484;
+        color: white;
+        font-family: LatoRegular;
+        font-size: 0.8rem;
+        margin-right: 1rem;
+    }
+
+    .calcResetWrap .btn-calculate{
+        width: 152px;
+        height: 50px;
+        border-radius: 3px;
+        background-color: #072d9e;
+        margin-right: 1rem;
+    }
+
+    .calcResetWrap .btn-reset{
+        width: 107px;
+        height: 50px;
+        border-radius: 3px;
+        border: solid 1px #c8c8c8;
+        background-color: #fff;
+        color: #000;
+    }
+
+    .webContainerBox{
+        height: 31.75rem !important;
+    }
+}

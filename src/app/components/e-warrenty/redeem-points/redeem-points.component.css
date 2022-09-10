@@ -1,0 +1,102 @@
+.justify-center-white{
+    justify-content: center;
+    color: white;
+}
+
+.greenBg{
+    background:#15b753;
+    border-radius: 5px;
+    height: 3.625rem;
+    font-family: 'LatoRegular';
+    font-size: 1rem;
+    align-items: center;
+
+}
+
+.yellowBg{
+background: #ffba39;
+border-radius: 5px;
+height: 3.625rem;
+    font-family: 'LatoRegular';
+    font-size: 1rem;
+    align-items: center;
+}
+.error{
+    color: red;
+}
+
+.image{
+    width: 0.875rem;
+    height: 0.8125rem;
+}
+
+.navBack{
+    align-items: center;
+}
+
+
+.inputfield{
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+}
+
+input{
+    font-family: LatoRegular;
+}
+
+
+.paytm-btn-submit{
+    background: #568bf6;
+    color: white;
+    width: 100%;
+}
+
+.paytmSubmitDiv{
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+
+.wdth{
+    width:8.9375rem
+}
+
+.success-check{
+    width: 33%;
+}
+
+.thankyou{
+    color: #2b448a;
+    font-family: LatoBold;
+    font-size: 1rem;
+}
+
+.msg{
+    font-family: LatoRegular;
+    font-size: 0.8125rem;
+    color: rgb( 74 74 74);
+}
+
+@media(max-width:799px){
+    .redeemPntsWeb{
+        display: none!important;
+    }
+
+    .redeemPntsMobile{
+        display: block;
+    }
+}
+
+@media(min-width:800px){
+    .redeemPntsWeb{
+        display: block!important;
+    }
+    .redeemPntsMobile{
+        display: none!important;
+    }
+    .web-container{
+        width: 53%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

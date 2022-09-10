@@ -1,0 +1,6 @@
+@import './../consumer.style.css';
+
+.error{
+    color: red;
+    margin-top: -1em !important;
+}

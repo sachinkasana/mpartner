@@ -1,0 +1,119 @@
+.qrCode{
+    justify-content: center;
+    padding-top: 2rem;
+    padding-top: 50px !important;
+}
+
+.qrCode img{
+    width: 9rem;
+    height: 9rem;
+}
+.error{
+    color: red;
+    margin-left: 0.5rem;
+}
+
+.qrTxt{
+    justify-content: center;
+    font-size: 1.2rem;
+    font-family: 'LatoBold';
+}
+
+.serialNo-header{
+     border-top: 2px solid #e9eded;
+    border-bottom: 2px solid #e9eded;
+    height: 2.625rem;
+ }
+
+.serialNo-content{
+    height:2.625rem;;
+    border-bottom: 2px solid #e9eded;
+    font-family: 'LatoRegular';
+    font-size: 0.875rem;
+    color: rgb(74 74 74);
+    align-items: center;
+
+}
+
+.deleteIcon{
+    height: 0.875rem;
+    width: 0.875rem;
+}
+
+.btn-submit{
+    background: #0b2e9c;
+    color: white;
+    width: 100%;
+}
+
+.warrantyCode-main{
+    height: 4rem;
+}
+
+.mat-form-field{
+    width: 100%!important;
+}
+
+.lnk{
+    font-family: 'LATOREGULAR';
+    font-size: 0.8125rem;
+    color: #000;
+    text-decoration: underline;
+}
+
+@media(max-width:799px){
+    .qrMobile{
+        display: block
+    }
+    .qrWeb{
+        display: none!important;
+    }
+}
+
+@media(min-width:800px){
+    .qrMobile{
+        display: none
+    }
+    .qrWeb{
+        display: block;
+    }
+    .eWar{
+        height: 4.4375rem;
+    }
+     
+
+    .web-header-col-2{
+        display: flex;
+        align-items: center;    
+    }
+
+    .web-header-title{
+        width: 87.5%;
+    }
+    .qrTxt{
+        justify-content: center;
+        font-size: 1rem;
+        font-family: 'LatoBold';
+        color: #000;
+    }
+    
+    .serialNo-main{
+        margin: 1.5rem;
+    border: 1px solid #dbdbdb; 
+    height: calc(100vh - 13.5rem); 
+    }
+    .serialNo-header{
+        color: #000 !important;
+    font-size: 0.875rem !important;
+    }
+    
+
+    .serialNo-content{
+        font-size: 0.8125rem !important;
+        color: #000000 !important;
+    }
+
+    .submitOtp{
+        display: none
+    }
+}

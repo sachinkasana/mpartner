@@ -1,0 +1,49 @@
+.dealerList-main{
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.searchWrap >div:first-child{
+    flex: 2;
+
+}
+
+.searchWrap >div:last-child{
+    flex: 1;
+}
+
+.searchWrap{
+    flex-wrap: nowrap;
+}
+
+.mat-form-field{
+    width: 100%;
+}
+
+.searchWrap button{
+    margin-left: 0.5rem;
+    width: calc(100% - 0.5rem);
+    height: 47px;
+}
+
+input::placeholder{
+    opacity: 0.2;
+}
+
+.details{
+    font-family: 'LatoRegular';
+    display: flex;
+    
+}
+
+.details >div{
+    flex: 1;
+}
+
+.details >div:first-child{
+    color:#838383
+}
+
+.search-details{
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+}

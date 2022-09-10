@@ -1,0 +1,20 @@
+{
+    "next": "अगला",
+    "skip": "छोड़ें",
+    "userCode": "उपयोगकर्ता कोड",
+    "otpSuccess": "आपके SAP पंजीकृत नंबर पर ओटीपी भेज दिया गया है",
+    "otp": "ओटीपी",
+    "submit": "प्रस्तुत",
+    "enterOTP":"ओटीपी दर्ज करें",
+    "enterPhone":"फ़ोन नंबर या एलपीटी कर्मचारी कोड दर्ज करें",
+    "selectLang":"भाषा चुने",
+    "selectSapId":"कृपया अपनी एसएपी आईडी चुनें",
+    "mobileNo":"मोबाइल न",
+    "enterMobileNo":"मोबाइल नंबर दर्ज करें",
+    "saleDate":"बिक्री की तिथि",
+    "enterSaleDate":"बिक्री की तारीख दर्ज करें",
+    "warrantyVerificationCode":"गारंटी पुष्टि संख्या",
+    "enterwarrantyVerificationCode":"गारंटी पुष्टि संख्या दर्ज करें"
+
+
+}

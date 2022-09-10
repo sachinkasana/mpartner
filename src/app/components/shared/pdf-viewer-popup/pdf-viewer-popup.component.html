@@ -1,0 +1,20 @@
+<div [ngStyle]="{'display':displayStyle}" class="modal fade modal-backdrop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div  class="modal-dialog modal-dialog-scrollable popupTop" role="document">
+      <div class="modal-content">
+        <div  class="modal-header">
+          <span class="btn closeicon" (click)="closePopup()"><img  src="../../assets/homeClosed.png" alt=""></span>
+
+        </div>
+        <div class="modal-body">
+            
+          <ng-content></ng-content>
+        </div>
+        <div  class="footer">
+          <div class="d-flex category" *ngIf="showOptions">
+            <div class="p-3 flex-fill downloadPdf"><a  href="{{dowloadUrl}}" target="_blank" download="{{dowloadUrl}}"><img src="../../assets/downloadRed.png" >DOWNLOAD PDF</a></div>
+            <div class="p-3 flex-fill sharePdf" (click)="openSharePdf()"><img src="../../assets/shareIcon.png" alt=""><span>SHARE PDF</span> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

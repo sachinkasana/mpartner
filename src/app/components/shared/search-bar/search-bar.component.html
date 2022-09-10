@@ -1,0 +1,8 @@
+<div  class="banner-main">
+    <div class="d-flex ps-3 pe-3 pt-2 search"><span class="me-2"><mat-icon>search</mat-icon></span>
+        <input type="text" [(ngModel)]="inputKey" (ngModelChange)="search()" matInput placeholder="Search" name="search"
+        required> <span class="spnclose" (click)="closeSearchBar()"><button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" >
+        </button></span>
+    </div>
+
+</div>

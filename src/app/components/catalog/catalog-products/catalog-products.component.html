@@ -1,0 +1,58 @@
+<div class="productlist-main" *ngIf="catalogProducts">
+  <div *ngFor="let product of catalogProducts;let i=index">
+    <div class="d-flex  catalog-header">
+      <div class="p-3 catalog-header-title"><b>{{product.Category_Name}}</b></div>
+      <div class="ms-auto catalog-header-image" (click)="openPdf(product.Url_pdf)">
+        <img src="../../../../assets/pdfredsmallsvg.svg" alt="" class="pdfMobile">
+        <img src="../../../../assets/pdf-web.svg" alt="" class="pdfWeb">
+
+      </div>
+    </div>
+    <!-- [src]="item.ImageUrl" -->
+    <div class="d-flex pt-1 ms-2  mb-3 catalog-card  ">
+      <div *ngFor="let item of product.Product_Details;let j=index">
+        <div  class="me-3 ps-1 catalog-card-image pt-1"><img
+          [src]="item.ImageUrl" alt="" (click)="selectProduct(item)">
+        
+      </div>
+      <div class="p-2 me-1 center LatoRegularFnt-0_8">{{item.Product_Name}}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="m-4 cntainer">
+    <div class="wrapper">
+        <div class="item yellowScratchCrd scratchCardTxt"><span>Tap to scratch</span> </div>
+        <div class="item orangeScratchCrd scratchCardTxt"><span>Tap to scratch</span> </div>
+        <div class="item yellowScratchCrd scratchCardTxt"><span>Tap to scratch</span> </div>
+        <div class="item blueScratchCrd scratchCardTxt"><span>Tap to scratch</span> </div>
+        <div class="item silverScratchCrd scratchCardTxt"><span>Tap to scratch</span> </div>
+         
+        
+
+        
+
+    </div>
+</div> -->
+</div>
+
+
+
+<app-pdf-viewer-popup *ngIf="showPdf" (popupClose)="hidePdf()" [dowloadUrl]="pdfUrl" (sharePdf)="sharePdf()">
+  <pdf-viewer [src]="pdfUrl" [rotation]="0" [original-size]="false" [show-all]="true" [fit-to-page]="false" [zoom]="1"
+    [zoom-scale]="'page-width'" [stick-to-page]="false" [render-text]="true" [external-link-target]="'blank'"
+    [autoresize]="true" [show-borders]="false" style="width: 100%; height: 600px;"></pdf-viewer>
+</app-pdf-viewer-popup>
+
+
+<app-popup *ngIf="showSharePdf" (popupClose)="sharePdf()" [sharePdf]=true>
+  <div class="d-flex justify-content-center"><span class="shareLineBox"></span></div>
+  <div class="sharePopTitle">Share</div>
+  <div class="sharePopUrl">{{pdfUrl}}</div>
+  <share-buttons theme="modern-dark" 
+  [include]="['facebook','twitter','linkedin','pinterest','reddit','tumblr','mix','viber','vk','telegram','messenger','whatsapp','xing','line','sms','email','print','copy']"
+  [show]="5"
+  [showText]="true"
+  [url]="pdfUrl"
+ ></share-buttons>
+</app-popup>

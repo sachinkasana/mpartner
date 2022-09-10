@@ -1,0 +1,64 @@
+<div class="dealerList-main">
+    <form role="form">
+        <div class="row">
+            <div class="form-group">
+                <div class="input-group mb-2">
+                    <input type="search" name="search" class="form-control"  placeholder="Search by Dealer code/Name/Phone no" (keyup)="FetchItemDetailsSearch(searchcontent)" [(ngModel)]="searchcontent">
+                    <!-- <span class="input-group-btn">
+                        <button class="btn btn-success ProductSearchBtn" type="button" (click)='FetchItemDetailsSearch(searchcontent)'><i class="glyphicon glyphicon-search" aria-hidden="true"></i><span style="margin-left:10px;">Search</span></button>
+                    </span> -->
+                  
+                </div>
+                <div class="input-group d-flex searchWrap">
+                    <!-- <input name="filters" class="form-control" type="text" placeholder="Search"> -->
+                    <div>
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-select placeholder="All" required>
+                            <mat-option *ngFor="let filter of filterOptionList" [value]="filter">
+                              {{filter}}
+                            </mat-option>
+                          </mat-select>         
+                      </mat-form-field>
+                    </div>
+
+                    <div class="input-group-btn">
+                        <button class="btn btn-darkBlue ProductSearchBtn" type="button" (click)='FetchItemDetailsSearch(searchcontent)'><i class="glyphicon glyphicon-search" aria-hidden="true"></i><span style="margin-left:10px;">SUBMIT</span></button>
+                    </div>
+                  
+                </div>
+                <ng-container *ngIf="showSuggestions">
+                    <div *ngFor="let data of filteredDealers">
+                        <div (click)="selectDealer(data)">{{data.DEALER_NAME}}</div><br/>
+                    </div>
+                </ng-container>
+                
+            </div>
+        </div>
+        
+    </form>
+    
+    <div class="search-details m-2" *ngIf="showDealerCard">
+        <div class="collection-details mb-3 ps-3 pt-3 pb-2">
+            <div class="pb-1 details">
+                <div>Dealer Code</div>: &nbsp;<div><b>{{selectedDealer?.DEALER_COD}}</b></div>
+            </div>
+            <div class="pb-1 details">
+                <div>Dealer Name</div>:&nbsp;<div><b>{{selectedDealer?.DEALER_NAME}}</b></div>
+            </div>
+            <div class="pb-1 details">
+                <div>City</div>:&nbsp;<div><b>{{selectedDealer?.CITY_DESC}}</b></div>
+            </div>
+            <div class="pb-1 details">
+                <div>State</div>:&nbsp;<div><b>{{selectedDealer?.STATE_DESC}}</b></div>
+            </div>
+            <div class="pb-1 details">
+                <div>Mob No.</div>:&nbsp;<div><b>{{selectedDealer?.MOBILE1}}</b></div>
+            </div>
+            <div class="pb-1 details">
+                <div>Status</div>
+                :&nbsp;<div><b>{{selectedDealer?.STATUS_DES}}</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+

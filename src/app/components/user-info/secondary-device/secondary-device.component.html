@@ -1,0 +1,47 @@
+<app-banner-navigate>
+    <div class="d-flex p-3 navBack"><span class="me-2" [routerLink]="['/dashboard/user-info']"><mat-icon class="">arrow_back</mat-icon></span></div>
+</app-banner-navigate>
+
+<div class="ms-3 me-3 mt-3" *ngIf="!deviceId">
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label class="Lato-Regular">Secondary Device {{id}}</mat-label>
+            <input type="text" matInput [(ngModel)]="mobileInput" placeholder="Enter Mobile No." name="mobileNo"
+               required>
+          </mat-form-field>
+    </div>
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label class="Lato-Regular">Re-Enter Mobile No.</mat-label>
+            <input type="text" matInput [(ngModel)]="confirmMobileInput" placeholder="Re-Enter Mobile No." name="confirmMobileNo"
+               required>
+          </mat-form-field>
+    </div>
+    <div class="pb-1 pt-2 verify"><button class="btn  btn-darkBlue" (click)="addDevice()" >{{'submit' | translate }}</button></div>
+
+    
+    
+</div>
+
+<div class="main-device ms-3 me-3 mt-3" *ngIf="deviceId">
+    <div class="p-3 pb-1"><span class="Lato-Bold">Secondary Device {{id}}</span></div>
+
+    <div class="d-flex pt-1 ps-3 pe-3 pb-3 det-row2" >
+        <div class="col1 flex-fill">
+            
+            <div class="profileGreyText Lato-Regular">
+                PhoneNo
+            </div>
+            <span class="Lato-Bold">{{deviceId}}</span>
+        </div>
+        <div class="col2">
+             
+                <div class="d-flex flex-fill" (click)="deleteDevice(deviceId)">
+                     <span class="ms-2 ">
+                       <mat-icon class="delete">delete</mat-icon>
+                    </span>
+                </div>
+        </div>
+    </div>
+
+ </div>  

@@ -1,0 +1,45 @@
+<app-banner></app-banner>
+<div class="web-container">
+  <div class="web-side-banner"></div>
+<div class="card" >
+    
+    <img  src="../assets/mobile_login.jpg" class="card-img-top" alt="...">
+    <div class="card-body cardBodyDiv">
+      <form (ngSubmit)="onSubmit()">
+        <div class="container">
+  
+          <div class="d-flex flex-column mb-3">
+            <div class="p-2 otpTxt">
+                <span class="LatoRegularFnt-0_8" >{{ user.otpMessage }} </span><span class="LatoBoldFnt-0_8">{{ user.mobile }}</span>
+              </div>
+            <div class="p-2 otpDiv" >
+
+              <mat-form-field   appearance="outline" floatLabel="always">
+                <mat-label> {{'otp' | translate }} </mat-label>
+                <input type="text" matInput [placeholder]="'enterOTP' | translate" name="otp"
+                [(ngModel)]="user.otp" required>
+              
+               
+              </mat-form-field>
+
+              
+            </div>
+            <div class="p-2"><button  class="btn btn-darkBlue">{{'submit' | translate }}</button></div>
+  
+          </div>
+
+          
+          
+          <div>
+            
+  
+          </div>
+  
+        </div>
+  
+    </form>
+    </div>
+    <div class="web-footer">Luminous India 2022 Copyright. All rights reserved</div>
+
+   </div>
+</div>

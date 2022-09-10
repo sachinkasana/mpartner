@@ -1,0 +1,511 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC:700');
+
+@font-face {
+    font-family: LatoBlackItalic;
+    src: url(./assets/Font-Family/Lato-BlackItalic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+    font-family: Latoblack;
+    src: url(./assets/Font-Family/Lato-Black.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+    font-family: LatoBold;
+    src: url(./assets/Font-Family/Lato-Bold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+    font-family: LatoBoldItalic;
+    src: url(./assets/Font-Family/Lato-BoldItalic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+    font-family: LatoLight;
+    src: url(./assets/Font-Family/Lato-Light.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+    font-family: LatoLightItalic;
+    src: url(./assets/Font-Family/Lato-LightItalic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+    font-family: LatoRegular;
+    src: url(./assets/Font-Family/Lato-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+    font-family: LatoThin;
+    src: url(./assets/Font-Family/Lato-Thin.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+    font-family: LatoThinItalic;
+    src: url(./assets/Font-Family/Lato-ThinItalic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+    font-family: LatoItalic;
+    src: url(./assets/Font-Family/Lato-Italic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+   font-family: PoppinsMedium;
+   src: url(./assets/Font-Family/Poppins-Medium.ttf) format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: RobotoMedium;
+   src: url(./assets/Font-Family/Roboto-Medium.ttf) format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: RobotoRegular;
+   src: url(./assets/Font-Family/Roboto-Regular.ttf) format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+
+
+
+
+ html,body {
+    width: 100% !important;
+    height: 100vh !important;
+    
+
+    }
+
+
+    .navBack{
+      color: white;
+      line-height: 1;
+  }
+
+  .darkBlueFnt{
+     color: #214198;
+  }
+
+  .btn-darkBlue{
+   background: linear-gradient(rgb(7 45 158),rgb(93 109 263)); 
+   color: rgb(255 255 255) !important;
+   width: 100%;
+   font-family: LatoBold;
+   height: 3.125rem;
+   font-size: 1rem;
+   border: none;
+ }
+
+ .fnt-2_5{
+   font-size: 0.75rem;
+ }
+
+ .flexCenter{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .txtBlackBold{
+    color: black;
+    font-weight: 500;
+ }
+
+ .unblock-btn{
+    background: rgb(32 171 44);
+    color: white;
+    height: 1.5625rem;
+    width: 5.6875rem;
+    font-size: 0.75rem;
+    font-family: LatoBold;
+ }
+
+ .lock-btn{
+   background:rgb(255 63 63);
+   color: white;
+   height: 1.5625rem;
+   width: 5.6875rem;
+   font-size: 0.75rem;
+   font-family: LatoBold;
+}
+
+.ellips{
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.greyText{
+   color: #9d9d9d;
+}
+
+.pointsText{
+   color:rgb(250 106 0);
+   font-size: 0.875rem;
+   display: flex;
+   align-items: center;
+   font-family: LatoRegular;
+}
+
+.Lato-Bold{
+   font-family:LatoBold;
+}
+
+.Lato-Regular{
+   font-family: LatoRegular
+}
+
+.Roboto-Regular{
+   font-family: Roboto;
+}
+
+
+.mandatory{
+   color:rgb( 255 63 63);
+   font-size: 0.75rem;
+
+
+}
+
+
+.mat-form-field label{
+   font-size: 0.75rem;
+   color: rgb(0 0 0 );
+   font-family: LatoRegular;
+   letter-spacing: 0.75px;
+
+}
+
+.mat-form-field .mat-select{
+   font-size: 1rem;
+   color: rgb(0 0 0 );
+   font-family: LatoRegular;
+}
+
+.mat-form-field input{
+   font-size: 1rem;
+   color: rgb(0 0 0 );
+   font-family: LatoRegular;
+}
+
+.mat-form-field{
+   font-size: 0.73rem;;
+}
+
+.LatoRegularFnt-0_8{
+color: #000;
+font-size: 0.875rem;
+font-family: LatoRegular;
+}
+
+.LatoRegularGrey{
+   color: rgb( 155 155 155);
+   font-size: 0.875rem;
+   font-family: LatoRegular;
+   }
+   
+
+
+
+
+
+
+.LatoBoldFnt-0_8{
+   color: #000;
+   font-size: 0.875rem;
+   font-family: LatoBold;
+   }
+
+.LatoBoldWhite-3{
+   color: white;
+   font-size: 1rem;
+   font-family: LatoBold;
+}
+
+.LatoBoldBlue-0_8{
+   color:rgb(36 66 153);
+   font-size: 0.875rem;
+   font-family: LatoBold;
+   }
+
+   .LatoBoldBlue-3{
+      color: rgb(34 64 152);
+      font-size: 1rem;
+      font-family: LatoBold;
+      }
+      .LatoRegularBlue-3{
+         color: rgb(34 64 152);
+         font-size: 1rem;
+      font-family: LatoRegular;
+      }
+      .LatoBoldBlue-0_7{
+         color: rgb(34 64 152);
+         font-size: 1rem;
+         font-family: LatoBold;
+         }
+
+
+
+
+
+.skip{
+   text-align: center;
+   font-family: LatoRegular;
+   font-size: 0.875rem;
+   color:rgb(0 0 0);
+}
+
+
+.txtBlack{
+   color: rgb(0 0 0);
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+   border-color: #8bb0fa;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+   background-color: rgb(84 139 247);
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+   background-color: rgb(84 139 247);
+}
+
+.grid2Col{
+   background: rgb(66 93 177);
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 0.75rem;
+    font-family: LatoBold;
+    flex-basis: 50%;
+    align-items: center;
+   }
+
+  .grid2ColActive{
+   background: rgb(33 65 152);
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 0.75rem;
+    font-family: LatoBold;
+    align-items: center;
+    flex-basis: 50%;
+  } 
+
+  .collectionActive{
+   background: #efeeee;
+   display: flex;
+   justify-content: center;
+   color: #1137a1;
+   font-size: 0.75rem;
+   font-family: LatoBold;
+   align-items: center;
+   flex-basis: 50%;
+  }
+
+
+  .Lato-Black{
+   font-family: Latoblack
+}
+
+.Roboto-Regular{
+   font-family: RobotoRegular;
+}
+
+.Roboto-Medium{
+   font-family: RobotoMedium;
+}
+
+.Poppins-Medium{
+   font-family: PoppinsMedium;
+}
+
+.toast-bottom-center{
+   
+   
+   opacity: 0.9;
+   bottom: 10px !important;
+ }
+
+
+ .toast-container.toast-bottom-center .ngx-toastr{
+   width: 150px !important ;
+ }
+ .toast-container .ngx-toastr {
+   color: black !important;
+   background: white !important;
+   font-family: 'LatoBold'!important;
+   padding: 9px 15px 7px 36px !important;
+   border-radius: 11px!important;
+ }
+
+
+ .profileLanguage .mat-select .mat-select-value {
+     color: white;
+ }
+
+
+ @media(max-width:799px){
+    .mobileHeaderContainer{
+      display: block;
+    }
+
+   .webHeaderContainer{
+      display: none !important;
+   }
+   .web-footer{
+      display: none;
+    }
+ }
+@media(min-width:800px){
+   .web-footer{
+      display: block;
+    }
+   .mobileHeaderContainer{
+      display: none !important
+   }
+   .webContainerBox{
+      border-radius: 5px;
+      box-shadow: 0 5px 20px 0 rgba(233, 233, 233, 0.5);
+      border: solid 1px #dbdbdb;
+      background-color: #fff;
+      margin: 1.5rem;
+   }
+   .webHeaderContainer{
+      display: block;
+   }
+   .navBackWeb{
+      color: #000;
+   }
+   .web-header-title{
+      font-family: LatoBold;
+        font-size: 1.5rem;
+        color: #000000;
+        padding: 1.5rem 18.1875rem 1.125rem 1.1875rem;
+        opacity: 0.8;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+   }
+
+   mat-sidenav ::-webkit-scrollbar {
+      width: 6px !important;
+    background-image: linear-gradient(358deg, #072d9e 0, #5d6dff -222%);
+  }
+   
+  mat-sidenav ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important; 
+      border-radius: 10px !important;
+  }
+   
+  mat-sidenav ::-webkit-scrollbar-thumb {
+   border-radius: 10px !important;
+   background:white;
+  }
+}
+
+
+
+.profileLanguage .mat-select-placeholder{
+color: white
+}
+.profileLanguage .mat-select-arrow {
+   color: white !important
+
+}
+.profileLanguage .mat-form-field-outline{
+   color: #213d8f;
+   display:none !important;
+}
+.profileLanguage .mat-form-field-outline-start{
+   border:1px solid transparent;
+}
+.profileLanguage .mat-form-field-underline{
+      display: none;
+}
+.profileLanguage .mat-form-field{
+   font-size: 0.05rem;
+}
+
+.profileLanguage .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+   color: white !important;
+}
+
+
+.profileLanguage .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick{
+color: white !important;
+}
+
+
+.sharePopTitle{
+   display: flex;
+    justify-content: center;
+    font-family: 'LatoBold';
+    font-size: 1.2rem;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.sharePopUrl{
+   
+   word-break: break-all;
+   font-family: 'LatoRegular';
+    color: #000;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.shareLineBox{
+   margin-bottom: 1rem;
+    background: #dcd7d7;
+    height: 5px;
+    width: 27px;
+    border-radius: 5px;
+}
+
+
+
+.on-grid-system .row3-container .row3 .mat-progress-bar-fill::after {
+   background-color: #3c65b4;
+}
+
+
+.on-grid-system .row3-container .row5 .mat-progress-bar-fill::after {
+   background-color: #e6cca9;
+}
+
+
+
+zxing-scanner > video{
+   height: calc(100vh - 7rem) !important;
+}
+
+.btn-lightBlue-3{
+   width: 100%;
+   background: #5291ee;
+   font-family: 'LatoBold';
+   font-size: 1rem;
+   border-radius: 21px;
+   color: white;
+
+}

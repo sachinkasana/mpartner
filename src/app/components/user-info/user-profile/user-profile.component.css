@@ -1,0 +1,129 @@
+.main-details ,.main-credentials,.main-device{
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+}
+
+
+.main-details .det-row1,.main-details .det-row2,.main-credentials .det-row1,.main-credentials .det-row2,.main-device .det-row1,.main-device .det-row2{
+     padding-right: 0.75rem!important;
+}
+.main-details .det-row2,.main-credentials .det-row2,.main-device .det-row2{
+    padding-bottom: 0.75rem !important;
+}
+
+
+.main-details .det-row1 .col1{
+    flex-basis: 80%;
+    padding-bottom: 1;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.main-details .det-row1 .col2{
+    flex-basis: 20%;
+    text-align: end;
+    border-bottom: 1px solid #e8e8e8;
+    
+}
+.main-details .det-row2 .col1,.main-credentials .det-row2 .col1,.main-device .det-row2 .col1{
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 0.75rem;
+}
+.main-details .det-row2 .col2,.main-credentials .det-row2 .col2,.main-device .det-row2 .col2{
+    padding-top: 0.5rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+
+.profileGreyText{
+    color:#c4c4c4;
+    font-size: 0.75rem;
+}
+
+.profile-img{
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+}
+
+
+.camera-img{
+width: 1.5rem;
+height: 1.5rem;
+margin-top: -1.75rem;
+margin-left: 2rem;
+
+}
+
+.pending{
+color:rgb(250 106 0)
+}
+
+.approved{
+    color: rgb(66 148 34);
+}
+
+.disapproved{
+    color: rgb(208 2 27);
+}
+
+.logout{
+    background: rgb( 255 255 255);
+    color: rgb(208 2 27);
+    border: 1px solid rgb(255 0 31);
+    width: 6rem;
+    height: 2.25rem;
+}
+
+@media(max-width:799px){
+    .profileHeaderWeb{
+        display: none !important
+    }
+}
+
+@media(min-width:800px){
+    .profileHeaderWeb{
+        display: block !important;
+    }
+
+    .web-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .web-container .webCol{
+        flex: 35%;
+        max-width: 35%;
+    }
+
+    .main-details .det-row1 .col1{
+        border-bottom:none !important ;
+    }
+
+    .profileInfoWeb{
+        display: none !important;
+    }
+
+
+    .main-details .det-row1 .col2{
+        border-bottom: none !important;
+        
+    } 
+
+    .main-details .det-row1{
+        position: relative;
+        padding-top: 0 !important;
+    }
+    .main-details .det-row1 .col2{
+        position: absolute;
+        right: 47px;
+        top: 38px; 
+    }
+
+    .camera-img{
+        position: absolute;
+        left: 37px;
+        margin: 0 !important;
+    }
+
+
+}

@@ -1,0 +1,9 @@
+<!-- [ngStyle]="{'display':displayStyle}"  -->
+<div [ngStyle]="{'display':displayStyle}"  class="modal fade modal-backdrop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div  class="modal-dialog modal-dialog-centered " role="document">
+      <div class="modal-content" [ngClass]="{scratchCardPopup:'scratchCardPopup'}" [style.margin-left.em]="2.3" [style.width.%]="80">
+        <span class="btn closeicon" (click)="closePopup()"><img  src="../../assets/homeClosed.png" alt=""></span>
+      <ng-content></ng-content>
+      </div>
+    </div>
+  </div>

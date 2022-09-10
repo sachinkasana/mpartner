@@ -1,0 +1,76 @@
+<div class="d-flex  webHeaderContainer">
+    <div class="web-header-title">
+     Ad Creator
+    </div>
+     
+  </div>
+  <div class="webContainerBox">
+    <div class="m-3">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label > Choose Language </mat-label>
+            <mat-select placeholder="Select Language" (selectionChange)="switchLang($event.value)" required>
+                <mat-option *ngFor="let lang of languageList" [value]="lang.id">
+                    {{lang.language}}
+                </mat-option>
+              </mat-select>         
+          </mat-form-field>
+    </div>
+    
+      
+      
+      <div class="pricelist-main">
+        <div class="d-flex flex-wrap mb-3 pricelist-card ">
+            <div *ngFor="let image of imageList" class="ps-3 pt-4 pricelist-card-image" >
+                <img [src]="image.custom_image" (click)="editAdPopup(image.custom_image)"/>
+            </div>
+          </div>
+    </div>
+  </div>
+
+
+<app-ad-popup #myOverlay *ngIf="showEditAdPopup==true" id="hello" (popupClose)="closePopup()" >
+    <div class="ad-headr" >
+        MPartner
+        <div  *ngIf="colorPalette" class="d-flex setSize">
+            <!-- <mat-slider class="example-margin" [(ngModel)]="value"></mat-slider> -->
+            <div>Set Text Size</div>
+            <div>
+                <input type="range" [(ngModel)]="fontSize">
+
+            </div>
+            <div (click)="colorPalette=false" ><span class="done">Done</span></div>
+
+        </div>
+    </div>
+    
+    <!-- <div class='post-it' [ngStyle]="{'background-image': 'url(' + editFileUrl + ')'}">
+        <div class="note">
+        </div>
+
+    </div> -->
+    <div id="mainContainer"  class="bg" [ngStyle]="{'background-image': 'url(' + editFileUrl + ')'}">
+        <div class="text-wrapper" >
+            <textarea  #inpt type="text" [style.color]="fontColor"  [style.fontSize]="fontSize+'px'"></textarea>
+        </div>
+        <div *ngIf="colorPalette" class="webSlider">
+            <input type="range" [(ngModel)]="fontSize">
+        </div>
+
+    </div>
+    <!-- <img [src]="editFileUrl"/> -->
+    <div class="d-flex action ms-1 me-1 pt-2" *ngIf="!colorPalette" >
+
+        <div (click)="showEditAdPopup=false" ><img class="closeImg" src="../../../assets/closed.png" alt=""></div>
+        <div (click)="openColor()" class="text-center"><span class="t-one">T</span><span class="t-two">T</span></div>
+        <div class="text-end" (click)="downloadImage()"><img class="downloadImg" src="../../../assets/download.png" alt=""></div>
+    </div>
+
+    
+    <div *ngIf="colorPalette">
+        <!-- <mat-slider class="example-margin" [(ngModel)]="value" ngDefaultControl ></mat-slider> -->
+
+        <div class="adFooterContainer">
+            <div class="colorBox" *ngFor="let color of addColorList" [style.background]="color" (click)="selectColor(color)"></div>
+        </div>
+      </div>
+  </app-ad-popup>

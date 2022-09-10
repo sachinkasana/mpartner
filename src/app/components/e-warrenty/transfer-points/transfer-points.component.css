@@ -1,0 +1,83 @@
+
+.transferDiv{
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.transfr-btn-submit{
+    background: #1137a1;
+    color: white;
+    width: 100%;
+}
+
+.fnt-1{
+    font-size: 0.75rem;
+}
+
+.from{
+    height: 4rem;
+}
+
+.to{
+   height: 4rem;
+}
+
+.mat-form-field{
+    width: 100%!important;
+}
+
+
+.txt-black{
+    padding-left: 1.25rem !important;
+    color: black;
+}
+
+.center{
+    justify-content: center;
+}
+
+.points{
+
+}
+
+.transfer-btn-submit{
+    background: #568bf6;
+    color: white;
+    width: 100%;
+}
+
+.transferSubmitDiv{
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.msg{
+    color: rgb(74 74 74);
+}
+
+.transfer-main{
+    height: calc(100vh - 10.1875rem);
+    overflow: auto;
+}
+
+
+@media(max-width:799px){
+    .transferMobile{
+        display: block;
+    }
+
+    .transferWeb{
+        display: none !important
+    }
+
+}
+
+@media(min-width:800px){
+    .transferMobile{
+        display: none !important;
+    }
+
+    .transferWeb{
+        display: block;
+    }
+}

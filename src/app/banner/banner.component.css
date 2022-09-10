@@ -1,0 +1,12 @@
+.banner-main{
+    background-image:url(../../assets/banner.png);
+    width: 100%;
+    background-size: cover;
+    z-index: 1000;
+    height: 50px;
+    padding-left: 0.8rem;
+}
+
+.logo{
+    width: 5.8rem;
+}

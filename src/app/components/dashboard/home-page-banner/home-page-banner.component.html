@@ -1,0 +1,12 @@
+<nav class="nav">
+    <!-- <a class="nav-link " [routerLink]="['/dashboard/youtube']">Youtube</a>
+    <a class="nav-link" href="#">Solar Calculator</a>
+    <a class="nav-link" [routerLink]="['/dashboard/e-warranty']">Ewarranty Scanner</a>
+    <a class="nav-link" href="#">Solar Calculator</a> -->
+      <ng-container  *ngFor="let item of bannerData[0]">
+        <a class="nav-link" (click)="selectHeader(item)">{{item.ModuleText}}</a>
+      </ng-container>
+
+   
+
+  </nav>

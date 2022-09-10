@@ -1,0 +1,53 @@
+<footer>
+    <mat-toolbar  class="toolbarNav">
+      <button (click)="menuSelected(menu?.ModuleName)"
+       
+       mat-flat-button  
+       *ngFor="let menu of bottom_menu[0],index as i" 
+       
+     
+       [ngClass]="
+       menu?.ModuleName=='Catalog' && activeMenu!='Catalog'?'catalog':
+       menu?.ModuleName=='Price List' && activeMenu!='Price List'?'priceList':
+       menu?.ModuleName=='Scheme' && activeMenu!='Scheme'?'scheme':
+       menu?.ModuleName=='eWarranty' && activeMenu!='eWarranty'?'eWarranty':
+       menu?.ModuleName=='Catalog' && activeMenu=='Catalog'?'catalogActive':
+       menu?.ModuleName=='Price List' && activeMenu=='Price List'?'priceListActive':
+       menu?.ModuleName=='Scheme' && activeMenu=='Scheme'?'schemeActive':
+       menu?.ModuleName=='eWarranty' && activeMenu=='eWarranty'?'eWarrantyActive':
+
+       ''
+
+"
+
+
+
+        
+       
+        
+       >
+        <span></span><br><br>
+        <span [ngClass]="menu?.ModuleName == activeMenu?'activetxt':'inactivetxt'">{{menu?.ModuleName}}</span>
+      </button>
+     
+      <!-- <button mat-flat-button routerLink="/catalog" routerLinkActive="active-link">
+        <span><img src="../../assets/noun_Book_873055.png"></span><br>
+
+        <span>Catalog</span>
+      </button>
+      <button mat-flat-button routerLink="/priceList" routerLinkActive="active-link">
+        <span><img src="../../assets/noun_Tag_3509684.png"></span><br>
+
+        <span>Price List</span>
+      </button>
+
+      <button mat-flat-button routerLink="/scheme" routerLinkActive="active-link">
+        <span><img src="../../assets/noun_TV_282938.png"></span><br>
+        <span>Scheme</span>
+      </button>
+      <button mat-flat-button routerLink="/ewarranty" routerLinkActive="active-link">
+        <span><img src="../../assets/noun_Certificate_2189430.png"></span><br>
+        <span>eWarranty</span>
+      </button> -->
+    </mat-toolbar>
+  </footer>

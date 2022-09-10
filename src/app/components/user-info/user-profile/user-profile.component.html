@@ -1,0 +1,123 @@
+<div class="d-flex eWar  warranty-header-web profileHeaderWeb">
+    <div class="web-header-title">
+      My Profile
+    </div>
+     
+  </div>
+<ng-container *ngIf="userData">
+
+<div class="main-details ms-3 me-3 mt-3">
+    <div class="d-flex p-3 det-row1">
+        <div class="col1">
+            <span class="Lato-Bold profileInfoWeb">Personal Info</span>
+        </div>
+        <div class="col2">
+            <div  >
+                <img class="profile-img" [src]="userData.profileImg" alt="">
+                <label class="-label" for="upload">
+                    <span>
+                        <img  class="camera-img" src="../../../../assets/group6.svg" alt="">
+                    </span>
+                  </label>
+                    <input type="file" name="profileImg" type="file" accept="image/*" (change)="handleInputChange($event)" id="upload" hidden/>
+            </div>
+              
+        </div>
+        
+    </div>
+    <div class="web-container">
+        <div class="d-flex ps-3 pe-3 pb-3 det-row2 webCol">
+            <div class="col1 flex-fill">
+                
+                <div class="profileGreyText Lato-Regular">
+                    First Name
+                </div>
+                <span class="Lato-Bold">{{userData.Name}}</span>
+            </div>
+            
+            
+        </div>
+    
+        <div class="d-flex ps-3 pe-3 pb-3 det-row2 webCol">
+            <div class="col1 flex-fill">
+                
+                <div class="profileGreyText Lato-Regular">
+                    Email ID
+                </div>
+                <span class="Lato-Bold">{{userData.Email}}</span>
+            </div>
+            
+        </div>
+        <div class="d-flex ps-3 pe-3 pb-3 det-row2 webCol">
+            <div class="col1 flex-fill">
+                
+                <div class="profileGreyText Lato-Regular">
+                    SAP Phone No
+                </div>
+                <span class="Lato-Bold">{{userData.Phone}}</span>
+            </div>
+            
+        </div>
+        <div class="d-flex ps-3 pe-3 pb-3 det-row2 webCol">
+            <div class="col1 flex-fill">
+                
+                <div class="profileGreyText Lato-Regular">
+                    Address
+                </div>
+                <span class="Lato-Bold">{{userData.Address1}}</span>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
+
+<div class="main-device ms-3 me-3 mt-3">
+    <div class="d-flex pt-3 ps-3 pe-3 pb-3 det-row2" >
+        <div class="col1 flex-fill">
+            
+            <div class="profileGreyText Lato-Regular">
+                Secondary Device 1
+            </div>
+            <span class="Lato-Bold">{{userData.secondaryDevice1}}</span>
+        </div>
+        <div class="col2" (click)="gotoDevice(userData.secondaryDevice1,1)">
+             
+                <div class="d-flex flex-fill">
+                  <span class="ms-2 " ><mat-icon>keyboard_arrow_right</mat-icon></span>
+            
+                </div>
+             
+            
+            
+        </div>
+        
+        
+    </div>
+    <div class="d-flex ps-3 pe-3 pb-3 det-row2">
+        <div class="col1 flex-fill">
+            
+            <div class="profileGreyText Lato-Regular">
+                Secondary Device 2
+            </div>
+            <span class="Lato-Bold">{{userData.secondaryDevice2}}</span>
+        </div>
+        <div class="col2" (click)="gotoDevice(userData.secondaryDevice2,2)">
+             
+                <div class="d-flex flex-fill">
+                   <span class="ms-2 "><mat-icon>keyboard_arrow_right</mat-icon></span>
+                </div>
+        </div>      
+    </div>
+</div>
+
+<div class=" ms-3 me-3 mt-3">
+    <div class="pt-3 ps-3 pe-3 pb-3  ">
+        <div class="flexCenter">
+            
+            <button class="btn logout Roboto-Regular" (click)="logout()">LOGOUT</button>
+        </div>
+    </div>
+    
+</div>
+</ng-container>

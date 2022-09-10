@@ -1,0 +1,301 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+  }
+  
+  h1.example-app-name {
+    margin-left: 8px;
+  }
+  
+  .example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+  
+  .example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+  }
+  
+
+  .mat-toolbar.mat-primary {
+    background: #1137a1;
+   
+}
+
+/* .nav{
+  position: relative;
+ 
+  background: #1137a1;
+  justify-content: space-around;
+  font-size: .7rem;
+  flex-wrap: nowrap;
+} */
+
+.nav{
+  width: 100%;
+}
+
+.nav a{
+  color: white;
+}
+
+.nav-link {
+  padding: 0.5rem 0.1rem;
+}
+
+.nav a img{
+ 
+}
+
+.iconImage{
+  max-width:1.3125rem;
+  max-height: 1.3125rem;
+  margin-right: 0.7rem;
+}
+
+.mat-sidenav{
+  /* height:calc(100vh - 4.0625rem); */
+  width: 85%;
+}
+
+.icon-bar{
+  width: 1.25rem;
+  height: 1.3125rem;
+}
+
+
+.logo{
+  width: 5.8rem;
+}
+
+
+.logo-w{
+  width: 60%;
+}
+
+.icon-w{
+  width: 15%;
+}
+
+
+.mat-nav-list .mat-list-item{
+  font-size: 1rem;
+  font-family: 'LatoRegular';
+  color: rgb(74 74 74);
+}
+
+
+.profile-main{
+  background: linear-gradient(rgb( 51 81 171),rgb( 26 53 131));
+}
+
+.close-icon{
+  text-align: end;
+}
+
+
+.close-icon img{
+  width: 13px;
+}
+
+.alignEnd{
+  justify-content: end;
+  padding-top: 1.3125rem !important;
+}
+
+ .det-row2{
+  padding-bottom: 0.75rem !important;
+}
+
+
+ .det-row1 .col1{
+  flex-basis: 25%;
+  padding-bottom: 1;
+ }
+
+ .det-row1 .col2{
+  flex-basis: 20%;
+  text-align: end;  
+}
+
+.profile-img{
+  width: 4.0625rem;
+  height: 4.0625rem;
+  border-radius: 50%;
+}
+
+.phoneTxt,.nameTxt{
+  color: rgb(255 255 255);
+}
+
+
+
+ 
+.mat-select .mat-select-value{
+  color: white !important;
+}
+/* #profile-language  .mat-form-field-appearance-outline .mat-form-field-outline{
+  color: #213d8f !important;
+} */
+
+#profile-language .mat-form-field-appearance-outline .mat-form-field-outline{
+  display: none !important;
+}
+
+#profile-language .mat-form-field{
+  font-size: 0.05rem !important;
+}
+
+#profile-language  .mat-form-field-appearance-outline .mat-form-field-outline-start{
+   border: 1px solid transparent !important;
+}
+#profile-language .mat-form-field-underline {
+  display: none !important;
+}
+.pl1_3{
+  padding-left:1.3125rem !important;;
+}
+
+.pb1_7{
+  padding-bottom: 1.75rem !important;
+}
+
+
+ 
+
+
+.mat-toolbar-single-row {
+  height: 50px;
+}
+
+.mat-icon{
+  font-size: 2.125rem;
+}
+
+.mat-toolbar-single-row{
+  padding-left: 6px;
+}
+
+.webBg{
+  background: #1137a1;
+  width: 260px;
+}
+
+.ps-4_5{
+  padding-left: 2rem;
+}
+
+.pt_4_5{
+  padding-top: 1.625rem;
+}
+
+
+@media(max-width:799px){
+  .mobileContainer{
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 800px) {
+  .iconCol1{
+    
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex: 5;
+  }
+
+  
+
+  .iconCol2{
+    display: flex;
+    justify-content: end;
+    padding-right: 1.5rem;
+    align-items: center;
+    flex: 1;
+  }
+
+  .icon-w {
+    width: 2.25rem;
+    }
+
+    .pipe{
+      color: #000;
+    }
+    .webNavList{
+      background:#1137a1;
+      color: white !important;
+    }
+    
+    .webToolbar{
+      background:white !important;
+      color: #1137a1;
+      height: 74px;
+      border-bottom: 1px solid #026fb9;
+    }
+
+    .welcomeTxt{
+      font-family: LatoRegular;
+      color: #919191;
+      font-size: 0.875rem;
+    }
+
+    .name{
+      font-family: LatoRegular;
+      color: #000000;
+      font-size: 0.875rem;
+    }
+    .profile-img{
+      width: 2.9375rem;
+      height: 2.9375rem;
+      border-radius: 50%;
+    }
+
+    .footerTxt{
+      color: #334151;
+      font-size: 0.8125rem;
+      font-family: LatoRegular;
+      background:white;
+
+      position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    max-height: 4.0625rem;
+    min-height: 4.0625rem;  
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow: 3px 3px 5px 6px #ccc; /* Firefox 3.5 - 3.6 */
+    box-shadow: 2px 2px 4px 5px #ccc; /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    }
+    .mat-nav-list .mat-list-item{
+      font-size: 0.875rem;
+      font-family: 'LatoRegular';
+      color: white !important;
+    }
+
+    .mat-nav-list a:hover,.mat-nav-list a:active,.mat-nav-list a:active{
+      background-color: rgba(239, 239, 239, 0.3);
+    border-left: 2px solid white;
+    }
+
+  
+   
+
+}
+ 

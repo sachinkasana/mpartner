@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "sh.surge.mpartner_web_dev.twa",
+                     "sha256_cert_fingerprints": ["CC:50:5A:C8:0B:07:E2:2B:8B:03:7B:15:23:CD:B3:2E:16:A9:A1:43:E2:68:AD:16:D8:DA:96:36:3F:76:34:77"] }
+      }
+]

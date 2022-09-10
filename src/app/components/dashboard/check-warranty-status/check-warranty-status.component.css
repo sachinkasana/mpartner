@@ -1,0 +1,121 @@
+.sno{
+    border: 1px solid rgb( 205 205 205);
+    border-radius: 5px;
+    height: 2.8125rem;
+    width: calc(100% - 3rem);
+    border-right: none;
+    margin: 1.5rem;
+    margin-top: 4rem;
+
+}
+.error{
+    color: red;
+}
+
+.submit{
+     
+    background: linear-gradient(rgb(7 45 158),rgb(93 109 263));
+    font-family: LatoBold;
+    font-size: 0.875rem;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    height: 2.7rem;
+    color: white;
+    width: 100%;
+
+      
+}
+
+.inpt{
+    padding: 0.75rem;
+    width: calc(100%);
+}
+
+.mat-input-element{
+    font-family: LatoRegular;
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-details{
+    border-top: 1px solid #e8e8e8;
+    height: calc(100vh - 13.875rem);
+    overflow: auto;
+}
+
+
+.main-details .det-row2{
+     padding-right: 0.75rem!important;
+}
+.main-details .det-row2{
+    padding-bottom: 0.75rem !important;
+    border-bottom: 1px solid #e8e8e8;
+
+}
+
+
+ 
+.main-details .det-row2 .col1{
+     
+}
+.main-details .det-row2 .col2{
+    padding-top: 0.5rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+
+.profileGreyText{
+    color:#c4c4c4;
+    font-size: 0.75rem;
+}
+
+.warning-main{
+    flex-direction: column;
+    padding-top: 3rem;
+}
+
+.warningTxt{
+    font-family: LatoRegular;
+    font-size: 0.875rem;
+    color:rgb(238 71 53);
+}
+.warning-img,.warningTxt{
+    display: flex;
+    justify-content: center;
+}
+
+.warning-img img{
+    width:3.8125rem;
+    height: 3.125rem;
+}
+
+input{
+    border:none;
+    outline: none;
+    background: transparent;
+}
+
+@media(min-width:800px){
+
+    .main-details{
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgba(233, 233, 233, 0.5);
+    border: solid 1px #dbdbdb;
+    margin: 1.5rem;
+    }
+    
+    .sno{
+        margin-top: 1.5rem;
+    }
+}

@@ -1,0 +1,102 @@
+<app-banner-navigate class="mobileHeaderContainer">
+    <div class="d-flex navBack p-3  LatoBoldWhite-3" (click)="back()"><span><mat-icon class="arrowbck">arrow_back</mat-icon></span><span class="ms-auto me-auto">SOLAR LOAD CALCULATOR</span> </div>
+</app-banner-navigate>
+<div class="webContainerBox mobileContainerBox off-grid-solar-calculator">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="web-form-wrapper">
+        <div class="MobileSelectRequire applianceLblTxt m-3 ">
+            Total Load Connected to Inverter (in Watts) (A)
+        </div>
+        <div class="m-3 col1">
+            <mat-form-field class="webForm" appearance="outline" floatLabel="always">
+                <mat-label > Total Load Connected to Inverter (in Watts) (A)</mat-label>
+    
+                <input  type="number" formControlName="totalLoad" matInput  name="totalLoad" (blur)="onBlur()" formControlName="totalLoad"
+                  #totalLoad [readonly]="isTotalLoadReadOnly" required>
+             </mat-form-field>
+    
+            <mat-form-field class="mobileForm" appearance="outline" floatLabel="always">
+                 <input  type="number" formControlName="totalLoad" matInput  name="totalLoad" (blur)="onBlur()" formControlName="totalLoad"
+                   #totalLoad [readonly]="isTotalLoadReadOnly" required>
+              </mat-form-field>
+        </div>
+        <div class="MobileSelectRequire applianceLblTxt m-3 ">
+            Average Running Load (%) (B)
+        </div>
+        <div  class="m-3 col1">
+            <mat-form-field class="webForm" appearance="outline" floatLabel="always">
+                <mat-label> Average Running Load (%) (B)</mat-label>
+    
+                <mat-select formControlName="averageRunningLoad" (selectionChange)="onPercentageChange($event)" required>
+                  <mat-option *ngFor="let percent of percentages" [value]="percent.value">
+                  {{percent.percentage}}
+                  </mat-option>
+                 
+                </mat-select>   
+             </mat-form-field>
+            <mat-form-field class="mobileForm" appearance="outline" floatLabel="always">
+                <mat-select  formControlName="averageRunningLoad" (selectionChange)="onPercentageChange($event)" required>
+                    <mat-option *ngFor="let percent of percentages" [value]="percent.value">
+                    {{percent.percentage}}
+                    </mat-option>
+                   
+                  </mat-select>         
+             </mat-form-field>
+        </div>
+        <div class="MobileSelectRequire applianceLblTxt m-3 ">
+            Total Load During Power Cut (in Watts) (C=A*B)
+        </div>
+        <div  class="m-3 col1">
+            <mat-form-field class="webForm" appearance="outline" floatLabel="always">
+                <mat-label> Total Load During Power Cut (in Watts) (C=A*B)</mat-label>
+    
+                <input  type="number" matInput  name="totalLoadPowerCut" formControlName="totalLoadPowerCut"
+                  #powerCutLoadWeb readonly>
+             </mat-form-field>
+            <mat-form-field class="mobileForm" appearance="outline" floatLabel="always">
+                 <input  type="number" matInput name="totalLoadPowerCut" formControlName="totalLoadPowerCut"
+                   #powerCutLoad readonly>
+              </mat-form-field>
+        </div>
+        <div class="MobileSelectRequire applianceLblTxt m-3 ">
+            Backup Time (in hrs)
+        </div>
+        <div  class="m-3 col1">   
+            <mat-form-field class="webForm" appearance="outline" floatLabel="always">
+                <mat-label>Backup Time (in hrs)</mat-label>
+    
+                <mat-select [(ngModel)]="backupTime" placeholder="Select backup time"  name="backupTime" formControlName="backupTime" (selectionChange)="switchBackup($event.value)"  required>
+                  <mat-option *ngFor="let time of backupTimes" [value]="time.upperValue">
+                    {{time.time}}
+                  </mat-option>
+                   
+                 </mat-select>   
+             </mat-form-field>     
+            <mat-form-field  class="mobileForm" appearance="outline" floatLabel="always">
+                <mat-select [(ngModel)]="backupTime" placeholder="Select backup time"  name="backupTime" formControlName="backupTime" (selectionChange)="switchBackup($event.value)"  required>
+                  <mat-option *ngFor="let time of backupTimes" [value]="time.upperValue">
+                    {{time.time}}
+                  </mat-option>
+                   
+                 
+                 </mat-select>         
+             </mat-form-field>
+        </div>
+    </div>
+    
+
+    <div class="m-3 d-flex calcResetWrap">
+        <div class="backBtnWeb">
+            <button class="btn btn-back" >BACK</button>
+        </div>
+        <div class="btn1">
+            <button class="btn btn-calculate" (click)="getRecommendedInverter()">CALCULATE</button>
+        </div>
+        <div class="btn2">
+            <button class="btn btn-reset">RESET</button>
+        </div>
+
+    </div>
+    </form>
+     
+</div>

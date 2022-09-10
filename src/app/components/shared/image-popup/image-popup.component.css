@@ -1,0 +1,41 @@
+.fade{
+    opacity: 1;
+}
+
+.close{
+    line-height: 0;
+}
+
+.modal-backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.popupTop{
+    margin-top: 9vh;
+}
+
+.closeicon{
+    position: absolute;
+    right: 0px;
+    z-index: 100;
+}
+
+.modal-content{
+    margin: 1rem;
+}
+
+.closeicon img{
+    height: 4vh;
+}
+
+
+.scratchCardPopup{
+    width: 80%;
+    margin-left: 2.375rem;
+}
+
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translate(0, 6px);
+}

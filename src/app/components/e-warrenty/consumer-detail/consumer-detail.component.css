@@ -1,0 +1,107 @@
+
+.mat-form-field{
+    width: 100%;
+}
+
+.error{
+    color: red;
+}
+
+.upload{
+    border: 1px solid rgb(205 205 205);
+    border-radius: 5px;
+    height: 2.5rem;
+}
+
+mat-label{
+color: rgb(0 0 0);
+}
+
+
+input,mat-select{
+font-family:LatoRegular;
+color: rgb(0 0 0);
+
+}
+
+.upload label{
+   color: rgb( 238 71 53);
+   font-family:Poppins-Medium;
+   display: contents;
+}
+
+.msgTxt{
+    color: rgb(250 106 0);
+    text-align: center;
+}
+
+.mt-minus{
+    margin-top: -1rem
+}
+
+
+.required{
+    font-size: 11px;
+    font-family: 'LATOREGULAR';
+    color: rgb(91 91 91);
+    margin-left: 0.25rem;
+
+}
+
+
+.main{
+    height: calc(100vh - 11.5rem);
+    overflow: auto;
+}
+
+
+@media(max-width:779px){
+    .consumerDetailMobile{
+        display: block;
+    }
+    .consumerDetailWeb{
+        display: none !important;
+    }
+}
+
+
+@media(min-width:800px){
+    .consumerDetailMobile{
+        display: none !important;
+    }
+    .consumerDetailWeb{
+        display: block
+
+    }
+
+    .main{
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgba(233, 233, 233, 0.5);
+    border: solid 1px #dbdbdb;
+    background-color: #fff;
+    margin: 1.5rem;
+    }
+    .eWar{
+        height: 4.4375rem;
+    }
+     
+
+    .web-header-col-2{
+        display: flex;
+        align-items: center;    
+    }
+    .web-header-title{
+        width: 78.5%;
+    }
+
+    .web-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .web-container .webCol{
+        flex:32% !important;
+        max-width: 33%;
+        margin-right: 0.5rem;
+    }
+}

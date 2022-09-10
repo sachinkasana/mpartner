@@ -1,0 +1,496 @@
+.eWar img{
+    width: 16.3125rem;
+    height: 4.0625rem;
+}
+
+.error{
+    color: red;
+}
+.eWar{
+}
+
+.banner img{
+    width: 100%;
+}
+
+.warranty-points-card .warranty-points-card-image{
+    flex-basis: 50%;
+    text-align: center;
+    padding: 0.5rem !important;
+    padding-top: 1rem!important;
+    /* background: url(../../assets/earned.png); */
+}
+.main{
+    height: calc(100% - -4rem);
+}
+
+
+.warranty-points-card .warranty-points-card img{
+    width: 97%;
+    height: 10rem;
+    border-radius: 5px;
+}
+.earned ,.redeemable,.redeemed{
+    background-size: cover; 
+    margin: 0.5rem;
+    background-repeat: round;
+    height: 10rem;
+    
+}
+.redeemed{
+    background-image: url(../../../../assets/redeemed.png);
+   
+
+}
+.earned{
+    background-image: url(../../../../assets/earned.png);
+
+}
+
+.redeemable{
+    background-image: url(../../../../assets/redeemable.png);
+
+}
+/*.redeemable{
+    background: url(../../assets/earned.png);
+    background-size: cover;
+    margin: 13px;
+    margin: 0.5rem;
+    background-repeat: round;
+    height: 8rem;
+
+} */
+
+ 
+
+.txt{
+    text-align: center;
+    color: white;
+}
+.txtPoints{
+     font-family: LatoBold;
+    font-size: 1.525rem;
+}
+
+.redeemablePoints{
+    background: #f7a623;
+    color: white;
+    border-radius: 5px;
+    font-family: LatoRegular;
+    font-size: 1.125rem;
+}
+.ireedeemablePoints{
+    background: #ff5733;
+    color: white;
+    border-radius: 5px;
+    font-family: LatoRegular;
+    font-size: 1.125rem;
+}
+.underVerificationPoints{
+    background: #cb6300;
+    color: white;
+    border-radius: 5px;
+    font-family: LatoRegular;
+    font-size: 1.125rem;
+}
+
+
+
+.redeemable-main{
+    padding-bottom: 0.25rem!important;
+}
+
+.irredeemable-main{
+    padding-top: 0.25rem!important;
+}
+
+.dealerOptions
+{
+    margin: 0.5rem;
+    background: #224098;
+    color: white;
+    border-radius: 5px;
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:9.25rem;
+    font-size: 0.75rem;
+    font-family: LatoBold;
+}
+
+
+
+.rewards{
+    margin: 0.5rem;
+    background: #224098;
+    color: white;
+    border-radius: 5px;
+    height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:9.25rem;
+    font-size: 0.75rem;
+    font-family: LatoBold;
+
+
+}
+
+.dealerOptions img,.rewards img{
+width: 53%;
+}
+
+.reportMain{
+    background: #e8f3f7;
+}
+
+.reprtsDownload,.rewardsDownload{
+    border: 1px solid rgb( 255 200 193);;
+    height: 1.4375rem;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    color: rgb( 239 83 62);
+    font-size: 0.6875rem;
+    font-family: LatoBold;
+}
+
+
+.reprtsDownload img,.rewardsDownload img{
+    width: 0.5rem;
+}
+
+
+
+.rprtHeader{
+    font-family: LatoBold;
+    font-size: 0.875rem;
+    min-width: 6rem;
+    border-bottom: 1px solid rgb( 151 151 151);
+    }
+
+.cardRejHeader{
+    background: #01aea8;
+    color: white;
+    justify-content: center;
+    height: 5.375rem;
+    align-items: center;
+}
+
+
+.progress-main svg{
+  background: red;
+  height: 77%!important;
+  width: 100%!important;
+}
+
+.indiaProgress{
+  padding: 1rem;
+  width: 50%;
+}
+.myProgress{
+  padding: 1rem;
+  width: 50%;
+}
+
+.progress-main{
+  background: #1d3961
+}
+
+.assist,.submit{
+  background: #1a3583;
+  justify-content: center;
+  color:white
+}
+    
+
+.table{
+    border: 2px solid rgb( 219 219 219);
+width: calc(100% - 2.5rem);
+overflow: auto;
+
+
+}
+.tblcol{
+    min-width:6rem;
+    border-bottom: 1px solid rgb( 151 151 151);
+}
+
+.colProduct{
+    max-width: 6rem;
+}
+
+.mobileNo,.warrantyCode,.center{
+    justify-content: center;
+}
+
+.mobile-main{
+    height: 4rem;
+}
+
+.mat-form-field{
+    width: 100%!important;
+}
+
+.btn-submit{
+    background: #0b2e9c;
+    color: white;
+    width: 100%;
+  }
+
+  .saleDate{
+    height: 4rem;
+}
+
+
+.msg{
+    font-size: .75rem;
+    margin-bottom: 4rem;
+}
+
+.redeemablePoints .rightArrow{
+    float: right;
+}
+.redeemablePoints .rightArrow img{
+    width: 50%;
+
+}
+
+.justify-center-white{
+    justify-content: center;
+    color: white;
+}
+
+.progressTitle{
+    width: 75%;
+    
+}
+
+.txt-black{
+    padding-left: 0.25rem !important;
+    color: black;
+}
+
+.inputfield{
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+}
+
+
+
+
+.paytmSubmitDiv{
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+
+
+.success-check{
+    width: 33%;
+}
+
+.fnt-1{
+    font-size: 0.75rem;
+}
+
+
+.fnt0_8{
+    font-size: 0.875rem;
+}
+
+.fnt1_25{
+    font-size: 1.125rem;
+}
+
+
+.p0_6{
+    padding-top: 0.625rem;
+}
+
+
+ 
+
+.alignEnd{
+    text-align: end;
+}
+
+.transfer_msg{
+    font-family: LatoRegular;
+    font-size: 0.875rem;
+    color: rgb(88, 88, 88);
+}
+
+.disclaimerTitle{
+    display: flex;
+    align-items: center;
+    margin-left: 0.5rem;
+    color: black;
+    font-family: 'LatoBold';
+    font-size: 1rem;
+}
+
+.warningBg{
+    color: #e6e6e6;
+}
+
+
+.disclaimerMsg{
+    font-family: 'LatoRegular';
+    color: #000;
+}
+
+.greyBck{
+    background-color: gray !important;
+}
+@media(max-width:799px){
+    .warranty-header-mobile{
+        display: block
+    }
+    .warranty-header-web{
+        display: none !important;
+    }
+}
+
+@media(min-width:800px){
+    .warranty-header-mobile{
+        display: none !important;
+    }
+    .warranty-header-web{
+        display: block
+    }
+
+    .web-container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .web-container .webCol{
+         
+        width: 45%;
+    flex: 45%;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    margin: 1.5rem;
+    }
+
+    .carousCust{
+        margin: 1.5rem;
+        border: 1px solid #dbdbdb;
+        border-radius: 5px;
+        padding: 1rem;
+        }
+
+        .eWar{
+            height: 4.4375rem;
+        }
+        .eWar img{
+            width: 9.1825rem;
+            height: 2.5rem;
+        }
+
+        .web-header-col-2{
+            display: flex;
+            align-items: center;    
+        }
+
+        .web-header-title{
+            width: 86.5%;
+        }
+
+        .indiaProgress{
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .myProgress{
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .progressTitle{
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        .cardRejHeader{
+            height: 3.125rem;
+        }
+        .progress-main {
+            height: 13.25rem;
+        }
+
+        .reportMain{
+            background: #ffffff;
+            padding-left:  0 !important ;
+            padding-right: 0 !important;
+        }
+
+        .table{
+            border: none;
+        }
+
+        .rptBorder{
+            border-bottom: 1px solid rgba(97,97,97,0.5);
+        }
+
+        .rprtHeader{
+            border-bottom: 1px solid rgba(97,97,97,0.5);
+
+        }
+
+        .tblcol{
+            border-bottom: 1px solid rgba(97,97,97,0.5);
+
+
+        }
+
+        .earned,.redeemable,.redeemed{
+            height: 11.125rem ;
+        }
+
+        .txtPoints{
+            margin-top:1.6875rem !important
+
+        }
+
+        .pt-irr-web{
+            /* padding-top: 4rem !important */
+        }
+        .dealerOptionsWeb{
+            width: 100%;
+        }
+
+        .getAssist-web-bg{
+          background: #204296 !important;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0; 
+
+        }
+
+        .getAssist-web{
+            padding: 0 !important;
+        }
+
+        
+}
+
+.redeemNow,.tripDetails{
+    background: #15b752;
+    margin: 1rem 0rem 0rem 0rem;
+    float: right;
+    width: 6.5rem;
+}
+
+
+.pad{
+    border: 1px solid #f2f2f2;
+    border-radius: 0.5rem;
+    margin: 0rem 0.5rem 1rem 0.5rem;
+    padding: 1rem 0 1rem 0;
+}
+
+.custErr{
+    margin-left: 0.75rem;
+}

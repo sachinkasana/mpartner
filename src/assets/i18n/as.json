@@ -1,0 +1,22 @@
+{
+    "next": "Next",
+    "skip": "Skip",
+    "userCode": "User Code",
+    "otpSuccess": "OTP has been sent to your SAP registered Number",
+    "otp": "OTP",
+    "submit": "SUBMIT",
+    "enterOTP":"Enter OTP",
+    "enterPhone":"Enter Phone Number or LPT Employee Code",
+    "selectLang":"Select Language",
+    "selectSapId":"Please select your SAP ID",
+    "mobileNo":"Mobile No",
+    "enterMobileNo":"Enter Mobile No ",
+    "saleDate":"Sale Date",
+    "enterSaleDate":"Enter Sale Date",
+    "warrantyVerificationCode":"Warranty Verification Code",
+    "enterwarrantyVerificationCode":"Enter Warranty Verification Code"
+    
+
+
+
+}

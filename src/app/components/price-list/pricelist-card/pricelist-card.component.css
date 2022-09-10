@@ -1,0 +1,92 @@
+.pricelist-card .pricelist-card-image{
+    flex-basis: 50%;
+    text-align: center;
+}
+
+
+
+.pricelist-card .pricelist-card-image img{
+    width: 100%;
+    height: 12.9375;
+}
+
+
+
+ 
+
+    .title{
+        color: black;
+    }
+
+    .pricelist-main{
+    min-height: calc(100vh - 9.9375rem);
+    max-height: calc(100vh - 9.9375rem);
+    overflow: auto;
+
+    }
+    
+   
+
+    .category{
+        height: 2.6rem;
+        position: fixed;
+        bottom: 4.2rem;
+        width: 100vw;
+    }
+
+    @media(max-width:799px){
+        .priceListWeb{
+            display: none !important;
+
+        }
+
+        .categoryMobile{
+            display: block;
+        }
+
+        .categoryWeb{
+            display: none !important;
+        }
+    }
+    @media(min-width:800px){
+        .priceListWeb{
+            display: block;
+        }
+        .eWar{
+            height: 4.4375rem;
+          }
+        .pricelist-main{
+            border-radius: 5px;
+            box-shadow: 0 5px 20px 0 rgba(233, 233, 233, 0.5);
+            border: solid 1px #dbdbdb;
+            background-color: #fff;
+            min-height: auto !important;
+            margin: 1.5rem;
+            max-height: calc(100vh - 12.9375rem)!important;
+            overflow: auto;
+
+         }
+
+
+        .pricelist-card .pricelist-card-image {
+            flex-basis: 25%;
+        
+        }
+
+        .pricelist-card .pricelist-card-image img{
+            height: 19.6875rem !important;
+        }
+        .categoryMobile{
+            display: none !important;
+        }
+        .categoryWeb{
+            display: block;
+            margin:1.5rem;
+            margin-top:0;   
+        }
+        .category{
+            position: relative !important;
+            width: 100%;
+            bottom: 0!important;
+        }
+  }

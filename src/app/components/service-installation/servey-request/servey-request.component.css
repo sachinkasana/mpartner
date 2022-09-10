@@ -1,0 +1,27 @@
+.category{
+    background: linear-gradient(rgb(7 45 158),rgb(93 109 263));   color: rgb(255 255 255);
+    font-family: LatoBold;
+   height: 3.125rem;
+   font-size: 0.875rem;
+   border: none;
+   align-items: center;
+}
+
+.main{
+    margin-top: 10rem;
+
+}
+
+.icn{
+    flex-basis: 5%;
+    margin: 1rem;
+    margin-right: 0rem;
+}
+
+@media(min-width:800px){
+    .category{
+    width: 50%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    }
+}

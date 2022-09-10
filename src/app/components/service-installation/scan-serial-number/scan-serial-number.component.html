@@ -1,0 +1,24 @@
+
+<app-banner-navigate>
+    <div class="d-flex p-3 navBack"><span class="me-2" [routerLink]="['/dashboard/service-installation']"  ><mat-icon class="">arrow_back</mat-icon></span></div>
+</app-banner-navigate>
+
+<div class="m-4 d-flex sno mt-5">
+
+    <div class="inpt">
+        <input type="text" matInput  placeholder="Scan/Enter manually" (ngModelChange) ="serialNumberChange($event)" [ngModel]="serialNumber" name="serialNumber"
+                   required>
+    </div>
+    <div>
+        <button class="btn " (click)="redirectToScan()" type="button"><img src="../../../../assets/qrsm.png" alt=""></button>
+
+    </div>
+
+    <div>
+        <button class="btn submit" type="button" (click)="sendSerialNumber()">SUBMIT</button>
+
+    </div>
+</div>
+
+
+ 

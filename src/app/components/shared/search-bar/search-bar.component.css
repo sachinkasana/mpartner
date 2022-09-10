@@ -1,0 +1,58 @@
+.banner-main{
+    background: #1137a1;
+    border-top: 1px solid white;
+    width: 100%;
+    background-size: cover;
+    z-index: 1000;
+    position: fixed;
+    top: 3.125rem;
+    height: 3rem;
+}
+
+.search{
+    color: white;
+}
+
+.close{
+    border: 1px solid grey;
+    border-radius: 5px;
+    background: white;
+}
+
+.icon-color{
+    color: red;
+}
+
+input{
+    border:none;
+    background: #1137a1;
+    color: white;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #405ba2;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #405ba2;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #405ba2;
+  }
+
+  .btn-close{
+    background: transparent url(../../../../assets/popupclose.png) center/2em auto no-repeat;
+    width: 15px;
+    height: 15px;
+    padding: 0.25em 0.2em;
+    border-radius: 1.25rem;
+
+}
+
+.spnclose{
+    background: white;
+    width: 1.3125rem;
+    height: 1.3125rem;
+    border-radius: 1rem;
+}

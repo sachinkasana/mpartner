@@ -1,0 +1,112 @@
+image: node:latest
+
+variables:
+  DEV_DOMAIN: mPartner-lms-dev.surge.sh
+  WEB_DEV_DOMAIN: mPartner-web-dev-fixes.surge.sh
+  WEB_DOMAIN: mPartner-web.surge.sh
+  STAGING_DOMAIN: m-Partner-uat.surge.sh
+  PRODUCTION_DOMAIN: m-Partner-prod.surge.sh
+
+.cache_template: &cache
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules/
+
+stages:
+  - build
+  - deploy develop
+  - deploy web_dev
+  - deploy web
+  - deploy staging
+  - deploy production
+
+Build website:
+  <<: *cache
+  stage: build
+  script:
+    - rm ./package-lock.json
+    - npm install --legacy-peer-deps
+    - npm install -g @angular/cli@13.0.4
+    - ng build --prod
+  artifacts:
+    paths:
+      - ./dist
+
+deploy develop:
+  <<: *cache
+  stage: deploy develop
+  environment:
+    name: dev
+    url : http://$DEV_DOMAIN
+  only:
+    - dev
+  script:
+    - rm ./package-lock.json
+    - npm install --legacy-peer-deps
+    - npm i --g surge
+    - surge -p dist/luminous-pwa/ --domain $DEV_DOMAIN
+
+deploy web_dev:
+  <<: *cache
+  stage: deploy web_dev
+  environment:
+    name: web
+    url : http://$WEB_DEV_DOMAIN
+  only:
+    - feature/Web_UI
+  script:
+    - rm ./package-lock.json
+    - npm install --legacy-peer-deps
+    - npm i --g surge
+    - surge -p dist/luminous-pwa/ --domain $WEB_DEV_DOMAIN
+  
+deploy web:
+  <<: *cache
+  stage: deploy web
+  environment:
+    name: web
+    url : http://$WEB_DOMAIN
+  only:
+    - feature/Web
+  script:
+    - rm ./package-lock.json
+    - npm install --legacy-peer-deps
+    - npm i --g surge
+    - surge -p dist/luminous-pwa/ --domain $WEB_DOMAIN
+
+
+deploy staging:
+  <<: *cache
+  stage: deploy staging
+  when: manual
+  allow_failure: false
+  environment:
+    name: staging
+    url : http://$STAGING_DOMAIN
+  only:
+    - demo
+  script:
+    - rm ./package-lock.json
+    - npm install --legacy-peer-deps
+    - npm i --g surge
+    - surge -p dist/luminous-pwa/ --domain $STAGING_DOMAIN
+
+deploy production:
+  <<: *cache
+  stage: deploy production
+  when: manual
+  allow_failure: false
+  environment:
+    name: production
+    url : http://$PRODUCTION_DOMAIN
+  only:
+    - release
+  script:
+    - rm ./package-lock.json
+    - npm install --legacy-peer-deps
+    - npm i --g surge
+    - surge -p dist/luminous-pwa/ --domain $PRODUCTION_DOMAIN
+
+
+

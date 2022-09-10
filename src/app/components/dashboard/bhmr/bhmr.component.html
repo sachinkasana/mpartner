@@ -1,0 +1,157 @@
+<div class="d-flex  webHeaderContainer">
+  <div class="web-header-title">
+    Battery Management and Handling Rules
+  </div>
+   
+</div>
+<div class="webContainerBox">
+  <div class="d-flex category"  *ngIf="bhmrCategories">
+    <ng-container *ngFor="let ct of bhmrCategories">
+        <div [ngClass]="activeCategory=='6' && ct.Id=='6'?'grid2ColActive':
+        activeCategory!='6' && ct.Id!='6'?'grid2ColActive':'collectionActive'
+        " 
+         name="inbt" (click)="selectCategory(ct.Id)" value="cat.id" class="p-3">{{ct.Parentcategoryname |uppercase}}</div>
+    </ng-container>
+
+  </div>
+  <div class="bhmr-main" *ngIf="activeCategory=='6'">
+    <div class="m-3 image-wrapper" *ngIf="bhmrCard">
+      <div class="mobileBg">
+        <div [ngStyle]="{'background-image': 'url(' + bhmrCard.background_image + ')'}" class="bg-img-1">
+          <div class="img-title"><span>{{bhmrCard.title |uppercase}}</span></div>
+        </div>
+        <div>
+          <img  class="bg-img-2" [src]="bhmrCard.main_image" alt=""/>
+    
+        </div>
+        <div class="mt-3 mb-3 pdf-main d-flex">
+          <div>
+            <a [href]="bhmrCard.card_action" target="_blank"><img class="pdf-image" src=".../../../../../../assets/pdf.png" alt=""></a>
+          </div>
+          <div class="ms-auto">
+            <img class="share-image" (click)="sharePdf();sharePdfUrl(bhmrCard.card_action)" src="../../../../assets/share.png" alt="">
+          </div>
+    
+        </div>
+      </div>
+
+      <div class="webBg">
+        <img  class="bg-img-2" src="../../../../assets/Web/bhmrWebBanner.png" alt=""/>
+
+      </div>
+      
+  
+      <ng-container *ngFor="let item of bhmrCard.BMHR_Data">
+        <div class="pdf-main mb-3 d-flex">
+          <div class="pdf-name">{{item.BMHR_Pdf_Name}}</div>
+          <div class="pdf-open" (click)="openPdf(item.BMHR_URL)">
+            <img class="pdf-image pdf-mobile-icon" src=".../../../../../../assets/eye.png" alt="">
+            <img class="pdf-image pdf-web-icon" src=".../../../../../../assets/eye2.png" alt="">
+          </div>
+          <div class="pdf-download"><a target="_blank" [href]="item.BMHR_URL">
+            <img class="pdf-image pdf-mobile-icon" src=".../../../../../../assets/pdf.png" alt="">
+            <img class="pdf-web-icon webDownloadImg" src=".../../../../../../assets/Web/bhmrDownload.png" alt=""></a>
+
+          
+          </div>
+          <div class="pdf-share" (click)="sharePdf();sharePdfUrl(item.BMHR_URL)">
+            <img class="share-image pdf-mobile-icon" src="../../../../assets/share.png" alt="">
+            <img class="share-image pdf-web-icon" src="../../../../assets/Web/webShareIcon.png" alt="">
+
+          </div>
+  
+          <!-- <a [href]="item.BMHR_URL"><img src="../../../../assets/pdfbluesvg.svg" alt="">{{item.BMHR_Pdf_Name}}</a> -->
+        </div>
+      </ng-container>
+  
+    </div>
+  </div>
+  
+
+  <div *ngIf="showCollectionCenter && activeCategory=='7'" class="collectionCenterBg">
+    <div class="pt-3 pb-3 collectionTitle">Locate collection service center <img class="mobile-location-icon" src="../../../../assets/location-icon.png" alt="">
+    </div>
+
+    <div class="searchBg m-2 d-flex">
+      <div class="pt-1 state ms-auto mt-3">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label > State </mat-label>
+            <mat-select placeholder="Select Sate" (selectionChange)="onStateChange($event)" required>
+                <mat-option *ngFor="let st of stateList" [value]="st.StateID">
+                  {{st.StateName}}
+                </mat-option>
+              </mat-select>         
+          </mat-form-field>
+    </div>
+
+    <div class="pt-1 city mt-3 ">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label > City </mat-label>
+            <mat-select placeholder="Select City" (selectionChange)="onCityChange($event)" required>
+                <mat-option *ngFor="let ct of cityList" [value]="ct.CityName">
+                  {{ct.CityName}}
+                </mat-option>
+              </mat-select>         
+          </mat-form-field>
+    </div>
+    </div>
+
+    <div class="search-details m-2">
+      <div *ngFor="let item of collectionCenters" class="collection-details mb-3 ps-3 pt-3 pb-2">
+        <div class="pb-1 address" >
+          Add1:<span>{{item.Dis_Address1}}</span>
+        </div>
+        <div class="pb-1 address" >
+          Add2:<span>{{item.Dis_Address2}}</span>
+        </div>
+        <div  class="pb-1 district">
+          District:<span>{{item.Dis_District}}</span>
+
+        </div>
+        <div class="d-flex pb-1">
+          <div class="state-det">
+            State:<span>{{item.Dis_State}}</span>
+
+          </div>
+          <div class="city-det">
+            City:<span>{{item.Dis_City}}</span>
+
+          </div>
+        </div>
+        <div class="pb-1 mobNo" >
+          Mob No.:<span class="webNo">{{item.Dis_ContactNo}}</span>
+        </div>
+
+
+        
+      </div>
+    </div>
+    
+
+
+
+
+
+  </div>
+</div>
+
+
+  <app-pdf-viewer-popup *ngIf="showPdf" [showOptions]="false" (popupClose)="hidePdf()" [dowloadUrl]="pdfUrl" (sharePdf)="sharePdf()">
+    <pdf-viewer [src]="pdfUrl" [rotation]="0" [original-size]="false" [show-all]="true" [fit-to-page]="false" [zoom]="1"
+      [zoom-scale]="'page-width'" [stick-to-page]="false" [render-text]="true" [external-link-target]="'blank'"
+      [autoresize]="true" [show-borders]="false" style="width: 100%; height: 600px;"></pdf-viewer>
+  
+  </app-pdf-viewer-popup>
+  
+  <app-popup *ngIf="showSharePdf" (popupClose)="sharePdf()" [sharePdf]=true>
+    <div class="d-flex justify-content-center"><span class="shareLineBox"></span></div>
+    <div class="sharePopTitle">Share</div>
+    <div class="sharePopUrl">{{pdfUrl}}</div>
+  
+    <share-buttons theme="modern-dark" 
+    [include]="['facebook','twitter','linkedin','pinterest','reddit','tumblr','mix','viber','vk','telegram','messenger','whatsapp','xing','line','sms','email','print','copy']"
+    [show]="5"
+    [showText]="true"
+    [url]="pdfUrl"
+   ></share-buttons>
+  </app-popup>

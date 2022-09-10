@@ -1,0 +1,114 @@
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .btn-submit{
+    background: #0b2e9c;
+    color: white;
+    width: 100%;
+  }
+
+.otpTxt{
+  width: calc(100% - 3.75rem);
+  padding-left: 3.75rem !important;
+text-align: center;
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+  
+
+
+
+.otpDiv{
+ 
+  height: 4rem
+}
+
+.submitDiv{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.card img{
+  width: 100%;
+  height: calc(50vh - 25px);
+}
+
+ 
+
+.mat-form-field{
+  display: block;
+}
+
+
+form{
+  display: flex;
+align-items: center;
+height: 100%;
+}
+
+.card{
+  border: none;
+      border-radius: 0;
+}
+.cardBodyDiv{
+  height: calc(50vh - 25px);
+  padding: 0 !important;
+  padding-left: 1rem!important;
+  padding-right: 1rem!important;
+}
+
+@media(min-width:800px){
+  .web-side-banner{
+    background: url(../../../../assets/Web/login.png);
+    width: 67.5%;
+    background-repeat: round;
+background-size: cover;
+  }
+
+  .web-container{
+    display: flex;
+   }
+
+  app-banner{
+    display: none
+  }
+
+  .card img {
+    height: calc(50vh - 1rem);
+}
+.card {
+  width: 32.5%;
+  border: none;
+}
+.web-footer{
+  height: 2rem;  
+  font-family: LatoRegular;
+  font-size: 13px;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4a4a4a;
+}
+.cardBodyDiv{
+  height: calc(50vh - 1rem);
+  padding: 0 !important;
+  padding-left: 1rem!important;
+  padding-right: 1rem!important;
+}
+}

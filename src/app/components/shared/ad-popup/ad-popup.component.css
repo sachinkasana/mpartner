@@ -1,0 +1,65 @@
+.fade{
+    opacity: 1;
+}
+
+.close{
+   justify-content: end;
+}
+
+.modal-backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+
+
+@media(max-width:800px){
+    .modal-dialog{
+        margin: 0;
+    }
+    
+    .modal-body{
+        padding: 0;
+    }
+
+    .modal-content{
+        border: none;
+        border-radius: 0;
+        height: 100vh;
+    }
+}
+
+
+
+
+ 
+
+.popupTop{
+    transform: none !important;
+}
+
+
+.btn-close{
+    background: transparent url(../../../../assets/popupclose.png) center/3em auto no-repeat;
+    width: 1.65rem;
+    height: 1.65rem;
+    padding: 0.25em 0.25em;
+    border-radius: 1.25rem;
+}
+
+.modal-footer{
+    padding: 0;
+    padding-right: 2rem;
+    border-top: none;
+    margin-bottom: 0.25rem;
+}
+
+.modal-footer button{
+    color:#27d7cf;
+    font-family: 'LatoBold';
+
+}
+
+ 
+
+

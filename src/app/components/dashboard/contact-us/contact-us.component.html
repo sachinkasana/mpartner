@@ -1,0 +1,55 @@
+<app-banner-navigate class="contactUsMobile">
+    <div class="d-flex navBack p-3 flexCenter cntus">Contact Us</div>
+</app-banner-navigate>
+<div class="d-flex eWar  warranty-header-web contactUsWeb">
+    <div class="web-header-title">
+        Contact Us
+    </div>
+     
+  </div>
+<div class="main webContainer" *ngIf="contactUsInfo">
+    <form (ngSubmit)="f.form.valid && sendContactUsQuery()" #f="ngForm">
+    <div class="d-flex ps-3 pe-3 pt-2 pb-1 title">
+        {{contactUsInfo[0]?.contactus_title}}
+    </div>
+    <div class="d-flex ps-3 pe-3 pt-1 pb-1">
+        <div class="flexCenter fnt-2_5 info "><span class="me-2 "><img src="../../../../assets/location-icon.png" alt=""> </span>{{contactUsInfo[0]?.address}}</div>
+    </div>
+    <div class="d-flex ps-3 pe-3 pt-1 pb-1">
+        <div class="flexCenter fnt-2_5 info">
+            <span  class="me-2"><img src="../../../../assets/phone-icon.png" alt=""></span>{{contactUsInfo[0]?.phoneno}}</div>
+        </div>
+        <div class="d-flex ps-3 pe-3 pt-1 pb-1">
+            <div class="flexCenter fnt-2_5 info"><span  class="me-2"><img src="../../../../assets/phone-icon.png" alt=""></span>{{contactUsInfo[0].sales_support_phoneno}}</div>
+        </div>
+    <div class="d-flex ps-3 pe-3 pt-1 pb-1">
+        <div class="flexCenter fnt-2_5 info">
+            <span  class="me-2"><img src="../../../../assets/email-icon.png" alt=""></span>{{contactUsInfo[0].email}}
+        </div>
+    </div>
+
+    <div class="d-flex ps-3 pe-3 pt-2 pb-1 msgTitle ">
+        Message
+    </div>
+    <div class="d-flex ps-3 pe-3 pt-1 pb-1">
+        <div class="flexCenter fnt-2_5 flex-fill">
+            <textarea matInput placeholder="Enter Message" name="message1" [(ngModel)]="message" #message1="ngModel" required></textarea>
+                
+        </div>
+    </div>
+    <div *ngIf="f.submitted && message1.invalid" class="error">
+        <div *ngIf="message1.errors?.['required']">Message is required</div>
+    </div>
+    <div class="d-flex ps-3 pe-3 pt-1 pb-1">
+        <div class="flexCenter fnt-2_5 attachment">
+            <input type="file" name="imageUrl" type="file" accept="image/*" (change)="handleInputChange($event)" id="upload" hidden/>
+            <label for="upload"><img src="../../../../assets/attachment-icon.png" alt="">{{fileLabel}}</label>
+            
+                <!-- <input #file type='file'   name="file">  -->
+
+        </div>
+    </div>
+    <div class="p-3 pb-5"><button type="submit"  class="btn btn-darkBlue">{{'submit' | translate }}</button></div>
+
+    </form>
+</div>

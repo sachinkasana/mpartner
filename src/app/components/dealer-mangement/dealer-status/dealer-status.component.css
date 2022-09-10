@@ -1,0 +1,99 @@
+
+/* .table{
+    border: 2px solid #e9eded;
+  } */
+
+  .example-container {
+    height: 62vh;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    
+  }
+  
+  table {
+    width: 800px;
+  }
+  
+  td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+  }
+  
+  th.mat-column-position, td.mat-column-position {
+    padding-left: 8px;
+  }
+  
+  .mat-table-sticky-border-elem-right {
+    border-left: 1px solid #e0e0e0;
+  }
+  
+  .mat-table-sticky-border-elem-left {
+    border-right: 1px solid #e0e0e0;
+  }
+
+
+  .border-b{
+    border-bottom: 1px solid rgb( 151, 151, 151,0.5 );
+  }
+
+  .mat-header-cell{
+    font-family: LATOBOLD;
+    font-size: 0.8125rem;
+    background: rgb(19 76 146);
+    color: white;
+  }
+
+
+  .mat-cell{
+    font-family: 'LatoRegular';
+    font-size: 0.8125rem;
+  }
+  tr.mat-header-row{
+    height: 2.5rem !important;
+    position: sticky;
+    top: 0;
+  }
+
+  tr.mat-row{
+    height: 2.5rem !important;
+  }
+
+  .verified{
+font-family: LatoRegular;
+font-size: 00.8125rem;
+color:rgb(36 115 6)
+  }
+
+
+  .notverified{
+    color:rgb( 255 77 77);
+    font-family: LatoRegular;
+    font-size: 00.8125rem;
+
+  }
+
+  .inputfield{
+    border: 1px solid rgb(205 205 205);
+    border-radius: 5px;
+    height: 3.125rem;
+    text-align: center;
+    font-family: 'LatoRegular';
+    font-size: 1rem;
+}
+
+input{
+    font-family: LatoRegular;
+}
+
+.otpMsg{
+  color: #747474;
+    font-size: 0.875rem;
+    font-family: LatoRegular;
+}
+
+.resendTxt{
+  color:rgb( 34 64 152);
+  font-size: 0.75rem;
+  font-family: LatoRegular;
+}

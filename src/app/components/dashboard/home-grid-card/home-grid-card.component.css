@@ -1,0 +1,41 @@
+.home-card-grid-card .home-card-grid-card-image{
+    flex-basis: 43%;
+    text-align: center;
+    background-size: cover;
+    margin-right: 0.5rem;
+    margin-bottom: 1.5rem;
+    background-repeat: round;
+
+}
+
+
+
+.home-card-grid-card .home-card-grid-card-image img{
+    width: 100%;
+    padding: 1rem;
+}
+
+
+
+
+    .title{
+        color: white;
+        font-family: LatoBold;
+        font-size: 1rem;
+    }
+
+    .home-card-grid-main{
+     
+     background-size: cover;
+    background-repeat: round;
+    }
+
+    .home-card-grid-card{
+        padding-left: 2.75rem;
+    padding-top: 49%;
+    }
+
+    .image-contain{
+        height: 90%;
+    }
+    

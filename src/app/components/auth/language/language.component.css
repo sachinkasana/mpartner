@@ -1,0 +1,83 @@
+.btn-submit{
+    background: #0b2e9c;
+    color: white;
+    width: 100%;
+  }
+
+    .card img{
+      width:100%;
+      height: calc(50vh - 25px);
+    }
+
+    
+
+    .langDiv{
+      height: 4rem;
+    }
+
+    .mat-form-field{
+      display: block;
+    }
+
+    .card{
+      overflow: hidden;
+      border: none;
+      border-radius: 0;
+    }
+
+    .langCardBody{
+      height: calc(50vh - 25px);
+      padding: 0 !important;
+      padding-left: 1rem!important;
+      padding-right: 1rem!important;
+    }
+
+    form{
+      display: flex;
+    align-items: center;
+    height: 100%;
+    }
+
+    @media(min-width:800px){
+      .web-side-banner{
+        background: url(../../../../assets/Web/languageWeb.png);
+        width: 67.5%;
+        background-repeat: round;
+    background-size: cover;
+    height: 100vh;
+      }
+
+      .web-container{
+        display: flex;
+       }
+
+      app-banner{
+        display: none
+      }
+
+      .card img {
+        /* height: calc(100vh - 21.6rem); */
+        height: calc(50vh - 1rem);
+    }
+    .card {
+      width: 32.5%;
+      border: none;
+    }
+    .web-footer{
+      height: 2rem;
+      font-family: LatoRegular;
+      font-size: 13px;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #4a4a4a;
+    }
+    .langCardBody{
+      height: calc(50vh - 1rem);
+      padding: 0 !important;
+      padding-left: 1rem!important;
+      padding-right: 1rem!important;
+    }
+    }
+
+    

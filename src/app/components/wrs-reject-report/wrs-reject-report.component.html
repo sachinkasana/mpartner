@@ -1,0 +1,132 @@
+<div class="main-container">
+  <!-- <div class="d-flex  bd-highlight  flex-row mb-3">
+        <div class="p-2 bd-highlight">1</div>
+        <div class="p-2 bd-highlight">2</div>
+    </div> -->
+
+
+  <div class="web-container">
+    <div class="d-flex eWar  warranty-header-web consumerDetailWeb">
+      <div class="web-header-title">
+        View WRS Reject Report
+      </div>
+      <div class="web-header-col-2">
+        <div class="d-flex bd-highlight mb-3 flex-container">
+          <div class="ms-3 calender flex-fill">
+            <form name="wrsForm">
+              <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label>Select Month and Year</mat-label>
+                <input matInput name="inpuDate" [formControl]="date" [matDatepicker]="dp2" [min]="sixMonthsAgo"
+                  [max]="today" placeholder="mm/yyyy" readonly>
+                <mat-hint class="hint">MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+                <mat-datepicker #dp2 startView="multi-year" (yearSelected)="chosenYearHandler($event)"
+                  (monthSelected)="chosenMonthHandler($event, dp2)"></mat-datepicker>
+              </mat-form-field>
+            </form>
+
+
+
+
+          </div>
+          <div class="download-wrap flex-fill">
+            <a href="{{Pdf_url}}" target="_blank" download="{{Pdf_url}}">
+              <button class="btn download">DOWNLOAD<span>
+
+                  <img class="ms-1" src="../../assets/downloadRed.png" alt=""></span></button>
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+</div>
+<div class="example-container mat-elevation-z8">
+
+  <table mat-table [dataSource]="dataSource">
+    
+    <!-- Name Column -->
+    <ng-container matColumnDef="Serial_Number">
+      <th mat-header-cell *matHeaderCellDef > Serial Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.Serial_Number}} </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="Product_des">
+      <th mat-header-cell *matHeaderCellDef> Product Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.Product_des}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Entered_By_Code">
+      <th mat-header-cell *matHeaderCellDef> Entered By Code</th>
+      <td mat-cell *matCellDef="let element"> {{element.Entered_By_Code}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Customer_Phone">
+      <th mat-header-cell *matHeaderCellDef> Customer Phone </th>
+      <td mat-cell *matCellDef="let element"> {{element.Customer_Phone}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Ew_ViaVerified">
+      <th mat-header-cell *matHeaderCellDef> Ew_ViaVerified </th>
+      <td mat-cell *matCellDef="let element"> {{element.Ew_ViaVerified}} </td>
+    </ng-container>
+    
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Remark_after_verification">
+      <th mat-header-cell *matHeaderCellDef> Remark after verification </th>
+      <td mat-cell *matCellDef="let element"> {{element.Remark_after_verification}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Points">
+      <th mat-header-cell *matHeaderCellDef> Points </th>
+      <td mat-cell *matCellDef="let element"> {{element.Points}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Month">
+      <th mat-header-cell *matHeaderCellDef> Month </th>
+      <td mat-cell *matCellDef="let element"> {{element.Month}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Year">
+      <th mat-header-cell *matHeaderCellDef> Year </th>
+      <td mat-cell *matCellDef="let element"> {{element.Year}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Final_Remarks">
+      <th mat-header-cell *matHeaderCellDef> Final Remarks </th>
+      <td mat-cell *matCellDef="let element"> {{element.Final_Remarks}} </td>
+    </ng-container>
+
+    <!-- Star Column -->
+    <!-- <ng-container matColumnDef="star" stickyEnd>
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon>more_vert</mat-icon>
+        </td>
+      </ng-container> -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    
+  </table>
+  <ng-container *ngIf="!dataSource.length">
+    <p class="txtMsg">No Data Found<p>
+  </ng-container>
+</div>

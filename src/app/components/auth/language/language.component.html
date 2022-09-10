@@ -1,0 +1,47 @@
+<app-banner></app-banner>
+
+<div class="web-container">
+  <div class="web-side-banner"></div>
+<div class="card">
+    
+    <img  src="../../assets/2021-03-02-3.png" class="card-img-top langImg" alt="...">
+    <div  class="card-body langCardBody">
+      <form #langForm="ngForm"  (ngSubmit)="onSubmit()">
+        <div class="container">
+  
+          <div class="d-flex flex-column mb-3">
+            
+            <div class="p-2 langDiv" >
+
+              <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label > {{'selectLang' | translate}} </mat-label>
+                <mat-select placeholder="Select Language"  [(value)]="selectedLanguage" (selectionChange)="switchLang($event.value)" required>
+                    <mat-option *ngFor="let lang of languageList" [value]="lang.languagecode">
+                      {{lang.language}}
+                    </mat-option>
+                  </mat-select>         
+              </mat-form-field>
+
+            </div>
+            <div class="p-2 "><button  [disabled]="!langForm.valid" class="btn btn-darkBlue">{{'submit' | translate }}</button></div>
+            <div class="p-2 skip"><a  [routerLink]="'/login'" class="skip" >{{'skip' | translate }}</a></div>
+
+          </div>
+          
+          <div>
+            
+  
+          </div>
+  
+        </div>
+        
+        
+        
+  
+    </form>
+    </div>
+    <div class="web-footer">Luminous India 2022 Copyright. All rights reserved</div>
+
+  </div>
+</div>
+

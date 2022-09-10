@@ -1,0 +1,11 @@
+<div class="home-card-grid-main" style="background-image: url({{homeGridCards?.background_image}});">
+    <div class="d-flex flex-wrap  home-card-grid-card ">
+        <div style="background-image: url({{card.background_image}});" *ngFor="let card of homeGridCards?.card_data" class="p-3 home-card-grid-card-image">
+            <div class="image-contain">
+                <img src="{{card.main_image}}" alt="">
+            </div> 
+            <div class="title"><b>{{card.title}}</b> </div>
+        </div>
+      </div>
+</div>
+  

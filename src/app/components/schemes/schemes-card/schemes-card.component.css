@@ -1,0 +1,48 @@
+.schemes-card .schemes-card-image{
+    flex-basis: 50%;
+    text-align: center;
+    padding: 0.5rem !IMPORTANT;
+    padding-top: 1rem!important;
+}
+
+
+
+.schemes-card .schemes-card-image img{
+    width: 97%;
+    height: 10rem;
+    border-radius: 5px;
+}
+
+
+
+.INBT{
+    background:rgb(33 65 152) ;
+    display: flex;
+    justify-content: center;
+    color: white;
+    }
+    
+    
+    .Solar{
+    background: rgb(66 93 177);
+    display: flex;
+    justify-content: center;
+    color: white;
+    }
+
+    .title{
+        color: black;
+        font-size: 0.7rem;
+    }
+
+    .schemes-main{
+        min-height: 71vh;
+    max-height: 71vh;
+    overflow: auto;
+    }
+    
+    .sub-title{
+        font-size: 0.7rem;
+    }
+    
+    

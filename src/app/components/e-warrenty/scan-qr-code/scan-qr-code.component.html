@@ -1,0 +1,107 @@
+<div class="qrMobile">
+    <div class="d-flex p-4 qrCode" (click)="openQRCode()">
+     
+        <img src="../../assets/QRCode1.jpg" alt="">
+    
+    </div>
+
+    <div class="d-flex qrTxt mb-4">
+    Scan QR Code
+    </div>
+</div>
+<div class="d-flex eWar  warranty-header-web qrWeb">
+    <div class="web-header-title">
+        eWarranty
+    </div>
+    <div class="web-header-col-2">
+        <div>
+            <img src="../../../../assets/qrsm.png" alt="" (click)="openQRCode()">
+            <span class=" qrTxt mb-4">
+                Scan QR Code
+            </span>
+
+        </div>
+        
+
+    </div>
+</div>
+
+
+<div class="serialNo-main">
+    <div class="d-flex serialNo-header LatoBoldBlue-3 p-2 ps-4">
+        Scanner Serial Nos.
+    </div>
+    <div class="d-flex serialNo-content-main " *ngFor="let selectedItem of serailNumbers;let i = index">
+        <div class="d-flex flex-fill serialNo-content p-2 ps-4">
+            {{selectedItem.name}}
+        </div>
+        <div class="d-flex flex-fill serialNo-content p-2">
+            {{selectedItem.serialNumber}}
+        </div>
+        <div class="d-flex flex-fill serialNo-content p-2" (click)="deleteSerialNumber(i)">
+           <img class="deleteIcon " src="../../../../assets/trash.svg" alt="">
+        </div>
+    </div>
+    <!-- <div class="d-flex serialNo-content-main ">
+        <div class="d-flex flex-fill serialNo-content p-2 ps-3">
+            Roshan Verma
+        </div>
+        <div class="d-flex flex-fill serialNo-content p-2">
+            454645465465
+        </div>
+        <div class="d-flex flex-fill serialNo-content p-0">
+           <img class="deleteIcon " src="./../../assets/delete.png" alt="">
+        </div>
+    </div>
+    
+    <div class="d-flex serialNo-content-main ">
+        <div class="d-flex flex-fill serialNo-content p-2 ps-3">
+            Roshan Verma
+        </div>
+        <div class="d-flex flex-fill serialNo-content p-2">
+            454645465465
+        </div>
+        <div class="d-flex flex-fill serialNo-content p-0">
+           <img class="deleteIcon " src="./../../assets/delete.png" alt="">
+        </div>
+    </div> -->
+    
+</div>
+
+<!-- <div class="d-flex p-3 flex-fill">
+    <button class="btn btn-primary">Submit</button>
+</div> -->
+
+<div class="p-4 submitOtp" *ngIf="this.scannedOptions && this.scannedOptions.option==='multiple'">
+    <button class="btn btn-darkBlue" (click)="generateOTP()">{{'submit' | translate }}</button>
+  </div>
+
+
+  
+<app-popup *ngIf="showOTPPopup" (popupClose)="closePopup()">
+    <div class="d-flex p-4 flex-fill fnt-1 pb-2">
+        <p  class="text-center LatoRegularFnt-0_8">Warranty verfication code has been sent to customer mobile no. to register the
+            purchased product for E-Warranty</p>
+        
+    </div>
+    <div class="d-flex warrantyCode-main">
+        
+        <div class="p-2 flex-fill warrantyCode">
+            <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label> {{'warrantyVerificationCode' | translate }} </mat-label>
+                <input type="tel" onKeyPress="if(this.value.length==6) return false;" [(ngModel)]="otpInput" matInput [placeholder]="'enterwarrantyVerificationCode' | translate" name="warrantyCode"
+                   required>
+  
+  
+              </mat-form-field> 
+              
+        </div>
+        
+    </div>
+    <div *ngIf="isOtpInputValid && !otpInput" class="error">
+        <div>Please Enter Verification Code</div>
+    </div>
+    
+    <div class="p-2 "><button (click)="submitOtp()" class="btn btn-darkBlue">{{'submit' | translate }}</button></div>
+    <div class="p-2 msg text-center"><a class="lnk" (click)="clickWithoutWarranty()">Continue without Warranty Verification Code</a></div>
+</app-popup>

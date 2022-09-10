@@ -1,0 +1,90 @@
+@import './../consumer.style.css';
+
+.visitMsg{
+    font-family: 'LatoBold';
+    color: #4a4a4a;
+}
+
+.txtMsg{
+    color: #7f7f7f;
+    text-align: center;
+    margin: 2rem;
+    font-family: 'LatoRegular';
+   }
+
+.errorMsg{
+ color: red;
+}
+
+   .txtStart{
+       font-family: LatoBlack;
+       font-size: 0.8125;
+   }
+
+   .designationTxt,.phoneTxt{
+    font-family: LatoRegular;
+    color: #747474;
+    font-size: 0.8125rem;
+   }
+
+   .name{
+       font-family: LatoBlack;
+       color: #444444;
+       font-size: 00.8125rem;
+   }
+
+   .bb{
+    border-bottom: 1px solid #cdcdcd;
+   }
+   @media(max-width:799px){
+    .pincode-container{
+        height: calc(100vh - 9.625rem);
+        overflow: auto;
+    }
+
+    .webLayoutCol3{
+        display: none
+    }
+   }
+
+   @media(min-width:800px){
+    .pincodeWebWrap{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .pincodeWebWrap div:nth-child(1){
+        margin-right: 1rem;
+        width:20.8125rem
+    }
+
+    .webLayout{
+        display: flex
+    }
+
+
+    .webLayoutCol1 .webDial{
+        display: none;
+    }
+
+    
+    .webLayout{
+        display: flex;
+    }
+
+    .webLayout .webLayoutCol1,.webLayout .webLayoutCol2,.webLayout .webLayoutCol3{
+        flex: 33%;
+        width: 33%;
+    }
+
+    .webLayoutCol3{
+        display: flex;
+        justify-content: end;
+    }
+
+    .webLayoutCol2{
+        justify-content: center;
+    }
+
+    
+   }

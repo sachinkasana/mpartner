@@ -1,0 +1,33 @@
+<app-banner-navigate class="mobileHeaderContainer">
+    <div class="d-flex navBack p-3 flexCenter LatoBoldWhite-3">SOLAR LOAD CALCULATOR</div>
+</app-banner-navigate>
+
+<div class="d-flex  webHeaderContainer">
+    <div class="web-header-title">
+       Solar Calculator
+    </div>
+     
+  </div>
+
+  <div class="webContainerBox mobileContainerBox">
+        <div class="webSelectRequire labelTxt ps-3 lblWeb pt-3">
+            Select Your Requirement
+        </div>
+        <div class="MobileSelectRequire labelTxt text-center pt-3 pb-3">
+            SELECT YOUR REQUIREMENT
+        </div>
+
+        <div class="onOffSolutionWrapper">
+                <div class="cat1">
+                     <button class="btn" (click)="offGrid()">BACKP-UP(OFF-GRID-SOLUTION)<img class="ms-2" src="../../assets/rightArrow.png" alt=""></button>
+                </div>
+                <div class="or">OR</div>
+                <div class="cat2">
+                    <button class="btn" (click)="onGrid()">SAVING(ON-GRID-SOLUTION)<img class="ms-3" src="../../assets/rightArrow.png" alt=""></button>
+                    </div>
+
+        </div>
+
+        <div class="solarImage"><img src="../../../../assets/solar-onoff.png" alt=""></div>
+
+  </div>

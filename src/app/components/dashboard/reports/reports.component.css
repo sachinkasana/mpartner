@@ -1,0 +1,317 @@
+.sno{
+    border: 1px solid rgb( 205 205 205);
+    border-radius: 5px;
+    height: 2.8125rem;
+    width: calc(100% - 3    rem);
+    border-right: none;
+}
+
+.submit{
+     
+    background: linear-gradient(rgb(7 45 158),rgb(93 109 263));
+    font-family: LatoBold;
+    font-size: 0.875rem;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    height: 2.7rem;
+    color: white;
+    width: 100%;
+
+      
+}
+
+.inpt{
+    padding: 0.75rem;
+    width: calc(100%);
+}
+
+.mat-input-element{
+    font-family: LatoRegular;
+    font-size: 1rem;
+}
+
+
+
+
+
+.dateRangeCalendar{
+ width: 96%;
+}
+
+.selectReport{
+    width: 100%;
+}
+
+.fromInput{
+    width: 50%;
+}
+
+.toInput{
+    position: absolute;
+    left: 146px;
+    width: 83px;
+}
+
+
+.mat-form-field:nth-child(2){
+    font-size: 1rem!important;
+    width: 93%;
+
+}
+
+.dateWrapper{
+    width:calc(100% - 5.5rem);
+}
+
+mat-date-range-input {
+    font-size: 1rem!important;
+}
+/* .mat-datepicker-toggle:nth-child(1){
+    position: absolute;
+    right: 144px;
+}
+
+.mat-datepicker-toggle:nth-child(2){
+    position: relative;
+    right: 12px;
+} */
+
+@media(max-width:799px){
+  .mobileTop{
+    margin-top: 4rem!important;
+  }
+  .EmailMobile{
+    display:block;
+  }
+  .EmailWeb{
+    display: none !important;
+  }
+
+  .emailDetail{
+    flex:1;
+    font-family: 'LatoRegular';
+    color: #000;
+    font-size: 1rem;
+    font-family: 'LatoRegular';
+  }
+
+  .emailBtnWrap{
+    flex: 1;
+    display: flex;
+    justify-content: end;
+  }
+  .btn-EmailToMe{
+    font-family: 'LatoRegular';
+    font-size: 1rem;
+    text-align: center;
+    color: rgb(146 51 52);
+    border: 1px solid #d98788;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.EmailToMe{
+  align-items: center;
+ 
+}
+
+.ledger-header{
+  margin-left: 1rem;
+    margin-bottom: 0.75rem;
+    font-family: 'LatoBold';
+    font-size: 1rem;
+}
+
+}
+@media(min-width:800px){
+    .webWrapper{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .webCol1{
+        flex: 25%;
+        max-width: 25%;
+        margin-right: 1rem;
+    }
+    .webCol2{
+        flex: 40%;
+    max-width: 40%;
+    margin-right: 5rem;
+
+    }
+    .webCol3{
+        flex: 25%;
+        width: 25%;
+    }
+
+    .btn-darkBlue{
+        width: 9.125rem;
+    }
+    .EmailToMe{
+        margin-left: auto;
+    }
+    .EmailMobile{
+      display: none;
+    }
+    .EmailWeb{
+      display: block;
+    }
+
+    .btn-EmailToMe{
+      font-family: LatoBold;
+    font-size: 1rem;
+   
+    text-align: center;
+    color: #ff8989;
+    min-width:146px;;
+  }
+
+  .EmailToMe{
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgba(233, 233, 233, 0.5);
+    border: solid 1px #dbdbdb;
+    background-color: #fff;
+    height: 3.125rem;
+
+}
+
+     
+
+}
+
+
+
+
+
+
+.example-container {
+    height:calc(100vh - 13rem);;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    margin-bottom: 2rem;
+    
+  }
+  .example-container-ledger
+  {
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    margin-bottom: 2rem;
+  }
+  
+  table {
+    width: 800px;
+  }
+  
+  td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+  }
+  
+  th.mat-column-position, td.mat-column-position {
+    padding-left: 8px;
+  }
+  
+  /* .mat-table-sticky-border-elem-right {
+    border-left: 1px solid #e0e0e0;
+  }
+  
+  .mat-table-sticky-border-elem-left {
+    border-right: 1px solid #e0e0e0;
+  } */
+  .main-container{
+    position: relative;
+    top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+   
+
+ 
+tr.mat-header-row{
+  height: 2.0625rem !important;
+}
+
+tr.mat-row{
+  height: 2.0625rem !important;
+}
+
+.mat-header-cell{
+  font-family: LATOBOLD;
+  font-size: 0.8125rem;
+   color: #000;
+ }
+
+
+.mat-cell{
+  font-family: 'LatoRegular';
+  font-size: 0.75rem;
+  color: #000;
+ min-width: 7rem;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+/* .mat-table-sticky-border-elem-left {
+  border-right: none;
+} */
+
+.rprt1Date{
+  width:4.8125rem ;
+}
+
+.ledgerRpt2Date{
+  width: 6.8125rem;
+}
+
+.rprt1  td.mat-cell:first-of-type{
+  padding-right: 1rem;
+}
+
+
+ 
+@media(min-width:800px){
+ 
+ 
+table{
+  width: 100%;
+}
+
+.example-container{
+  width: calc(100% - 2.5rem);
+  margin: 1.5rem;
+  border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgba(233, 233, 233, 0.5);
+    border: solid 1px #dbdbdb;
+    background-color: #fff;
+}
+
+
+}
+
+
+
+.mat-header-cell{
+  font-family: LATOBOLD;
+  font-size: 0.8125rem;
+  background: rgb(19 76 146);
+  color: white;
+}
+
+.tables-container{
+  height: calc(100vh - 20rem);
+  overflow: auto;
+ }
+
+
+ .txtMsg{
+  color: #7f7f7f;
+  text-align: center;
+  margin: 2rem;
+  font-family: 'LatoRegular';
+ }

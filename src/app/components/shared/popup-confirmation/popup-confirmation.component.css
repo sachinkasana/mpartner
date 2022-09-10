@@ -1,0 +1,18 @@
+.btn-no,.btn-yes{
+    background: #6200ed;
+    color: white;
+    width: 48%;
+    height: 44px;
+    font-family: 'LatoBold';
+    border-radius: 0;
+}
+
+.header{
+    font-family: 'LatoBold';
+    color: #747474;
+}
+
+.message{
+    color: #747474;
+    font-family: 'LatoRegular';
+}

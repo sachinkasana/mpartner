@@ -1,0 +1,94 @@
+<app-popup [scrollable]=scrollable *ngIf="agreementPopupShow">
+    <div #content></div>
+    <div class="p-1 ms-4">
+        <a href="">Click to view Annexure</a>
+    </div>
+    <div class=" p-1 d-flex ms-4">
+        <div class="me-2"><mat-checkbox [checked]="checkedAgreement" (change)="onChangeAgreement($event)" class="example-margin"></mat-checkbox>
+        </div> 
+        <div class="Lato-Regular">
+            I accept all terms and condition of Luminous FSE Agreement
+        </div>
+        
+    </div>
+    <div class="p-1 text-center">
+        <button class="btn continue" (click)="submitAgreement()" [disabled]="!checkedAgreement">CONTINUE</button>
+    </div>
+</app-popup>
+
+<app-image-popup *ngIf="lssWeek && lssWeek.lss_img" >
+    <div  class="homePopup lssWeek">
+        <img src="{{lssWeek.lss_img}}" alt="">
+    </div>
+    <br><br>
+    <div class="joinTxt">
+        <a href="{{lssWeek.lss_url}}" target="_blank">Click here to join >></a>
+    </div>
+</app-image-popup>
+
+<app-image-popup *ngFor="let item of popupNotification" (popupClose)="closeImagePop(item.Type)" >
+    <div  class="homePopup">
+        <img *ngIf="item.Type=='image' || item.Type=='gif' " src="{{item.Imagepath}}" alt="">
+        <video *ngIf="item.Type=='video'" controls preload="none" #videoPlayer>
+            <source src="{{item.Imagepath}}" type="video/mp4">
+            
+          </video>
+        
+    </div>
+
+</app-image-popup>
+<!-- <app-home-page-banner></app-home-page-banner> -->
+
+
+ <div *ngIf="!mobileQuery.matches" class="web-container" >
+    <div class="web-header-title">
+        Dashboard
+    </div>
+    <div class="d-flex flx-container">
+        <div class="flx-col">
+            <div class="carousel-container">
+            <app-carousel [bannerCardsList]=bannerCardsList></app-carousel>
+    
+        </div>
+            <div class="centerImage">
+                <img src="{{homeMoreCard?.background_image}}" alt="">
+    
+            </div>
+        </div>
+        <div class="flx-col">
+            <div class="hmeGrid-container">
+                <app-home-grid-card [homeGridCards]="homeGridCards"></app-home-grid-card>
+    
+            </div>
+            <div class="bottomImage">
+                <img src="{{homeOneImage?.background_image}}" alt="">
+    
+            </div>
+    
+        </div>
+    </div>
+    
+   
+
+
+ 
+
+</div>
+<div *ngIf="mobileQuery.matches" class="mobile-container">
+    <app-home-page-banner *ngIf="Header_Menu" [bannerData]="Header_Menu"></app-home-page-banner>
+    <app-carousel [bannerCardsList]=bannerCardsList></app-carousel>
+    <app-home-grid-card [homeGridCards]="homeGridCards"></app-home-grid-card>
+    <div class="centerImage">
+        <img src="{{homeMoreCard?.background_image}}" alt="">
+
+    </div>
+    <div class="bottomImage">
+        <img src="{{homeOneImage?.background_image}}" alt="">
+        
+    </div>
+</div>
+
+
+
+
+

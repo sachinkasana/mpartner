@@ -1,0 +1,21 @@
+
+.homePopup{
+    background-image: url(../../../assets/homePopup.png);
+    height: 17rem;
+    width: 100%;
+    background-repeat: round;
+}
+
+
+
+.centerImage img{
+    height: 22vh;
+    width: 100vw;
+
+}
+
+
+.bottomImage img{
+    height: 23vh;
+    width: 100vw;
+}

@@ -1,0 +1,59 @@
+<!-- <div class="d-flex ps-4 pt-2 pb-2 prdName">
+  Sine Wave
+</div> -->
+<ng-container *ngIf="isDataEmpty">
+  <p>No Data Found</p>
+</ng-container>
+<app-banner-navigate class="catalogMobile">
+  <div class="d-flex  catalog-header">
+    <div class="p-3 d-flex LatoBoldWhite-3 me-1"><mat-icon (click)="goBack()" class="">arrow_back</mat-icon><span class="ms-1">Catalog</span>  </div>
+    <div class="ms-auto catalog-header-image pe-4">
+      <a ><img src="../../../../assets/pdfbluesvg.svg" alt=""></a>
+    </div>
+  </div>
+</app-banner-navigate>
+<div class="d-flex eWar  warranty-header-web catalogWeb">
+  <div class="web-header-title">
+    Catalog
+  </div>
+   
+</div>
+ 
+<div class="web-container">
+  <div class="p-3 sub-title">
+    Sine Wave
+  </div>
+  
+  <div class="d-flex flex-wrap mb-3 catalog-card pt-2  ">
+    <div *ngFor="let item of products;let j=index" class="p-2 ps-1 pt-3 ">
+      <div class="catalog-card-image">
+        <img [src]="item.productcatalog_image_url" alt="" (click)="openPdf(item.productcatalog_pdf)">
+  
+      </div>
+      <div class="p-2 me-1 center LatoRegularFnt-0_8">{{item.productioncatalog_name}}</div>
+  
+     </div>
+  </div>
+</div>
+
+
+
+
+
+<app-pdf-viewer-popup *ngIf="showPdf" (popupClose)="hidePdf()" [dowloadUrl]="pdfUrl" (sharePdf)="sharePdf()">
+  <pdf-viewer [src]="pdfUrl" [rotation]="0" [original-size]="false" [show-all]="true" [fit-to-page]="false" [zoom]="1"
+    [zoom-scale]="'page-width'" [stick-to-page]="false" [render-text]="true" [external-link-target]="'blank'"
+    [autoresize]="true" [show-borders]="false" style="width: 100%; height: 600px;"></pdf-viewer>
+</app-pdf-viewer-popup>
+
+<app-popup *ngIf="showSharePdf" (popupClose)="sharePdf()" [sharePdf]=true>
+  <div class="d-flex justify-content-center"><span class="shareLineBox"></span></div>
+  <div class="sharePopTitle">Share</div>
+  <div class="sharePopUrl">{{pdfUrl}}</div>
+  <share-buttons theme="modern-dark" 
+  [include]="['facebook','twitter','linkedin','pinterest','reddit','tumblr','mix','viber','vk','telegram','messenger','whatsapp','xing','line','sms','email','print','copy']"
+  [show]="5"
+  [showText]="true"
+  [url]="pdfUrl"
+ ></share-buttons>
+</app-popup>

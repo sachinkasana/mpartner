@@ -1,0 +1,78 @@
+<app-banner-navigate class="mobileHeaderContainer">
+    <div class="d-flex navBack p-3  LatoBoldWhite-3"><span (click)="back()"><mat-icon class="arrowbck">arrow_back</mat-icon></span><span class="ms-auto me-auto">SOLAR LOAD CALCULATOR</span> </div>
+</app-banner-navigate>
+
+<div class="d-flex  webHeaderContainer">
+    <div class="web-header-title">
+       Solar Calculator
+    </div>
+     
+  </div>
+
+  <div  class="webContainerBox mobileContainerBox">
+      <div *ngIf="!showForm">
+        <div class="webSelectRequire labelTxt ps-3 pt-3">
+            Select Property Type
+        </div>
+        <div class="MobileSelectRequire labelTxt text-center pt-3 pb-3">
+            SELECT PROPERTY TYPE
+        </div>
+
+        <div class="onOffSolutionWrapper">
+                <div class="cat1">
+                     <button class="btn" (click)="chooseProperty('Residential')" >Residential<img class="ms-2" src="../../assets/rightArrow.png" alt=""></button>
+                </div>
+                <div class="or">OR</div>
+                <div class="cat2">
+                    <button class="btn" (click)="chooseProperty('Commercial')">Commercial<img class="ms-3" src="../../assets/rightArrow.png" alt=""></button>
+                    </div>
+
+        </div>
+
+        <div class="solarImage"><img src="../../../../assets/solar-onoff.png" alt=""></div>
+      </div>
+      <form *ngIf="showForm" class="m-3 onGridForm">
+        <div class="pt-1 flex-fill">
+            <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label class="Lato-Regular">Pincode</mat-label>
+                <input type="text" maxlength="6" [ngModel]="user.pincode" (ngModelChange)="updatePincode($event)"  matInput  placeholder="Enter Pincode" name="landline"
+               required>
+              </mat-form-field>
+        </div>
+        
+        <div class="pt-1 flex-fill">
+            <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label > State </mat-label>
+                <mat-select placeholder="Select Sate" name="userState" [(ngModel)]="userState" (selectionChange)="onStateChange($event)" required>
+                    <mat-option *ngFor="let st of stateList"  [value]="st.StateName">
+                      {{st.StateName}}
+                    </mat-option>
+                  </mat-select>           
+              </mat-form-field>
+        </div>
+    
+        <div class="pt-1 flex-fill">
+            <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label > City </mat-label>
+                <mat-select placeholder="Select City" name="userCity" [(ngModel)]="userCity" (selectionChange)="onCityChange($event)" required>
+                    <mat-option *ngFor="let ct of cityList"  [value]="ct.DistrictName" >
+                      {{ct.DistrictName}}
+                    </mat-option>
+                  </mat-select>        
+              </mat-form-field>
+        </div>
+    
+        <div class="pt-1 flex-fill">
+            <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label class="Lato-Regular">Monthly Bill</mat-label>
+                <input type="number" [(ngModel)]="user.bill"  matInput  placeholder="Enter Bill Amount" name="amount"
+                required>
+              </mat-form-field>
+        </div>
+        <div class="applianceAdd">
+            <button (click)="submit()" name="submit" class="btn btn-calculate">CALCULATE</button>
+        </div>
+    </form>
+        
+
+  </div>

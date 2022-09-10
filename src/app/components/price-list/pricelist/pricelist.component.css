@@ -1,0 +1,7 @@
+.pricelist-card .pricelist-card-image{
+    flex-basis: 50%;
+}
+
+.pricelist-card .pricelist-card-image img{
+    width: 100%;
+}

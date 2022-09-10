@@ -1,0 +1,18 @@
+.nav{
+    position: relative;
+   
+    background: #1137a1;
+    justify-content: space-around;
+    overflow-x: hidden;
+    height: 40px;
+}
+
+.nav a{
+    color: white;
+    font-size: 0.75rem;
+    font-family: LatoRegular;
+}
+
+.nav-link {
+    padding: 0.5rem 0.1rem;
+}

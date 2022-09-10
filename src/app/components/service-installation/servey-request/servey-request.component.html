@@ -1,0 +1,9 @@
+<div class="main">
+  <div class="d-flex btn category m-4 " *ngFor="let request of serviceInstallationData">
+    <div class="icn">
+      <img *ngIf="request.Id ==1" src="../../../../assets/instsurvy.svg" alt="">
+      <img *ngIf="request.Id ==2"  src="../../../../assets/checkstatus-icon.svg" alt="">
+    </div>  <div class="p-3 flex-fill d-flex" (click)="onRequestClick(request.Id)">{{request.title}}</div>
+</div>
+</div>
+

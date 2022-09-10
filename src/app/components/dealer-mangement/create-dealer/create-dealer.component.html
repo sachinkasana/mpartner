@@ -1,0 +1,428 @@
+<app-banner-navigate class="mobileHeaderContainer">
+    <div class="d-flex ms-4 mt-2 navBack" (click)="cancel()"><span class="me-2">
+            <mat-icon class="">arrow_back</mat-icon>
+        </span>   </div>
+</app-banner-navigate>
+
+<div class="newDealer-main">
+    <div class="newDealer-banner"></div>
+    <div class="newDealer-form">
+        <div class="newDealer-form-header">
+            {{title}}
+        </div>
+        <form [formGroup]="createDealerForm">
+            <container-element [ngSwitch]="formStep">
+                <div  *ngSwitchCase="0">
+                    <div class="detailsHeader">Firm Details</div>
+
+                    <div class="whiteBg" formGroupName="firmDetails">
+        
+                        <div class="address-details ms-4 me-4">
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label class="Lato-Regular">Proprietor/firm/Company Name</mat-label>
+                                    <input type="text" formControlName="dealerFirmName" matInput placeholder="Proprietor/firm/Company Name"
+                                        name="dealerFirmName">
+                                </mat-form-field>
+                                <div *ngIf="formValid"
+                                    class="error">
+                                    <div *ngIf="getFirmDetailsForm.get('dealerFirmName')?.errors?.['required']">Please enter Proprietor/firm/Company Name.</div>
+                                </div>
+                            </div>
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label class="Lato-Regular">Dealer Name(Shop Name)</mat-label>
+                                    <input type="text" formControlName="dealerName" matInput placeholder="Dealer Name(Shop Name)"
+                                        name="dealerName">
+                                </mat-form-field>
+                                <div *ngIf="formValid" class="error">
+                                    <div *ngIf="getFirmDetailsForm.get('dealerName')?.errors?.['required']">Please enter
+                                        Dealer Name(Shop Name).</div>
+                                </div>
+                            </div>
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label class="Lato-Regular">Owner Name</mat-label>
+                                    <input type="text" formControlName="ownerName" matInput placeholder="Owner Name"
+                                        name="ownerName">
+                                    
+                                </mat-form-field>
+                                <div *ngIf="formValid" class="error">
+                                        <div *ngIf="getFirmDetailsForm.get('ownerName')?.errors?.['required']">Please enter
+                                            owner name.</div>
+                                    </div>
+                            </div>
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label class="Lato-Regular">Mobile No.</mat-label>
+                                    <input type="number" onKeyPress="if(this.value.length==10) return false;" formControlName="mobileNumber" matInput placeholder="Mobile No."
+                                        name="mobileNumber">
+                                </mat-form-field>
+                                <div *ngIf="formValid" class="error">
+                                    <div *ngIf="getFirmDetailsForm.get('mobileNumber')?.errors?.['pattern']">Please enter valid
+                                        number.</div>
+                                    <div *ngIf="getFirmDetailsForm.get('mobileNumber')?.errors?.['required']">Please enter
+                                        number.</div>
+                                </div>
+                            </div>
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label class="Lato-Regular">Email Id</mat-label>
+                                    <input type="text" formControlName="emailId" matInput placeholder="Email Id" name="emailId">
+                                </mat-form-field>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="d-flex btn-wrap">
+                        <div class="pb-1 pt-2 verify"><button class="btn  btn-darkBlue next"
+                            (click)="nextStep('1','firmDetails')">NEXT</button></div>
+                        <div class="pb-1 pt-2 verify"><button class="btn  btn-darkBlue cancel" (click)="cancel()">CANCEL</button>
+                        </div>
+                    </div>
+                </div>
+        
+        
+                <div  *ngSwitchCase="1">
+                    <div class="detailsHeader">Address Details</div>
+
+                    <div class="whiteBg" formGroupName="addressDetails">
+        
+                        <div class="address-details ms-4 me-4">
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label class="Lato-Regular">Address 1</mat-label>
+                                    <input type="text" formControlName="address1" matInput placeholder="Address 1"
+                                        name="address1">
+                                </mat-form-field>
+                            </div>
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label class="Lato-Regular">Address 2</mat-label>
+                                    <input type="text" formControlName="address2" matInput placeholder="Address 2"
+                                        name="address2">
+                                </mat-form-field>
+                            </div>
+                            <div class="pt-1 flex-fill">
+                                
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label > State </mat-label>
+                                    <input type="text" formControlName="state" matInput placeholder="State"
+                                    name="State">
+                                    <!-- <mat-select placeholder="Select Sate" formControlName="state" (selectionChange)="onStateChange($event)" required>
+                                        <mat-option *ngFor="let st of stateList" [value]="st.StateID">
+                                          {{st.StateName}}
+                                        </mat-option>
+                                      </mat-select>          -->
+                                  </mat-form-field>
+                            
+                        </div>
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label > City </mat-label>
+                                    <mat-select placeholder="Select City" formControlName="city" (selectionChange)="onCityChange($event)">
+                                        <mat-option *ngFor="let ct of cityList" [value]="ct.CityName">
+                                          {{ct.CityName}}
+                                        </mat-option>
+                                      </mat-select>         
+                                  </mat-form-field>
+                            </div>
+                           
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label class="Lato-Regular">Postal Code</mat-label>
+                                    <input type="tel" pattern="[0-9]*" onKeyPress="if(this.value.length==6) return false;" formControlName="postalCode" matInput placeholder="Postal Code"
+                                        name="postalCode">
+                            
+                                </mat-form-field>
+                                <div *ngIf="formValid" class="error">
+                                    <div *ngIf="getAddressDetailsForm.get('postalCode')?.errors?.['required']">Please enter
+                                        postal code.</div>
+                                    <div *ngIf="getAddressDetailsForm.get('postalCode')?.errors?.['minlength']">Please enter valid
+                                        postal code.</div>
+                                        </div>
+                            </div>
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label class="Lato-Regular">Select District</mat-label>
+                                    <input type="text" formControlName="district" matInput placeholder="Select District"
+                                        name="district">
+                                </mat-form-field>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="btn-wrap2 d-flex">
+                        <div class="pb-1 pt-2 verify"><button class="btn  btn-darkBlue back" (click)="back('0')">Back</button>
+                        </div>
+                        <div class="pb-1 pt-2 verify"><button class="btn  btn-darkBlue next"
+                                (click)="nextStep('2','addressDetails')">NEXT</button></div>
+                        <div class="pb-1 pt-2 verify"><button class="btn  btn-darkBlue cancel" (click)="cancel()">CANCEL</button>
+                        </div>
+                    </div>
+        
+                </div>
+                <div  *ngSwitchCase="2">
+                    <div class="detailsHeader">Documents Upload</div>
+
+                    <div class="whiteBg" formGroupName="documentsDetails">
+        
+                        <div class="address-details ms-4 me-4">
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label> Document1 </mat-label>
+                                    <mat-select placeholder="Select Document" formControlName="document1"
+                                        (selectionChange)="onDocument1Change($event)">
+                                        <mat-option *ngFor="let doc of document1List" [value]="doc.id">
+                                            {{doc.docname}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label class="Lato-Regular">Document No</mat-label>
+                                    <input type="text" onKeyPress="if(this.value.length==10) return false;" formControlName="document1No" matInput placeholder="Document No"
+                                        name="document1No">
+                                </mat-form-field>
+                                <div *ngIf="formValid" class="error">
+                                    <div *ngIf="getDocumentsDetails.get('document1No')?.errors?.['pattern']">Please enter valid
+                                        PAN.</div>
+                                    <div *ngIf="getDocumentsDetails.get('document1No')?.errors?.['required']">Please enter
+                                        PAN.</div>
+                                </div>
+                            </div>
+                            <div class="pt-1 flex-fill">
+        
+                                <div class="p-2 flex-fill invoiceUpload">
+        
+                                    <div class="material-textfield">
+                                        
+                                        <label >Upload Document Copy<img class="ms-2"
+                                                src="../../../../assets/fileUploadsm-icon.png" alt=""> </label>
+        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex" >
+                                <div class="img-container">
+                                    <div>
+                                        <div *ngIf="!doc1" class="previewUpload">
+                                            <div>
+                                                <input  type="file" name="imageUrl" type="file"  accept="image/*"
+                                                (change)="handleInputChange($event,'doc1')" id="upload1" hidden />
+                                                      <label  for="upload1"><img class="ms-2"
+                                                            src="../../../../assets/uploadImage.png" alt=""> 
+                                                        </label>
+                                            </div>
+                                           
+
+                                        </div>
+                                        <div *ngIf="doc1" class="previewUpload">
+                                            <img src="{{doc1}}" /><span class="spnclose"><button type="button" (click)="deleteFile('doc1',0)" class="btn-close "
+                                                data-bs-dismiss="modal" aria-label="Close">
+                                            </button></span>
+                                        </div>
+                                        <div *ngIf="!doc1" class="latoRegular text-center">(Front)</div>
+
+                                    </div>
+                                    
+
+                                    <div>
+                                        <div *ngIf="!doc2"   class="previewUpload">
+                                            <input type="file" name="imageUrl" type="file"  accept="image/*"
+                                                (change)="handleInputChange($event,'doc2')" id="upload2" hidden />
+                                                     <label    for="upload2"><img class="ms-2"
+                                                    src="../../../../assets/uploadImage.png" alt=""> </label>
+
+                                        </div>
+                                        <div *ngIf="doc2"  class="previewUpload" >
+                                            <img src="{{doc2}}" /><span class="spnclose"><button type="button" (click)="deleteFile('doc2',1)" class="btn-close "
+                                                data-bs-dismiss="modal" aria-label="Close">
+                                            </button></span>
+
+                                        </div>
+                                        <div *ngIf="!doc2" class="latoRegular text-center">(Back)</div>
+
+                                    </div>
+                                   
+                                </div>
+                                <!-- <div class="img-container">
+                                    <div    class="previewUpload">
+                                        <input type="file" name="imageUrl" type="file" multiple accept="image/*"
+                                            (change)="handleInputChange($event,'doc1')" id="upload" hidden />
+                                        <label    for="upload"><img class="ms-2"
+                                                src="../../../../assets/uploadImage.png" alt=""> </label>
+                                    </div>
+                                    <div  class="previewUpload" >
+                                        <img src="{{doc1List[1]}}" /><span class="spnclose"><button type="button" (click)="deleteFile('doc1',1)" class="btn-close "
+                                            data-bs-dismiss="modal" aria-label="Close">
+                                        </button></span>
+                                    </div>
+                                   
+                                </div> -->
+                                
+        
+                            </div>
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label> Document 2 </mat-label>
+                                    <mat-select placeholder="Select Document" formControlName="document2"
+                                        (selectionChange)="onDocument2Change($event)">
+                                        <mat-option *ngFor="let doc of documentList" [value]="doc.id">
+                                            {{doc.docname}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+        
+                            <div class="pt-1 flex-fill">
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label class="Lato-Regular">Document No</mat-label>
+                                    <input type="text" (keypress)="keyPressAng($event)" formControlName="document2No" matInput placeholder="Document No"
+                                        name="document2No">
+                                </mat-form-field>
+                                <div *ngIf="formValid" class="error">
+                                <div *ngIf="getDocumentsDetails.get('document2No')?.errors?.['pattern']">Please enter valid
+                                    Value.</div>
+                                <div *ngIf="getDocumentsDetails.get('document2No')?.errors?.['required']">Please enter
+                                    Value.</div>
+                            </div>
+                            </div>
+                            <div class="pt-1 flex-fill pb-3">
+                                <div class="p-2 flex-fill invoiceUpload">
+        
+                                    <div class="material-textfield">
+                                       
+                                        <label>Upload Document Copy<img class="ms-2"
+                                                src="../../../../assets/fileUploadsm-icon.png" alt=""> </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex pb-3" >
+                                <div class="img-container">
+                                    <div>
+                                        <div *ngIf="!doc3" class="previewUpload">
+                                            <div>
+                                                <input  type="file" name="imageUrl" type="file"  accept="image/*"
+                                                (change)="handleInputChange($event,'doc3')" id="upload3" hidden />
+                                                      <label  for="upload3"><img class="ms-2"
+                                                            src="../../../../assets/uploadImage.png" alt=""> 
+                                                        </label>
+                                            </div>
+                                           
+
+                                        </div>
+                                        <div *ngIf="doc3" class="previewUpload">
+                                            <img src="{{doc3}}" /><span class="spnclose"><button type="button" (click)="deleteFile('doc3',0)" class="btn-close "
+                                                data-bs-dismiss="modal" aria-label="Close">
+                                            </button></span>
+                                        </div>
+                                        <div *ngIf="!doc3" class="latoRegular text-center">(Front)</div>
+
+                                    </div>
+                                    
+
+                                    <div>
+                                        <div *ngIf="!doc4"   class="previewUpload">
+                                            <input type="file" name="imageUrl" type="file"  accept="image/*"
+                                                (change)="handleInputChange($event,'doc4')" id="upload4" hidden />
+                                                     <label    for="upload4"><img class="ms-2"
+                                                    src="../../../../assets/uploadImage.png" alt=""> </label>
+
+                                        </div>
+                                        <div *ngIf="doc4"  class="previewUpload" >
+                                            <img src="{{doc4}}" /><span class="spnclose"><button type="button" (click)="deleteFile('doc4',1)" class="btn-close "
+                                                data-bs-dismiss="modal" aria-label="Close">
+                                            </button></span>
+
+                                        </div>
+                                        <div *ngIf="!doc4" class="latoRegular text-center">(Back)</div>
+
+                                    </div>
+                                   
+                                </div>
+                             
+                                
+        
+                            </div>
+                            <!-- <div class="d-flex" >
+                                <div class="previewUpload" *ngFor="let image of doc2List;let i=index">
+                                    <img src="{{image}}" /><span class="spnclose"><button type="button" (click)="deleteFile('doc2',i)" class="btn-close "
+                                        data-bs-dismiss="modal" aria-label="Close">
+                                    </button></span>
+                                </div>
+                                
+        
+                            </div> -->
+                            
+                        </div>
+                    </div>
+                    <div class="d-flex btn-wrap2">
+                        <div class="pb-1 pt-2 verify"><button class="btn  btn-darkBlue back" (click)="back('1')">BACK</button>
+                        </div>
+                        <div class="pb-1 pt-2 verify"><button class="btn  btn-darkBlue next" (click)="createOTP()">SUBMIT</button>
+                        </div>
+                        <div class="pb-1 pt-2 verify"><button class="btn  btn-darkBlue cancel" (click)="cancel()">CANCEL</button>
+                        </div>
+                    </div>
+                    
+        
+                </div>
+        
+                <div class="whiteBg" *ngSwitchCase="3">
+        
+                </div>
+        
+            </container-element>
+            
+        </form>
+    </div>
+
+</div>
+
+
+<app-popup *ngIf="showOTPAuthPopup" (popupClose)="closeAuthPopup()">
+    <div class="d-flex p-2 ps-1 justify-content-center">
+        <img src="../../../../assets/otpIcon.png" />
+     </div>
+    <div class="d-flex p-2 mt-4 ms-2 me-2 LatoRegularFnt-0_8 text-center">
+        <span>{{otpAuthMessage}}</span> 
+     </div>
+   
+    <!-- <div class="d-flex p-2 mt-4 LatoRegularFnt-0_8">
+        <span>Verify your OTP</span> 
+     </div> -->
+     
+    <div class="d-flex p-2 ps-1  inputfield otp">
+        <mat-form-field   appearance="outline" floatLabel="always">
+            <mat-label> {{'otp' | translate }} </mat-label>
+            <input type="tel" onKeyPress="if(this.value.length==6) return false;"  matInput placeholder="Enter OTP" 
+            [(ngModel)]="otpInput" required>
+          </mat-form-field>
+        <!-- <input type="text" [(ngModel)]="otpInput" matInput placeholder="Verify your OTP"> -->
+    </div>
+    <div *ngIf="isOtpValid && !otpInput" class="error">
+        <div>Please Enter OTP</div>
+    </div>
+
+
+    <div class="p-1 paytmSubmitDiv"><button  (click)="verifyOTP()" class="btn btn-darkBlue">{{'submit' |
+            translate }}</button></div>
+
+</app-popup>
+
+<app-popup *ngIf="showDealerSucessPopup" (popupClose)="closePopup()">
+    <div class="d-flex p-3 pt-1 pb-0 flex-fill justify-content-center">
+        <img class="success-check" src="../../assets/noun_Check_675326.png" alt="">
+    </div>
+    <div class="d-flex p-3 flex-fill justify-content-center thankyou">
+        Thank you!
+    </div>
+    <div class="d-flex p-3 pt-0 pb-0 flex-fill justify-content-center fnt-1 msg">
+       The documents has been sent for validation.<br/>Check the status through Status tab in dealer management tab in 72 hours.
+    </div>
+
+</app-popup>

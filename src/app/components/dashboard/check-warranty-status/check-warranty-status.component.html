@@ -1,0 +1,130 @@
+
+<div class="d-flex sno mb-1">
+
+    <div class="inpt">
+        <input type="text" matInput  placeholder="Scan / Enter Manually" [(ngModel)]="serialNumber" name="serialNumber"
+                   required>
+    </div>
+    <div>
+        <button class="btn " (click)="redirectToScan()" type="button"><img src="../../../../assets/qrsm.png" alt=""></button>
+    </div>
+
+    
+    
+    <div>
+        <button class="btn submit" type="button" (click)="sendSerialNumber()">SUBMIT</button>
+    </div>
+    
+</div>
+<div *ngIf="isSerialNumberValid && !serialNumber" class="error ms-4">
+    <div>Please Scan/Enter serial number</div>
+</div>
+
+
+<div class="main-details  mt-3" *ngIf="warrantyData">
+    
+
+    <div class="d-flex pt-2 ps-3 pe-3 pb-3 det-row2">
+        <div class="col1 flex-fill">
+            
+            <div class="profileGreyText Lato-Regular">
+                MGF Month & Year
+            </div>
+            <span class="Lato-Bold">{{warrantyData?.Manufacturing_Date}}</span>
+        </div>
+        
+        
+    </div>
+
+    <div class="d-flex pt-2 ps-3 pe-3 pb-3 det-row2">
+        <div class="col1 flex-fill">
+             
+            <div class="profileGreyText Lato-Regular">
+                <p>Model Name</p>
+
+            </div>
+            <span class="Lato-Bold">{{warrantyData?.Model_Name}}</span>
+        </div>
+        
+    </div>
+    <div class="d-flex pt-2 ps-3 pe-3 pb-3 det-row2">
+        <div class="col1 flex-fill">
+            
+            <div class="profileGreyText Lato-Regular">
+                Serial No.
+            </div>
+            <span class="Lato-Bold">{{serialNumber}}</span>
+        </div>
+        
+    </div>
+    <div class="d-flex pt-2 ps-3 pe-3 pb-3 det-row2">
+        <div class="col1 flex-fill">
+            
+            <div class="profileGreyText Lato-Regular">
+                Primary Date
+            </div>
+            <span class="Lato-Bold">{{warrantyData?.Manufacturing_Date}}</span>
+        </div>
+        
+    </div>
+    <div class="d-flex pt-2 ps-3 pe-3 pb-3 det-row2">
+        <div class="col1 flex-fill">
+            
+            <div class="profileGreyText Lato-Regular">
+                Distributor Name
+            </div>
+            <span class="Lato-Bold">{{warrantyData?.Primary_Customer}}</span>
+        </div>
+        
+    </div>
+    <div class="d-flex pt-2 ps-3 pe-3 pb-3 det-row2">
+        <div class="col1 flex-fill">
+            
+            <div class="profileGreyText Lato-Regular">
+                Distributor Code
+            </div>
+            <span class="Lato-Bold">{{warrantyData?.Primary_Customer}}</span>
+        </div>
+        
+    </div>
+    <div class="d-flex pt-2 ps-3 pe-3 pb-3 det-row2">
+        <div class="col1 flex-fill">
+            
+            <div class="profileGreyText Lato-Regular">
+                Dealer Name
+            </div>
+            <span class="Lato-Bold">{{warrantyData?.Tertiary_Dealer_Name}}</span>
+        </div>
+        
+    </div>
+    <div class="d-flex pt-2 ps-3 pe-3 pb-3 det-row2">
+        <div class="col1 flex-fill">
+            
+            <div class="profileGreyText Lato-Regular">
+                Dealer Code
+            </div>
+            <span class="Lato-Bold">{{warrantyData?.Tertiary_Dealer_Name}}</span>
+        </div>
+        
+    </div>
+    <div class="d-flex pt-2 ps-3 pe-3 pb-3 det-row2">
+        <div class="col1 flex-fill">
+            
+            <div class="profileGreyText Lato-Regular">
+                Sale Date
+            </div>
+            <span class="Lato-Bold">{{warrantyData?.Primary_Billed_Date}}</span>
+        </div>
+        
+    </div>
+    
+</div>
+
+<div class="m-3 d-flex warning-main" *ngIf="showAlert">
+    <div class="warning-img">
+        <img src="../../../../assets/error.png" alt="">
+    </div>
+    <div class="warningTxt pt-3">
+        eWarranty is not registered
+    </div>
+</div>

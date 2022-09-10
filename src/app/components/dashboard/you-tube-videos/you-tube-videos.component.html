@@ -1,0 +1,52 @@
+<!-- Page Content -->
+<div class="main">
+  <div class="d-flex eWar  warranty-header-web youTubeWeb">
+    <div class="web-header-title">
+        Luminous Youtube
+    </div>
+
+  </div>
+
+  <div class="m-4  web-container search-results"  infinite-scroll
+  [infiniteScrollDistance]="1"
+  [infiniteScrollUpDistance]="2"
+  [infiniteScrollThrottle]="300"
+  (scrolled)="onScrollDown()"
+  (scrolledUp)="onUp()">
+
+    <div class="web-wrapper">
+      <div *ngFor="let video of videos"  class="wrapper">
+      
+        <div  class="item ">
+          <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank">
+            <img [src]="video.snippet.thumbnails.standard.url" class="card-img-top" alt="..."></a>
+            <a href="https://www.youtube.com/watch?v={{video.id}}" target="_blank">
+              <span class="youtube-icon">
+                <div class="red-circle">
+                  <div class="triangle-right"></div>
+                </div>
+                
+              </span>
+            </a>  
+        </div>
+        <div class="item">
+          <h5 class="card-title mb-0">
+            <a href="https://www.youtube.com/watch?v={{video.id}}">{{video.snippet.title}}
+            </a></h5>
+            <p> {{video.postedVideoTime}} | {{video.statistics.viewCount}} views</p>
+           
+        </div>
+      
+        
+        
+
+    </div>
+    </div>
+
+    
+</div>
+
+  
+ 
+
+</div>

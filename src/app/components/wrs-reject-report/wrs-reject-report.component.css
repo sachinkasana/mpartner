@@ -1,0 +1,158 @@
+.txtMsg{
+  color: #7f7f7f;
+  text-align: center;
+  margin: 2rem;
+  font-family: 'LatoRegular';
+ }
+ 
+.example-container {
+    height:calc(100vh - 14.5rem);;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    
+  }
+
+ 
+  
+  table {
+    width: 800px;
+  }
+  
+  td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+  }
+  
+  th.mat-column-position, td.mat-column-position {
+    padding-left: 8px;
+  }
+  
+  .mat-table-sticky-border-elem-right {
+    border-left: 1px solid #e0e0e0;
+  }
+  
+  .mat-table-sticky-border-elem-left {
+    border-right: 1px solid #e0e0e0;
+  }
+  .main-container{
+    position: relative;
+    top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .flex-container{
+    flex-direction: row;
+    width: 100vw;
+  }
+  .flex-container .download-wrap{
+    margin: 0.5rem;
+    height: 5vh;
+    flex-basis: 30%;
+  }
+
+  .flex-container .calender{
+    margin: 0.5rem;
+    height: 5vh;
+  }
+
+  .flex-container .calender mat-form-field{
+    width: calc(100vw - 9.8125rem);
+    font-size: 0.43rem;
+  }
+
+.download{
+    border: 1px solid rgb( 255 200 193);
+    color: rgb( 239 83 62);
+    font-size: 0.6875rem;
+    font-family: LatoBold;
+    height: 2.25rem;
+    min-width: 6.875rem;
+}
+
+.download img{
+  height: 0.6875rem;
+  width: 0.6875rem;
+ 
+}
+
+tr.mat-header-row{
+  height: 2.0625rem !important;
+  position: sticky;
+  top: 0;
+}
+
+tr.mat-row{
+  height: 2.0625rem !important;
+}
+
+.mat-header-cell{
+  font-family: LATOBOLD;
+  font-size: 0.8125rem;
+   color: #000;
+   padding: 0 0.5rem 0 0.5rem;
+   white-space: nowrap;
+}
+
+
+.mat-cell{
+  font-family: 'LatoRegular';
+  font-size: 0.75rem;
+  color: #000;
+  padding: 0 0.5rem 0 0.5rem;
+  white-space: nowrap;
+}
+
+
+.mat-table-sticky-border-elem-left {
+  border-right: none;
+}
+
+
+@media(max-width:799px){
+  .web-header-title{
+    display: none !important;
+  }
+}
+@media(min-width:800px){
+  .flex-container .calender mat-form-field {
+    width: 100%;
+    font-size: 0.43rem;
+}
+.flex-container{
+  width: 100% !important;
+}
+.eWar{
+  height: 4.4375rem;
+}
+
+
+.web-header-col-2{
+  display: flex;
+  align-items: center;    
+}
+.web-header-title{
+  width: 78.5%;
+}
+
+table{
+  width: 100%;
+}
+
+.example-container{
+  width: calc(100% - 2.5rem);
+  margin: 1.5rem;
+  border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgba(233, 233, 233, 0.5);
+    border: solid 1px #dbdbdb;
+    background-color: #fff;
+}
+
+
+}
+
+
+.hint{
+  font-size: 0.75rem;
+  font-family: latoRegular;
+}

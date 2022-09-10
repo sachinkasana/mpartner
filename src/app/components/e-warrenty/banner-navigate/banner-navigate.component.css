@@ -1,0 +1,9 @@
+.banner-main{
+    background: #1137a1;
+    border-top: 1px solid white;
+    width: 100%;
+    background-size: cover;
+    z-index: 1000;
+    height: 3rem;
+}
+

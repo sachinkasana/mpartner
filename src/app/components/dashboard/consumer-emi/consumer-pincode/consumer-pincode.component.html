@@ -1,0 +1,170 @@
+<app-banner-navigate class="consumerPhoneMobile">
+    <div class="d-flex p-3 navBack"><span class="me-2">
+            <mat-icon class="" (click)="goBack()">arrow_back</mat-icon>
+        </span> Customer EMI</div>
+</app-banner-navigate>
+<div class="d-flex eWar  warranty-header-web consumerPhoneWeb">
+    <div class="web-header-title">
+        Consumer EMI
+    </div>
+     
+  </div>
+<!-- Consumer EMI Request start -->
+<div class="web-container pincode-container">
+    <div>
+        <div class="d-flex ps-3 pb-1 pt-0 pe-0 consumer-main">
+            <div class="p-1 darkBlueFnt consumerTitle flex-fill">
+                Search nearby Representative
+            </div>
+            <div class="ps-3 pb-1 pt-0 pe-0 logo">
+                <img src="../../assets/HDFC-Bank.png" alt="">
+            </div>
+        </div>
+    
+        <div class="web-container-row">
+            <div class="d-flex ps-3 pb-1 pt-0 pe-3  pincode-main">
+                <div class="p-1 flex-fill">
+                    <form (ngSubmit)="f.form.valid && next()" #f="ngForm">
+                        <div class="pincodeWebWrap">
+                            <div>
+                                <mat-form-field appearance="outline" floatLabel="always">
+                                    <mat-label>Enter Pincode</mat-label>
+                                    <input type="tel" [(ngModel)]="pincode"  matInput placeholder="Enter Pincode of your Shop"
+                                        name="pincode" #pincodeNgModel="ngModel" minlength="6" onKeyPress="if(this.value.length==6) return false;" pattern="[0-9.]+" required>
+                                </mat-form-field>
+                                <div *ngIf="f.submitted && pincodeNgModel.invalid" class="errorMsg">
+                                    <div *ngIf="pincodeNgModel.errors?.['required']">Pincode is required</div>
+                                </div>
+                                <div class="errorMsg" *ngIf="pincodeNgModel.errors?.['minlength']">Pincode length should be 6 digits only</div>
+                                <!-- <div *ngIf="pincodeNgModel.errors?.['minlength']">
+                                    <div *ngIf="pincodeNgModel.errors?.['minlength']">Pincode length 6</div>
+                                </div>
+                                  <div *ngIf="pincodeNgModel.errors?.['pattern']">
+                                    Only Numbers are allowed
+                                  </div> -->
+                            </div>
+                            
+                            <div class=" pb-1 pt-0  verify webCol2"><button type="submit" class="btn  btn-darkBlue">SUBMIT</button></div>
+    
+                        </div>
+                       
+                        
+
+                    </form>
+                </div>
+            </div>
+        
+        
+            
+        </div>
+    </div>
+
+
+    <div *ngIf="showError">
+        <p class="txtMsg">No Data Found<p>
+      </div>
+
+
+    <ng-container *ngIf="showHDFC">
+        <div class="d-flex ps-3 pb-1 pt-0 pe-3   consumer-main">
+            <div class="p-1  flex-fill msgTxt">
+               <span class="txtStart">Luminous </span>offers attractive Consumer EMI options, in collaboration with HDFC Bank.
+                Please connect the HDFC bank representative at the following number.
+            </div>
+        </div>
+
+        <div class="p-3 contacts-main">
+            <div class="content">
+                <div class="p-2 webLayout bb">
+                    <div class="webLayoutCol1">
+                        <div class="d-flex p-1 designationTxt">
+                            {{smDetails.sm_designation}}
+                        </div>
+    
+                        <div class="d-flex">
+                            <div class="p-1 name"> {{smDetails.sm_name}}</div>
+                            <div class="p-1 pe-1 webDial">
+    
+                                <a href="tel:{{smDetails.sm_phoneno}}">
+                                    <img src="../../assets/phonecall (1).png" alt="">
+                                </a>
+                            </div>
+                            <div class="p-1 webDial">
+                                <a href="https://wa.me/+91{{smDetails.sm_phoneno}}" target="_blank">
+                                    <img src="../../assets/whatsapp--2-.png" alt="">
+                                </a>
+                            </div>
+    
+    
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex p-1 phoneTxt webLayoutCol2">
+                        +91{{smDetails.sm_phoneno}}
+                    </div>
+
+                    <div class="webLayoutCol3">
+                        <div class="p-1 pe-1 webDial">
+    
+                            <a href="tel:{{smDetails.sm_phoneno}}">
+                                <img src="../../assets/phonecall (1).png" alt="">
+                            </a>
+                        </div>
+                        <div class="p-1 webDial">
+                            <a href="https://wa.me/+91{{smDetails.sm_phoneno}}" target="_blank">
+                                <img src="../../assets/whatsapp--2-.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 webLayout">
+                    <div class="webLayoutCol1">
+                        <div class="d-flex p-1 designationTxt">
+                            {{smDetails.ro_designation}}
+                        </div>
+    
+                        <div class="d-flex">
+                            <div class="p-1 name"> {{smDetails.ro_name}}</div>
+                            <div class="p-1 pe-1 webDial">
+    
+                                <a href="tel:{{smDetails.ro_phoneno}}">
+                                    <img src="../../assets/phonecall (1).png" alt="">
+                                </a>
+                            </div>
+                            <div class="p-1 webDial">
+                                <a href="https://wa.me/+91{{smDetails.ro_phoneno}}" target="_blank">
+                                    <img src="../../assets/whatsapp--2-.png" alt="">
+                                </a>
+                            </div>
+    
+    
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex p-1 phoneTxt webLayoutCol2">
+                        +91{{smDetails.ro_phoneno}}
+                    </div>
+
+                    <div class="webLayoutCol3">
+                        <div class="p-1 pe-1 webDial">
+    
+                            <a href="tel:{{smDetails.ro_phoneno}}">
+                                <img src="../../assets/phonecall (1).png" alt="">
+                            </a>
+                        </div>
+                        <div class="p-1 webDial">
+                            <a href="https://wa.me/+91{{smDetails.ro_phoneno}}" target="_blank">
+                                <img src="../../assets/whatsapp--2-.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="ps-3 pe-3 pt-2 pb-3 fnt-2_5 text-center visitMsg">
+            *HDFC Representative will visit to your shop by next 30 minutes
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,31 @@
+{
+    "Message": "Data  fetched successfully.",
+    "Status": "200",
+    "Token": "",
+    "FinelabList": [
+      {
+        "UserId": "9900000070",
+        "PartnerNumber": null,
+        "Iredeemable": null,
+        "TotalPoint": 12,
+        "Blocked": 1,
+        "Name": "Dummy Dealer for test 70"
+      },
+      {
+        "UserId": "9900000071",
+        "PartnerNumber": null,
+        "Iredeemable": null,
+        "TotalPoint": 34,
+        "Blocked": 0,
+        "Name": "Dummy Dealer for test 71"
+      },
+      {
+        "UserId": "9900000072",
+        "PartnerNumber": null,
+        "Iredeemable": null,
+        "TotalPoint": 45,
+        "Blocked": 1,
+        "Name": "Dummy Dealer for test 72"
+      }
+    ]
+  }

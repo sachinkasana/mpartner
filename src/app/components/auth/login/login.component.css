@@ -1,0 +1,137 @@
+
+  
+  .material-textfield {
+    position: relative;  
+  }
+  
+  
+
+  
+  /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+.mat-radio-group{
+  display: grid;
+}
+
+.card img{
+  width:100%;
+  height: calc(50vh - 25px);
+}
+
+
+ 
+
+.mat-form-field{
+  display: block;
+}
+
+
+.cont-div{
+  width: 100%;
+}
+
+.usercode-div{
+  height: 4rem;
+}
+
+.btn-checked{
+  font-size: 0.9375rem;
+  color: rgb(0 0 0);
+  font-family: LatoRegular;
+}
+
+.btn-unchecked{
+  font-size: 0.9375rem;
+  color: rgb(144 144 144);
+  font-family: LatoRegular;
+  
+
+}
+
+.blocked{
+  font-size: 0.75rem;
+  color: rgb(255 0 0);
+  font-family: LatoRegular;
+}
+
+.pl{
+  padding-left: 1.875rem !important;
+}
+
+.mb{
+   margin-bottom: 1.4375rem !important;;
+}
+
+.cardBodyDiv{
+  height: calc(50vh - 25px);
+  padding: 0 !important;
+  padding-left: 1rem!important;
+  padding-right: 1rem!important;
+}
+
+form{
+  display: flex;
+align-items: center;
+height: 100%;
+}
+
+.card{
+  border: none;
+      border-radius: 0;
+}
+
+
+@media(min-width:800px){
+  .web-side-banner{
+    background: url(../../../../assets/Web/login.png);
+    width: 67.5%;
+    background-repeat: round;
+background-size: cover;
+height: 100vh;
+  }
+
+  .web-container{
+    display: flex;
+   }
+
+  app-banner{
+    display: none
+  }
+
+  .card img {
+    height: calc(50vh - 1rem);
+}
+.card {
+  width: 32.5%;
+  border: none;
+}
+
+.web-footer{
+  height: 2rem;
+  font-family: LatoRegular;
+  font-size: 13px;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.cardBodyDiv{
+  height: calc(50vh - 1rem);
+  padding: 0 !important;
+  padding-left: 1rem!important;
+  padding-right: 1rem!important;
+}
+}

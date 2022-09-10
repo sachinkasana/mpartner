@@ -1,0 +1,62 @@
+<app-banner></app-banner>
+
+<app-popup [headerFlag]="popHeaderFlag" [footerFlag]="popHeaderFlag" *ngIf="userLoggedIn">
+  <div class="d-flex flex-column mb-3">
+    <div class="ps-4 p-2">
+      <div class="LatoRegularFnt-0_8" ><span>{{'selectSapId' | translate }}</span></div>
+    </div>
+    <div class="pl p-2">
+      <mat-radio-group style="display: grid;" aria-label="Select an option">
+        <mat-radio-button class="mb" #check *ngFor="let uid of userData" (change)="radioChange(uid)"  [value]="uid.id">
+          <span [ngClass]="check.checked?'btn-checked':'btn-unchecked'">
+            {{uid.id}}({{uid.type}}) <br>{{uid.city}}
+          </span><br>
+          <span *ngIf="uid.message!==''" class="blocked">(uid.message)</span>
+          
+        </mat-radio-button>
+        <!-- <mat-radio-button value="2">8585858(Dealer)<br>NOIDA</mat-radio-button> -->
+      </mat-radio-group>
+    </div>
+    <div class="ps-3 pe-3 ">
+      <button class="btn btn-darkBlue" (click)="selectSAPID()">{{'submit' | translate }}</button>
+    </div>
+
+  </div>
+
+</app-popup>
+
+<div class="web-container">
+  <div class="web-side-banner"></div>
+<div class="card">
+  <img src="../assets/mobile_login.jpg" class="card-img-top" alt="...">
+  <div class="card-body cardBodyDiv">
+    <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+      <div class="container">
+
+        <div class="d-flex flex-column mb-3 cont-div">
+          <div class="p-2 usercode-div">
+            <mat-form-field appearance="outline" floatLabel="always">
+              <mat-label> {{'userCode' | translate }} </mat-label>
+              <input type="number" onKeyPress="if(this.value.length==10) return false;" matInput [placeholder]="'enterPhone' | translate" name="mobile"
+                [(ngModel)]="user.mobile" #mobile="ngModel" required>
+            </mat-form-field>
+            <div *ngIf="f.submitted && mobile.invalid" class="invalid-feedback">
+              <div *ngIf="mobile.errors?.['required']">Mobile is required</div>
+          </div>
+
+          </div>
+          <div class="p-2"><button class="btn btn-darkBlue" onclick="">{{'next' | translate }}</button></div>
+          <div class="p-2 skip"><a>{{'skip' | translate }}</a></div>
+
+        </div>
+
+
+      </div>
+
+    </form>
+  </div>
+  <div class="web-footer">Luminous India 2022 Copyright. All rights reserved</div>
+
+</div>
+</div>
+  

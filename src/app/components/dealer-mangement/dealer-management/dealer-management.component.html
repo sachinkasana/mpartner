@@ -1,0 +1,20 @@
+<div>
+    <div class="dealer-banner"></div>
+    <div class="dealer-options ">
+    <div class="ps-3 pe-3 mb-3 web-dealer-options">
+        <button class="btn btn-lightBlue-3" *ngIf="this.storageService.getItem('userType')=='DISTY'" (click)="createNewDealer()"><span class="me-1"><img src="../../../../assets/plus_icon.png"></span> Create New Dealer</button>
+    </div>
+    <div class="ps-3 pe-3 mb-3 web-dealer-options">
+        <button class="btn btn-lightBlue-3" *ngIf="this.storageService.getItem('userType')=='DEALER'" (click)="updateDocument()"><span class=" me-1"><img src="../../../../assets/dealerUpdate.png"></span>Update Documents</button>
+    </div>
+    <div class="ps-3 pe-3 mb-3 web-dealer-options">
+        <button class="btn btn-lightBlue-3" *ngIf="this.storageService.getItem('userType')=='DISTY'" (click)="dealerList()"><span class="me-1"><img src="../../../../assets/dealerView.png"></span>View Dealer List</button>
+    </div>
+    <div class="ps-3 pe-3 web-dealer-options ">
+        <button class="btn btn-darkBlue"  (click)="status()"><span class=" me-1"><img src="../../../../assets/dealerCheckStatus.png"></span>Status</button>
+    </div>
+</div>
+</div>
+
+
+

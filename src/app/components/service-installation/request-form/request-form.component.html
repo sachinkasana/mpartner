@@ -1,0 +1,189 @@
+<!-- <app-banner-navigate>
+    <div class="d-flex p-3 navBack" (click)="redirectToBack()"><span class="me-2" [routerLink]="['/dashboard/user-info']"  ><mat-icon class="">arrow_back</mat-icon></span></div>
+</app-banner-navigate> -->
+
+<div class="main">
+<form (ngSubmit)="submit(f)" #f="ngForm">
+    <app-scan-serial-number [serialNumber]="routerData.serialNumber"></app-scan-serial-number>
+<div class="registration-details ms-4 me-4 mt-3">
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label class="Lato-Regular">Category</mat-label>
+            <input type="text" [(ngModel)]="user.category" matInput name="category" #category="ngModel"
+               disabled>
+          </mat-form-field>
+    </div>
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label > Type of Service </mat-label>
+            <mat-select placeholder="Select Service" [(ngModel)]="user.type" name="type" #type="ngModel" (selectionChange)="onServiceTypeChange($event)" required>
+                <mat-option *ngFor="let st of typesOfService" [value]="st.title">
+                  {{st.title}}
+                </mat-option>
+              </mat-select>         
+          </mat-form-field>
+    </div>
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label class="Lato-Regular">Model Name</mat-label>
+            <input type="text" [(ngModel)]="user.modelName" matInput #modelName="ngModel"  name="modelName"
+               disabled>
+          </mat-form-field>
+    </div>
+    <div class="pt-1 d-flex  flex-fill ">
+            <div class="saleDate">
+                <mat-form-field appearance="outline" floatLabel="always">
+                    <mat-label> Date of Sale</mat-label>
+                    <input  [matDatepicker]="dp" [(ngModel)]="user.salesDate" [max]="maxDate" #salesDate="ngModel" matInput placeholder="Select Date" name="salesDate"
+                       required>
+                       <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                       <mat-datepicker #dp></mat-datepicker>
+                  </mat-form-field> 
+            </div>
+            <div class="p-2 flex-fill invoiceUpload">
+
+                <div class="material-textfield">
+                  <!-- <input style="width:50%"  placeholder="Enter Phone Number or LPT Employee Code" type="file">
+                  <label>UserCode</label> -->
+      
+      
+ 
+            <input type="file" name="imageUrl" type="file" accept="image/*" (change)="handleInputChange($event)" id="upload" hidden/>
+            <label for="upload">Upload Invoice<img class="ms-2" src="../../../../assets/fileUploadsm-icon.png" alt=""> </label>
+            <span class="customLabel">Upload Invoice<span>*</span></span>
+                </div>
+              </div>
+                      
+     </div>
+
+     
+ 
+        <div class="d-flex pt-1 ms-2  mb-3 previewContainer ">
+            <div class="previewUpload"  *ngFor="let image of imageList">
+                 <img src="{{image.url}}"/><span class="spnclose"><button type="button" (click)="deleteUploadedImages(image)" class="btn-close " data-bs-dismiss="modal" aria-label="Close" >
+                </button></span>
+
+            </div>
+        </div>
+        
+         
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label > Product Delivered at Customer </mat-label>
+            <mat-select placeholder="Select"  required value="Yes">
+                <mat-option value="Yes">
+                  Yes
+                </mat-option>
+                <mat-option value="No">
+                    No
+                  </mat-option>
+              </mat-select>         
+          </mat-form-field>
+    </div>
+      
+        
+</div>
+<div class="brk"></div>
+
+<div class="address-details ms-4 me-4 mt-3">
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label class="Lato-Regular">Cutomer Name</mat-label>
+            <input type="text" [(ngModel)]="user.cutomerName" #cutomerName="ngModel" maxlength="50" matInput pattern="^[a-zA-Z]+$"  placeholder="Cutomer Name" name="cutomerName"
+               required>
+          </mat-form-field>
+          <!-- <div *ngIf="(cutomerName?.dirty || cutomerName?.touched)" class="error"> -->
+            <div *ngIf="isValidFormSubmitted && cutomerName.errors?.['required']" class="error">
+              Customer Name is required
+            </div>
+            <div *ngIf="isValidFormSubmitted && cutomerName.errors?.['maxlength']"  class="error">
+              Customer Name Minimum Length is {{cutomerName.errors?.['maxlength']?.requiredLength}}
+            </div>
+            <div *ngIf="isValidFormSubmitted && cutomerName.errors?.['pattern']"  class="error">
+              Only characters are allowed
+            </div>
+          <!-- </div> -->
+    </div>
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label class="Lato-Regular">Consumer Phone No.</mat-label>
+            <input type="number" onKeyPress="if(this.value.length==10) return false;" [(ngModel)]="user.customerContactNo"  matInput #customerContactNo="ngModel" onKeyPress="if(this.value.length==10) return false;"  placeholder="Enter Consumer Phone No." name="customerContactNo"
+               required>
+          </mat-form-field>
+          <div *ngIf="isValidFormSubmitted && customerContactNo.errors?.['required']" class="error">
+            Consumer Phone No. is required
+          </div>
+          <div *ngIf="isValidFormSubmitted && user.customerContactNo.toString().length<10" class="error">
+            Consumer Phone No. should be 10 digits
+          </div>
+          
+    </div>
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label class="Lato-Regular">Alternate Contact No.</mat-label>
+            <input type="number" onKeyPress="if(this.value.length==10) return false;" [(ngModel)]="user.customerAlternateNo" matInput #customerAlternateNo="ngModel"  placeholder="Alternate Contact No." name="customerAlternateNo"
+               required>
+          </mat-form-field>
+          <div *ngIf="isValidFormSubmitted && customerAlternateNo.errors?.['required']" class="error">
+            Alternate Contact No. is required
+          </div>
+          <div *ngIf="isValidFormSubmitted && user.customerAlternateNo.toString().length<10" class="error">
+            Alternate Contact No. should be 10 digits
+          </div>
+    </div>
+    <!-- <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label class="Lato-Regular">Address.</mat-label>
+            <input type="text" [(ngModel)]="user.Address" matInput #Address="ngModel"  placeholder="Address" name="Address"
+               required>
+          </mat-form-field>
+    </div> -->
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label class="Lato-Regular">Locality or Landmark</mat-label>
+            <input type="text" [(ngModel)]="user.locality" matInput #locality="ngModel"  placeholder="Locality or Landmark" name="locality"
+               required>
+          </mat-form-field>
+    </div>
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label > State </mat-label>
+            <mat-select placeholder="Select Sate" [(ngModel)]="user.state" #state="ngModel" name="state" (selectionChange)="onStateChange($event)" required>
+                <mat-option *ngFor="let st of stateList" [value]="st.StateID">
+                  {{st.StateName}}
+                </mat-option>
+              </mat-select>         
+          </mat-form-field>
+    </div>
+
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label > City </mat-label>
+            <mat-select placeholder="Select City"  #city="ngModel" name="city" [(ngModel)]="user.city" required>
+                <mat-option *ngFor="let ct of cityList" [value]="ct.CityCode">
+                  {{ct.CityName}}
+                </mat-option>
+              </mat-select>         
+          </mat-form-field>
+    </div>
+    
+
+    
+    <div class="pt-1 flex-fill">
+        <mat-form-field appearance="outline" floatLabel="always">
+            <mat-label class="Lato-Regular">Address</mat-label>
+            <input type="text" matInput  placeholder="Enter Address" #address="ngModel" name="address" [(ngModel)]="user.address" name="address"
+               required>
+          </mat-form-field>
+    </div>
+    <div class="pb-1 pt-2 verify"><button type="submit" class="btn  btn-darkBlue"  >{{'submit' | translate }}</button></div>
+    <div class="d-flex pt-2 pb-2 justify-content-center msgInstall">
+        * Installation to be done at customer premises only
+
+    </div>
+</div>
+</form>
+</div>
+
+
+

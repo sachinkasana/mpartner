@@ -1,0 +1,111 @@
+<app-banner-navigate class="transferMobile">
+  <div class="d-flex ms-3 mt-2 navBack align-items-center" (click)="gotoBack()"><span class="me-2">
+      <mat-icon class="">arrow_back</mat-icon>
+    </span> Transfer Points</div>
+</app-banner-navigate>
+<!-- <app-banner-navigate>
+    <div class="d-flex ms-3 mt-2 navBack" ><span class="me-2">
+            <mat-icon class="">arrow_back</mat-icon>
+        </span>   </div>
+</app-banner-navigate> -->
+<div class="d-flex eWar  warranty-header-web transferWeb">
+  <div class="web-header-title">
+      <span class="me-2 navBackWeb" (click)="gotoBack()" >
+          <mat-icon class="">arrow_back</mat-icon>
+      </span>  Transfer Points
+  </div>
+
+</div>
+
+<div class="transfer-main">
+  <div class="d-flex p-2 mb-3 from">
+    <div class="p-2 flex-fill">
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label>From </mat-label>
+        <mat-select placeholder="Select From" required (selectionChange)="onFromModeChange($event)">
+          <mat-option *ngFor="let mode of transferModes" [value]="mode.id">
+            {{mode.title}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <ng-container *ngIf="showPointsInput">
+    <div class="d-flex p-2 ps-4 LatoRegularFnt-0_8 points">
+      Available Points: {{availablePoints}}
+    </div>
+
+    <div class="d-flex p-2 mb-3 from">
+      <div class="p-2 flex-fill center">
+        <mat-form-field appearance="outline" floatLabel="always">
+          <mat-label> Points </mat-label>
+          <input type="number" [(ngModel)]="inputPoints" matInput placeholder="Enter Points" name="points" required>
+        </mat-form-field>
+      </div>
+    </div>
+  </ng-container>
+
+
+
+  <div class="d-flex p-2 mb-3 to">
+    <div class="p-2 flex-fill ">
+
+      <mat-form-field appearance="outline" floatLabel="always">
+        <mat-label> To </mat-label>
+        <mat-select placeholder="Select To" required (selectionChange)="onToModeChange($event)">
+          <mat-option *ngFor="let mode of toTranferModes" [value]="mode.id">
+            {{mode.title}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+  </div>
+
+
+
+  <div class="p-2 transferDiv">
+    <div class="p-3 flex-fill">
+      <button (click)="submit()" class="btn btn-darkBlue">TRANSFER POINTS</button>
+
+    </div>
+  </div>
+  <div class="d-flex p-4 flex-fill fnt-1 justify-content-center ">
+
+
+    <p class="msg text-center LatoRegular"> *It will take 2-3 days to verify and complete the transfer .During verification period no transaction will happen
+    </p>
+
+  </div>
+
+
+</div>
+
+<!-- confirm transfer popup start -->
+<app-popup *ngIf="false">
+  <div class="d-flex p-2 ps-1 txt-black">
+    Convert From: <span class="ml-2"><b>Gift Vouchers</b></span>
+  </div>
+  <div class="d-flex p-2 txt-black">
+    Convert To: <span class="ml-2"><b>Paytm Wallet</b> </span>
+  </div>
+  <div class="d-flex p-2 txt-black">
+    Available Points: <span class="ml-2"><b>2000</b> </span>
+  </div>
+
+
+  <div class="d-flex p-2 txt-black">
+    Transfer Points:<span class="ml-2"><b>2000</b></span>
+  </div>
+  <div class="d-flex p-2 txt-black">
+    It will take 2-3 days
+  </div>
+
+
+  <div class="p-3 transferSubmitDiv"><button class="btn transfer-btn-submit">{{'submit' | translate }}</button></div>
+
+
+</app-popup>
+
+<!-- confirm transfer popup end -->

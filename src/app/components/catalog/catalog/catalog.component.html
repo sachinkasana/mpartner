@@ -1,0 +1,57 @@
+<app-banner-navigate class="catalogMobile">
+  <div class="d-flex  catalog-header">
+    <div class="p-3 LatoBoldWhite-3 pb-0">Catalog</div>
+    <div class="ms-auto catalog-header-image pe-4">
+      <a (click)="openPdf(inbt.url)"><img src="../../../../assets/pdfbluesvg.svg" alt=""></a>
+    </div>
+  </div>
+</app-banner-navigate>
+<div class="d-flex eWar  warranty-header-web catalogWeb">
+  <div class="web-header-title">
+    Catalog
+  </div>
+  <div class="ms-auto catalog-header-image pe-4">
+    <a (click)="openPdf(inbt.url)"><img src="../../../../assets/catalogwebheaderpdf.svg" alt=""></a>
+  </div>
+</div>
+<div class="categoryWeb">
+  <div class="d-flex category " *ngIf="inbt.id || solar.id">
+    <div [ngClass]="category=='INBT'?'grid2ColActive':'grid2Col'" name="inbt" [(ngModel)]="inbt.id" (click)="onCategoryClick(inbt.id,'INBT')" ngDefaultControl
+      class="p-3   ">INBT CATALOG</div>
+    <div [ngClass]="category=='Solar'?'grid2ColActive':'grid2Col'" name="solar" [(ngModel)]="solar.id" (click)="onCategoryClick(solar.id,'Solar')" ngDefaultControl
+      class="p-3 ">SOLAR CATALOG</div>
+  </div>
+  <app-catalog-products [catalogProducts]="catalog_menu" class="catalogWeb"></app-catalog-products>
+
+</div>
+
+
+<app-catalog-products [catalogProducts]="catalog_menu" class="categoryMobile"></app-catalog-products>
+
+
+<div class="d-flex category categoryMobile" *ngIf="inbt.id || solar.id">
+  <div [ngClass]="category=='INBT'?'grid2ColActive':'grid2Col'" name="inbt" [(ngModel)]="inbt.id" (click)="onCategoryClick(inbt.id,'INBT')" ngDefaultControl
+    class="p-3   ">INBT CATALOG</div>
+  <div [ngClass]="category=='Solar'?'grid2ColActive':'grid2Col'" name="solar" [(ngModel)]="solar.id" (click)="onCategoryClick(solar.id,'Solar')" ngDefaultControl
+    class="p-3 ">SOLAR CATALOG</div>
+</div>
+
+<app-pdf-viewer-popup *ngIf="showPdf" (popupClose)="hidePdf()" [dowloadUrl]="pdfUrl" (sharePdf)="sharePdf()">
+  <pdf-viewer [src]="pdfUrl" [rotation]="0" [original-size]="false" [show-all]="true" [fit-to-page]="false" [zoom]="1"
+    [zoom-scale]="'page-width'" [stick-to-page]="false" [render-text]="true" [external-link-target]="'blank'"
+    [autoresize]="true" [show-borders]="false" style="width: 100%; height: 600px;"></pdf-viewer>
+
+</app-pdf-viewer-popup>
+
+<app-popup *ngIf="showSharePdf" (popupClose)="sharePdf()" [sharePdf]=true>
+  <div class="d-flex justify-content-center"><span class="shareLineBox"></span></div>
+  <div class="sharePopTitle">Share</div>
+  <div class="sharePopUrl">{{pdfUrl}}</div>
+
+  <share-buttons theme="modern-dark" 
+  [include]="['facebook','twitter','linkedin','pinterest','reddit','tumblr','mix','viber','vk','telegram','messenger','whatsapp','xing','line','sms','email','print','copy']"
+  [show]="5"
+  [showText]="true"
+  [url]="pdfUrl"
+ ></share-buttons>
+</app-popup>

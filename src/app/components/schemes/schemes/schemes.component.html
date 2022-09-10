@@ -1,0 +1,55 @@
+<div class="d-flex eWar  warranty-header-web schemesWeb">
+  <div class="web-header-title">
+      Schemes
+  </div>
+
+</div>
+<div class="categoryWeb">
+  <div class="d-flex category " *ngIf="storageService.getItem('userType')=='DISTY'">
+    <div class="p-3  " [ngClass]="selectedUser=='DEALER'?'grid2ColActive':'grid2Col'" (click)="onTabChange('DEALER')">DEALER</div>
+    <div class="p-3 " [ngClass]="selectedUser=='DISTY'?'grid2ColActive':'grid2Col'" (click)="onTabChange('DISTY')">DISTRIBUTOR</div>
+  </div>
+</div>
+
+<div class="schemes-main">
+    <div class="d-flex flex-wrap mb-1 schemes-card ">
+        <div *ngFor="let schemes of schemeList" class="schemes-card-image" (click)="openPdf(schemes.card_action)"><img src="{{schemes?.main_image}}" alt="">
+            <div class="LatoBoldFnt-0_8"><b>{{schemes?.title}}</b> </div>
+            <div class="LatoRegularGrey">{{schemes?.sub_title}} </div>   
+        </div>
+      </div>
+</div>
+  <div class="d-flex category categoryMobile" *ngIf="storageService.getItem('userType')=='DISTY'">
+    <div class="p-3  " [ngClass]="selectedUser=='DEALER'?'grid2ColActive':'grid2Col'" (click)="onTabChange('DEALER')">DEALER</div>
+    <div class="p-3 " [ngClass]="selectedUser=='DISTY'?'grid2ColActive':'grid2Col'" (click)="onTabChange('DISTY')">DISTRIBUTOR</div>
+  </div>
+
+  <app-pdf-viewer-popup  *ngIf="showPdf" (popupClose)="hidePdf()" [dowloadUrl]="pdfUrl" (sharePdf)="sharePdf()">
+    <pdf-viewer
+    [src]="pdfUrl"
+    [rotation]="0"
+    [original-size]="false"
+    [show-all]="true"
+    [fit-to-page]="false"
+    [zoom]="1"
+    [zoom-scale]="'page-width'"
+    [stick-to-page]="false"
+    [render-text]="true"
+    [external-link-target]="'blank'"
+    [autoresize]="true"
+    [show-borders]="false"
+    style="width: 100%; height: 600px;"
+  ></pdf-viewer>
+     </app-pdf-viewer-popup>
+
+     <app-popup *ngIf="showSharePdf" (popupClose)="sharePdf()" [sharePdf]=true>
+      <div class="d-flex justify-content-center"><span class="shareLineBox"></span></div>
+      <div class="sharePopTitle">Share</div>
+      <div class="sharePopUrl">{{pdfUrl}}</div>
+      <share-buttons theme="modern-dark" 
+      [include]="['facebook','twitter','linkedin','pinterest','reddit','tumblr','mix','viber','vk','telegram','messenger','whatsapp','xing','line','sms','email','print','copy']"
+      [show]="5"
+      [showText]="true"
+      [url]="pdfUrl"
+     ></share-buttons>
+    </app-popup>

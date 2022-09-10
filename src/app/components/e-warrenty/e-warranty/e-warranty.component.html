@@ -1,0 +1,263 @@
+<div class="main">
+    <div class="d-flex eWar justify-content-center p-4 warranty-header-mobile">
+        <img src="../../assets/eawrrantyimage.png" alt="" (click)="scanQR()">
+    </div>
+    <div class="d-flex eWar   pt-2 pb-2 warranty-header-web">
+        <div class="web-header-title">
+            eWarranty
+        </div>
+        <div class="web-header-col-2">
+            <img src="../../assets/eawrrantyimage.png" alt="" (click)="scanQR()">
+
+        </div>
+    </div>
+    <div class="carousCust">
+        <app-carousel [bannerCardsList]=bannerData></app-carousel>
+
+    </div>
+    <div class="d-flex ps-4 pt-2 pb-2">
+        <span class="LatoBoldBlue-3">{{pointsData?.data[0].title}}</span>
+    </div>
+<div class="web-container">    
+    
+
+         <ng-container *ngIf="pointsData">
+            
+            
+            <!-- <div class="webCol">
+                <div class="warranty-points">
+                    <div class="d-flex ps-4 pt-2 pb-2">
+                        <span class="LatoBoldBlue-3">{{pointsData.data[0].title}}</span>
+                    </div>
+                    <div class="d-flex mb-3 warranty-points-card  m-3">
+                        <div class="p-1 flex-fill earned">
+                            <div class="txt txtPoints mt-2 mb-1">{{pointsData.data[0].earnedPoints}}</div>
+                            <div class="txt Lato-Regular fnt0_8 p0_6">Earned Points</div>
+                            <div class="txt Lato-Regular fnt-1 p0_6">{{pointsData.statusTitle}} {{pointsData.data[0].oldEarnedPointsDate}}</div>
+                        </div>
+                        <div class="p-1 flex-fill redeemed">
+                            <div class="txt txtPoints  mt-2 mb-1">{{pointsData.data[0].redeemedPoints}}</div>
+                            <div class="txt Lato-Regular fnt0_8 p0_6">Redeemed Points</div>
+                            <div class="txt Lato-Regular fnt-1 p0_6">{{pointsData.statusTitle}} {{pointsData.data[0].oldRedeemedPointDate}}</div>
+                        </div>
+                        <div class="p-1 flex-fill  redeemable">
+                            <div class="txt txtPoints  mt-2 mb-1">{{pointsData.data[0].redeemablePoints}}</div>
+                            <div class="txt Lato-Regular fnt0_8 p0_6">Redeemable Points</div>
+                            <div class="txt Lato-Regular fnt-1 p0_6">{{pointsData.statusTitle}} {{pointsData.data[0].oldRedeemablePointDate}}</div>
+                        </div>
+            
+                      </div>
+                </div>
+            </div> -->
+            
+            <div class="webCol pad">
+                
+                <div class="LatoRegularBlue-3 mb-3 ps-3 pe-3">PayTM/PINELAB Wallet</div>
+                <div class="d-flex  p-2 irredeemable-main pt-irr-web">
+                    <div class="p-3 flex-fill ireedeemablePoints ms-2 me-2">
+                            Account Balance: <span  class="Lato-Black fnt1_25">{{pointsData?.data[0].redeemablePoints}}</span>
+                            <div class="p-3  dealerOptions redeemNow" [ngClass]="(allocatedPoints.paytm_status === 'PENDING' )? 'greyBck' : ''" (click)="redeemPoints()">Redeem Now </div> 
+                    </div>
+                </div>
+                <div class="d-flex  p-2 irredeemable-main">
+                    <div class="p-3 flex-fill underVerificationPoints ms-2 me-2 ">
+                            Points Earned: <span class="Lato-Black fnt1_25">{{pointsData?.data[0].totalIrredeemable}}</span> 
+                    </div>
+                </div>
+                <div class="d-flex p-2 pt-1 redeemable-main" *ngIf="this.allocatedPoints">
+                    <div class="p-3 flex-fill  redeemablePoints ms-2 me-2 pe-2">
+                            Under Verification Points: <span class="Lato-Black fnt1_25"> {{pointsData?.data[0]?.pointUnderVerification}} </span>
+                    </div>
+                </div>
+                 <!-- <div class="m-5 mt-1 mb-2 d-flex justify-content-center transfer_msg center text-center">{{this.allocatedPoints.transfer_msg}}</div> -->
+                 
+            </div>
+
+            <div class="webCol pad" *ngIf="pointsData.isscheme_trip == 'yes'">
+                <div class="LatoRegularBlue-3 mb-3 ps-3 pe-3">Trip Scheme Earning Details</div>
+
+                <div class="d-flex  p-2 irredeemable-main pt-irr-web">
+                    <div class="p-3 flex-fill ireedeemablePoints ms-2 me-2">
+                            Account Balance: <span  class="Lato-Black fnt1_25">{{pointsData?.data[0].redeemablePoints}}</span>
+                            <div class="p-3  dealerOptions tripDetails" (click)="getTripDetails()">Trip Details</div>
+                    </div>
+                </div>
+                <div class="d-flex  p-2 irredeemable-main">
+                    <div class="p-3 flex-fill underVerificationPoints ms-2 me-2 ">
+                            Points Earned: <span class="Lato-Black fnt1_25">{{pointsData?.data[0].totalRedeemable}}</span> 
+                    </div>
+                </div>
+                <div class="d-flex p-2 pt-1 redeemable-main" *ngIf="this.allocatedPoints">
+                    <div class="p-3 flex-fill  redeemablePoints ms-2 me-2 pe-2">
+                            Under Verification Points: <span class="Lato-Black fnt1_25"> {{pointsData?.data[0].pointUnderVerification}} </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dealerOptionsWeb">
+                <div class="d-flex p-3 justify-content-center" (click)="dealerOptions()">
+                    <div class="p-3  dealerOptions">DEALER OPTIONS <span class="ms-1"><img src="../../assets/rightArrow.png" alt=""></span></div>
+                    <!-- <div class="p-3 flex-fill rewards" [routerLink]="['rewards']">REWARDS <span class="ms-1"><img src="../../assets/rightArrow.png" alt=""></span></div> -->
+            
+                </div>
+            </div>
+            
+        </ng-container>
+     
+     
+
+    <div class="webCol">
+        <div class="reportMain pb-3 p-2">
+            <div class="d-flex rptBorder">
+                <div class="p-2 ps-3 flex-grow-1 LatoBoldBlue-3">Report</div>
+                <div class="p-2 reprtsDownload me-2 mt-1" (click)="downloadReport()">Report <img class="ms-1" src="./../../assets/downloadRed.png" alt=""></div>
+                <!-- <div class="p-2 rewardsDownload me-2 mt-1 ">Rewards<img class="ms-1" src="./../../assets/downloadRed.png" alt=""></div> -->
+        
+        
+            </div>
+            <div class="table ms-3">
+                <div class="d-flex bb">
+                    <div class="p-2 ps-3 flex-fill rprtHeader">Product</div>
+                    <div class="p-2 flex-fill rprtHeader text-center">Accepted</div>
+                    <div class="p-2 flex-fill rprtHeader text-center">Rejected</div>
+                    <div class="p-2 flex-fill rprtHeader text-center  ">Total Points</div>
+                    <div class="p-2 flex-fill rprtHeader text-center">Total Card</div>
+        
+            
+                </div>
+                <div class="d-flex bb" *ngFor="let rd of reportCardData">
+                    <div class="p-2 tblcol ps-3 flex-fill LatoRegularFnt-0_8 colProduct">{{rd.Product}}</div>
+                    <div class="p-2 tblcol flex-fill LatoRegularFnt-0_8 text-center">{{rd.Accepted}}</div>
+                    <div class="p-2 tblcol flex-fill LatoRegularFnt-0_8 text-center">{{rd.Rejected}}</div>
+                    <div class="p-2 tblcol flex-fill LatoRegularFnt-0_8 text-center">{{rd.Total_Point}}</div>
+                    <div class="p-2 tblcol flex-fill LatoRegularFnt-0_8 text-center">{{rd.Total_Card}}</div>
+        
+            
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    
+    
+    <div class="webCol">
+        <div class="d-flex">
+            <div class="p-3 d-flex cardRejHeader flex-fill">
+                CARD REJECTION RATE COMPARISON
+            </div> 
+        </div>
+    
+        <div #progress class="d-flex progress-main">
+            <div class="indiaProgress ">
+                <circle-progress
+      [percent]="indiaProgress"
+      [radius]="60"
+      [outerStrokeWidth]="10"
+      [innerStrokeWidth]="10"
+      [outerStrokeColor]="'#fdcb00'"
+      [innerStrokeColor]="'#667084'"
+      [animation]="true"
+      [animationDuration]="300"
+      [showTitle]=true
+      [showSubtitle]=false
+      [showZeroOuterStroke]=true
+      [showInnerStroke]=true
+      [responsive]=false
+      [titleColor]="'#fdcb00'"
+      [renderOnClick]=true
+      [imageWidth]="setHeight()"
+        [titleFormat]="formatTitle"  
+      [imageHeight]="40"
+      
+    ></circle-progress>
+    <div class="d-flex justify-center-white progressTitle ms-1">India</div>
+            </div> 
+            <div class="myProgress ">
+                <circle-progress
+      [percent]="myProgress"
+      [radius]="60"
+      [outerStrokeWidth]="10"
+      [innerStrokeWidth]="10"
+      [outerStrokeColor]="'#fdcb00'"
+      [innerStrokeColor]="'#667084'"
+      [animation]="true"
+      [animationDuration]="300"
+      [showTitle]=true
+      [showSubtitle]=false
+      [showZeroOuterStroke]=true
+      [showInnerStroke]=true
+      [responsive]=false
+      [titleColor]="'#fdcb00'"
+      [renderOnClick]=true
+      [imageWidth]="100"
+        [titleFormat]="formatTitle"  
+      
+      
+    ></circle-progress>
+    <div class="d-flex justify-center-white progressTitle ms-1">My</div>
+            </div> 
+        </div>
+    
+    </div>
+
+    
+    <div class="webCol">
+            <div class="p-2 pt-3 submitDiv getAssist-web"><button  class="btn btn-darkBlue getAssist-web-bg">Get Assist</button></div>
+
+        <div class="d-flex p-2 flex-fill msg">
+
+            <!-- Warranty verfication code has been sent to customer mobile no. to register the
+                purchased product for E-Warranty -->
+            <div [innerHtml]="tAndC"></div> 
+            
+        </div>
+    </div>
+     
+</div>
+</div>
+
+<app-popup *ngIf="showScanWarrantyPopup"  (popupClose)="closeScannerPopup()">
+    <div class="d-flex mobile-main">
+        <div class="p-2 flex-fill mobileNo">
+            <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label>Customer Mobile Number </mat-label>
+                <input type="number" [(ngModel)]="mobile" onKeyPress="if(this.value.length==10) return false;" matInput placeholder="Customer Mobile Number" name="mobile"
+                   required>
+              </mat-form-field>
+             
+        </div>
+        
+    </div>
+    <div *ngIf="formValid && !mobile" class="error custErr">
+        Customer Mobile Number is required
+      </div>
+      <div *ngIf="formValid && mobile && mobile.toString().length<10" class="error custErr">
+        Customer Mobile Number should be 10 digits
+      </div>
+    <div class="d-flex ">
+        <div class="p-2 flex-fill  saleDate">
+            <mat-form-field appearance="outline" floatLabel="always">
+                <mat-label> {{'saleDate' | translate }} </mat-label>
+                <input matInput [matDatepicker]="dp" [min]="minDate1" [max]="maxSaleDate" [(ngModel)]="saleDateInput" [placeholder]="'enterSaleDate' | translate" name="saleDate"
+                   required>
+                   <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                   <mat-datepicker #dp></mat-datepicker>
+              </mat-form-field>            
+        </div>
+    </div>
+    <div class="p-2 submitDiv"><button  (click)="submitSaleDate()" class="btn btn-darkBlue">{{'submit' | translate }}</button></div>    
+</app-popup>
+
+<app-popup [disclaimerFlag]=true  [footerFlag]=true>
+    <div class="p-3 pb-0 pt-0">
+        <div class="d-flex">
+            <div class="warningBg"><mat-icon>warning</mat-icon></div>
+            <div class="disclaimerTitle"><span>Disclaimer</span></div>
+        </div>
+        <div class="disclaimerMsg">Points in eWarranty report are subject to change. Points will be deducted if Customer
+            details are found inaccurate in the verfication.
+        </div>
+    </div>
+</app-popup>
+
+

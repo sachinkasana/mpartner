@@ -1,0 +1,104 @@
+<app-banner-navigate class="consumerDetailMobile">
+    <div class="d-flex p-3 pb-0 navBack"><span class="me-2" [routerLink]="['/dashboard/e-warranty']"  ><mat-icon class="">arrow_back</mat-icon></span></div>
+</app-banner-navigate>
+<div class="d-flex eWar  warranty-header-web consumerDetailWeb">
+    <div class="web-header-title">
+        eWarranty
+    </div>
+    <div class="web-header-col-2">
+        <div>
+            <img src="../../../../assets/qrsm.png" alt="" (click)="openQRCode()">
+            <span class=" qrTxt mb-4">
+                Scan QR Code
+            </span>
+
+        </div>
+        
+
+    </div>
+  </div>
+<div class="main">
+    <div class="address-details ms-5 me-5 mt-3">
+        <div class="pt-1 flex-fill LatoBoldBlue-3">
+            Enter customer details
+        </div>
+        <div class="pt-1 pb-3 flex-fill">
+            <span class="mandatory">*</span> <span class="required">Required</span> 
+        </div>
+        <div class="web-container">
+            
+                <div class="webCol pt-1 flex-fill">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label class="Lato-Regular">Full name</mat-label>
+                        <input type="text" [(ngModel)]="user.name" matInput  placeholder="Enter Name" name="fullName"
+                           required>
+                      </mat-form-field>
+                      <div *ngIf="!user.name && !validForm" class="error">
+                        Please enter name.
+                      </div>
+                </div>
+                <div class="webCol pt-1 flex-fill">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label class="Lato-Regular">Landline No.</mat-label>
+                        <input type="number" [(ngModel)]="user.landline" onKeyPress="if(this.value.length==9) return false;" matInput  placeholder="Enter Landline No." name="landline"
+                           required>
+                      </mat-form-field>
+                      <div *ngIf="!user.landline && !validForm" class="error">
+                        Please enter landline number.
+                      </div>
+                </div>
+                
+                <div class="webCol pt-1 flex-fill">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label > State </mat-label>
+                        <mat-select placeholder="Select Sate" (selectionChange)="onStateChange($event)" required>
+                            <mat-option *ngFor="let st of stateList" [value]="st.StateID">
+                              {{st.StateName}}
+                            </mat-option>
+                          </mat-select>         
+                      </mat-form-field>
+                      <div *ngIf="!user.state && !validForm" class="error">
+                        Please select state.
+                      </div>
+                </div>
+        
+                <div class="webCol pt-1 flex-fill">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label > City </mat-label>
+                        <mat-select placeholder="Select City" [(ngModel)]="user.city" required>
+                            <mat-option *ngFor="let ct of cityList" [value]="ct.CityName">
+                              {{ct.CityName}}
+                            </mat-option>
+                          </mat-select>         
+                      </mat-form-field>
+                      <div *ngIf="!user.city && !validForm" class="error">
+                        Please select city.
+                      </div>
+                </div>
+                
+        
+                
+                <div class="webCol pt-1 flex-fill">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label class="Lato-Regular">Address</mat-label>
+                        <input type="text" matInput  placeholder="Enter Address" [(ngModel)]="user.address" name="address"
+                           required>
+                      </mat-form-field>
+                      <div *ngIf="!user.address && !validForm" class="error">
+                        Please enter address.
+                      </div>
+                </div>
+        
+                <div class="webCol pb-5 pt-2 verify">
+                    <button class="btn  btn-darkBlue" (click)="submit()"  >{{'submit' | translate }}</button>
+                </div>
+        </div>
+        
+    
+            
+            
+    </div>
+</div>
+
+
+

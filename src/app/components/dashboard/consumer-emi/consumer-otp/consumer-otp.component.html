@@ -1,0 +1,58 @@
+<app-banner-navigate class="consumerPhoneMobile">
+    <div class="d-flex p-3 navBack"><span class="me-2"><mat-icon class="">arrow_back</mat-icon></span>  Consumer EMI</div>
+</app-banner-navigate>
+
+<!-- Consumer EMI Request start -->
+<div class="d-flex eWar  warranty-header-web consumerPhoneWeb">
+    <div class="web-header-title">
+        Consumer EMI
+    </div>
+     
+  </div>
+
+  <div class="web-container">
+    <div>
+        <div class="d-flex ps-3 pb-1 pt-0 pe-0 consumer-main">
+            <div class="p-1 darkBlueFnt consumerTitle flex-fill">
+                Consumer EMI Request 
+            </div>
+            <div class="ps-3 pb-1 pt-0 pe-0 logo">
+                <img  src="../../assets/HDFC-Bank.png" alt="">
+            </div>
+        </div>
+        <div class="d-flex ps-3 pb-1 pt-0 pe-0   consumer-main">
+            <div class="p-1  flex-fill msgTxt">
+                Luminous offers attractive Consumer finance offers with HDFC Bank. Fill request form to avail offer.
+            </div>
+             
+        </div>
+        <div class="web-container-row">
+            <div class="d-flex ps-3 pb-1 pt-0 pe-3  phoneNo-main webCol1">
+                <div class="p-1 flex-fill">
+                    <mat-form-field appearance="outline" floatLabel="always">
+                        <mat-label>OTP</mat-label>
+                        <input type="tel" onKeyPress="if(this.value.length==6) return false;" [(ngModel)]="otp" matInput placeholder="Enter OTP" name="otp"
+                   required>
+                      </mat-form-field>
+                      <div *ngIf="verifyDisabled && !otp" class="error">
+                        <div>Please Enter OTP</div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="ps-3 pb-1 pt-0 pe-3 verify webCol2"><button class="btn  btn-darkBlue" (click)="next()">Next</button></div>
+            
+        </div>
+       
+        <div class="d-flex ps-3 pb-1 pt-1 pe-3  offer-main">
+            <div class="d-flex flex-fill" >
+                <img src="../../assets/sideDrawer.png" alt="">
+            </div>
+            
+            
+        </div>
+    
+    </div>
+  </div>
+ 

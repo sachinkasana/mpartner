@@ -1,0 +1,247 @@
+.category{
+    height: 2.6rem;
+    width: 100vw;
+}
+.bhmr-main{
+    height: calc(100vh - 10.75rem);
+    overflow: auto;
+}
+.image-wrapper .bg-img-1{
+     background-size: 100% 100%;
+    height: 50px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.image-wrapper .bg-img-2{
+    width: 100%;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.img-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+}
+
+.pdf-main{
+    border: 1px solid #000;
+    border-radius: 3px;
+    padding: 0.75rem;
+}
+
+.pdf-image,.share-image{
+    width:1.71875rem;
+    height:1.6875rem ;
+}
+
+.pdf-name{
+    flex:6;
+    font-family: 'LatoRegular';
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+.pdf-open,.pdf-download,.pdf-share{
+flex: 1;
+}
+
+
+.collectionCenterBg{
+    background:#d1e3e7;
+    height: calc(100vh - 9.75rem);
+    overflow: auto;
+}
+
+.searchBg{
+    background:#efeeee;
+    border-radius: 5px;
+}
+
+.collectionTitle{
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: 'LatoBold';
+    font-size: 1rem;
+    color: #000;
+}
+
+
+.state,.city{
+    width: 47%;
+}
+
+.state .mat-form-field,.city .mat-form-field{
+    width: 88%;
+}
+
+.collection-details{
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.search-details{
+    background:white;
+}
+
+.state-det,.city-det{
+flex: 1;
+}
+
+.address,.district,.state-det,.city-det{
+    font-family: 'LatoRegular';
+}
+
+.mobNo{
+    color:blueviolet;
+    font-family: LatoBold;
+}
+
+@media(max-width:799px){
+    .mobileBg{
+        display: block;
+    }
+    .webBg{
+      display: none !important  
+    }
+
+    .pdf-mobile-icon{
+        display: block;
+    }
+
+    .pdf-web-icon{
+        display: none !important;
+    }
+}
+@media(min-width:800px){
+
+    .category{
+        width: calc(100% - 2rem);
+        margin-left: 1rem;
+        margin-right: 1rem;
+        border-bottom: 1px solid #dbdbdb;
+    }
+
+    .grid2ColActive{
+        background: white;
+        color: #000;
+        font-family: 'LatoBold';
+        font-size: 0.875rem;
+        border-bottom: 3px solid #4a90e2;  
+        flex-basis: 25%;
+    }
+
+    .collectionActive{
+        background: white;
+        color: #000;
+        font-family: 'LatoBold';
+        font-size: 0.875rem;
+        flex-basis: 25%;
+
+    }
+
+
+    .mobileBg{
+        display: none !important;
+    }
+
+    .webBg{
+        display: block;  
+      }
+
+      .image-wrapper .bg-img-2{
+          margin-bottom: 1.5rem;
+      }
+     
+      .pdf-main{
+        border: none;
+        border-bottom: 1px solid #dbdbdb;
+        border-radius: 0;
+      }
+   
+      .pdf-mobile-icon{
+          display: none;
+      }
+
+      .pdf-web-icon{
+        display: block;
+    }
+
+
+    .pdf-open,.pdf-download,.pdf-share{
+        flex: 0.5;
+        }
+
+        .pdf-image{
+            width: 22px;
+            height: 12px;
+        }
+
+        .webDownloadImg{
+            width: 24px;
+            height: 22px;
+        }
+      
+        .pdf-open{
+            display: flex;
+            align-items: center;
+        }
+
+        .share-image{
+            width: 26px;
+            height: 28px;
+        }
+
+        .collectionCenterBg{
+            background: white;
+        }
+
+        .collectionTitle{
+            text-align: start;
+            padding-left: 1rem;
+            font-family: 'LatoBold';
+            font-size: 17px;
+            color: #224098;
+        }
+
+        .searchBg{
+            background: white;
+        }
+
+        .state{
+            margin-left: 0.75rem !important;
+        }
+
+        .search-details{
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .collection-details{
+            flex: 50%;
+            max-width: 45%;
+            margin-right: 0.875rem;
+            margin-left: 1rem;
+            border: 1px solid #cdcdcd;
+        }
+
+        .webNo{
+            font-family: 'LatoBold';
+            color: #000;
+        }
+
+
+        .mobNo{
+            color: #000;
+        }
+
+        .mobile-location-icon{
+            display: none!important;
+        }
+}
+
+
+

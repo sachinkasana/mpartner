@@ -1,0 +1,328 @@
+@import'./../solar-style.css';
+
+.applianceLblTxt{
+    color: #2b72bd;
+    font-size:1rem ;
+    font-family: LatoRegular;
+}
+
+.appliance .mat-form-field{
+
+    width: 100%;
+}
+
+.btn-add{
+    width: 100%;
+    background: #5291ee;
+    font-family: 'LatoBold';
+    font-size: 1rem;
+    border-radius: 21px;
+    color: white;
+
+}
+
+.btn-next{
+    background: #5291ee;
+    font-family: 'LatoBold';
+    font-size: 1rem;
+    border-radius: 21px;
+    color: white;
+    width: 50%;
+    
+    
+}
+
+
+.example-container {
+    height:calc(100vh - 13rem);;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+  }
+  
+  th.mat-column-position, td.mat-column-position {
+    padding-left: 8px;
+  }
+  
+  .mat-table-sticky-border-elem-right {
+    border-left: 1px solid #e0e0e0;
+  }
+  
+  .mat-table-sticky-border-elem-left {
+    border-right: 1px solid #e0e0e0;
+  }
+  .main-container{
+    position: relative;
+    top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+   
+
+ 
+tr.mat-header-row{
+  height: 2.0625rem !important;
+}
+
+tr.mat-row{
+  height: 2.0625rem !important;
+}
+
+.mat-header-cell{
+  font-family: LATOBOLD;
+  font-size: 0.8125rem;
+   color: #000;
+}
+
+
+.mat-cell{
+  font-family: 'LatoRegular';
+  font-size: 0.75rem;
+  color: #000;
+  border-bottom: 3px solid #992901;
+}
+
+
+.mat-table-sticky-border-elem-left {
+  border-right: none;
+}
+
+.add-table-container{
+
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    margin-bottom: 3rem;
+}
+
+@media(max-width:799px){
+    .w-40{
+        width: 40%;
+    }
+    .plus,.minus,.qty{
+        flex: 1;
+        border: 1px solid #979797;
+        text-align: center;
+        border-radius: 5px;
+        color: #000;
+        font-family: LatoBold;
+        font-size: 1rem;
+    }
+     
+    .plus{
+        border-left: none;
+    }
+    .minus{
+        border-right:none;
+    }
+
+    .wattge,.delete{
+        flex: 1;
+    }
+    .wattge{
+        text-align: center;
+        font-family: 'LatoBold';
+    }
+    .delete{
+        text-align: end;
+    }
+
+    .delete img{
+        width: 11px;
+        height: 11px;
+    }
+    .totalWattage{
+        height: 3rem;
+    }
+    .totalWattage .col1,.totalWattage .col2{
+        flex: 1;
+        border-top: 1px solid #cdcdcd;
+        border-bottom: 1px solid #cdcdcd;
+        
+
+    }
+    .totalWattage .col1{
+        font-family: LATOBOLD;
+        font-size: 0.8125rem;
+        color: #000;
+        align-items: center;
+        display: flex;
+    }
+    .totalWattage .col2{
+        justify-content: end;
+        font-family: LATOBOLD;
+        font-size: 0.8125rem;
+        color: #000;
+        align-items: center;
+        display: flex;
+    }
+
+    .mobileContainerBox{
+        height: calc(100vh - 12rem);
+        overflow: auto;
+    }
+    .actionWeb{
+      display: none;
+    }
+    .minus .btn,.plus .btn{
+      padding: 0 !important;
+    }
+
+    .minus .btn:focus,.plus .btn:focus{
+      box-shadow: none;
+    }
+}
+ 
+@media(min-width:800px){
+ 
+ 
+table{
+  width: 100%;
+}
+
+.example-container{
+  width: calc(100% - 2.5rem);
+  margin: 1.5rem;
+  border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgba(233, 233, 233, 0.5);
+    border: solid 1px #dbdbdb;
+    background-color: #fff;
+}
+.webSelectAddAppliance{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn-add{
+  height: 50px;
+  border-radius: 3px;
+  background-color: #072d9e;
+  width: 91px;
+}
+
+.applianceAdd{
+  margin: 5px 0 0 0 !important;
+}
+
+.totalWattage .col1,.totalWattage .col2{
+  flex: 1;
+  border-top: 1px solid #cdcdcd;
+  border-bottom: 1px solid #cdcdcd;
+
+}
+.totalWattage .col1{
+  font-family: LATOBOLD;
+  font-size: 0.8125rem;
+  color: #000;
+  align-items: center;
+  display: flex;
+  padding: 0.5rem;
+}
+.totalWattage .col2{
+  justify-content: end;
+  font-family: LATOBOLD;
+  font-size: 0.8125rem;
+  color: #000;
+  align-items: center;
+  display: flex;
+}
+
+.wattge,.delete{
+  flex: 1;
+}
+.wattge{
+  text-align: center;
+  font-family: 'LatoBold';
+}
+.delete{
+  text-align: end;
+}
+
+.delete img{
+  width: 11px;
+  height: 11px;
+}
+
+.mat-cell{
+  border-bottom: 1px solid rgba(0,0,0,.12);;
+
+}
+
+.btn-next{
+  width: 107px;
+    height: 50px;
+    border-radius: 3px;
+    background-color: #072d9e;
+    position: absolute;
+    left: 3rem;
+    margin-top: 2rem;
+}
+
+.plus,.minus,.qty{
+  flex: 0.5;
+  text-align: center;
+  border-radius: 5px;
+  color: #000;
+  font-family: LatoBold;
+  font-size: 1rem;
+}
+
+.plus{
+  border-left: none;
+}
+.minus{
+  border-right:none;
+}
+
+tr.mat-row{
+ height: 2.75rem !important;
+}
+
+
+tr.mat-header-row{
+  height: 2.75rem !important;
+}
+
+.webQty{
+  margin-left: 22%;
+  margin-right: 22%;  
+}
+
+.mat-header-cell:nth-child(2){
+  text-align: center;
+}
+
+.qty{
+  width: 45px;
+  height: 30px;
+  border: 1px solid #979797;
+
+}
+
+.actionWeb{
+  display: block;
+}
+.minus .btn,.plus .btn{
+  padding: 0 !important;
+  line-height: 0;
+}
+
+.minus .btn:focus,.plus .btn:focus{
+  box-shadow: none;
+}
+
+}
+
+ 
+
+

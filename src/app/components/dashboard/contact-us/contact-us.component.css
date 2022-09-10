@@ -1,0 +1,92 @@
+textarea{
+    height: 7.18rem;
+    width: calc(100vw - 3.5rem);
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 0.75rem;
+}
+
+.mat-form-field{
+    width: 100%;
+}
+.error{
+    color: red;
+    padding-left: 1rem !important;
+}
+
+.attachment{
+    background: white;
+    color: rgb(34 64 152);
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    padding-top: 0.25rem;
+    font-family: LatoRegular;
+    font-size: 0.875rem;
+    height: 2.5rem;
+}
+.attachment label{
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    color:rgb(34 64 152);
+    font-size: 0.875rem;
+    font-family: LatoBold;
+}
+
+.info{
+    font-family: LatoRegular;
+    font-size: 0.875rem;
+    color: #000;
+}
+
+.msgTitle{
+    font-family: LatoRegular;
+    font-size: 0.8125rem;
+    color: #000;
+}
+
+.cntus{
+    font-family: 'LatoRegular';
+    font-size: 1rem;
+}
+
+.main{
+    height: calc(100vh - 10.375rem);
+    overflow: auto;
+}
+
+@media(max-width:799px){
+    .contactUsMobile{
+        display: block;
+    }
+
+    .contactUsWeb{
+        display: none !important;
+    }
+}
+
+@media(min-width:800px){
+    .contactUsMobile{
+        display: none !important;
+
+    }
+
+    .contactUsWeb{
+        display: block;
+
+    }
+
+    .webContainer{
+        margin: 1.5rem;
+        margin-top:0rem;
+        border-radius: 5px;
+        box-shadow: 0 5px 20px 0 rgba(233, 233, 233, 0.5);
+        border: solid 1px #dbdbdb;
+        background-color: #fff;
+    }
+}

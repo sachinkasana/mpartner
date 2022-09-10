@@ -1,0 +1,78 @@
+.fade{
+    opacity: 1;
+}
+
+.close{
+   justify-content: end;
+}
+
+.modal-backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+
+
+
+
+.modal-content{
+    margin: 1.5rem;
+}
+
+
+.modal-dialog-scrollable .modal-content {
+    height: 100%;
+    margin: 0;
+  
+}
+
+.modal-dialog-scrollable.modal.fade .modal-dialog {
+    transform: none;
+
+}
+
+.popupTop{
+    transform: none !important;
+}
+
+
+.btn-close{
+    background: transparent url(../../../../assets/popupclose.png) center/3em auto no-repeat;
+    width: 1.65rem;
+    height: 1.65rem;
+    padding: 0.25em 0.25em;
+    border-radius: 1.25rem;
+}
+
+.modal-footer{
+    padding: 0;
+    padding-right: 2rem;
+    border-top: none;
+    margin-bottom: 0.25rem;
+}
+
+.modal-footer button{
+    color:#27d7cf;
+    font-family: 'LatoBold';
+
+}
+
+@media(max-width:799px){
+    .modal-dialog .sharePdf{
+        animation-name: sharepdf;
+      animation-duration: 1s;
+      transform: translate(0, 143px);
+      height: calc(100vh - 100px);
+     }
+    
+     .modal-content.sharePdf{
+         margin: 0;
+     }
+    
+    @keyframes sharepdf {
+        0%   {  transform: translate(0,calc(100vh - 100px))}
+       
+        100% {   transform: translate(0, 143px)}
+      }
+     
+}

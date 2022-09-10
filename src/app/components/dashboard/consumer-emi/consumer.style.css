@@ -1,0 +1,108 @@
+.logo img{
+    width: 5rem;
+    height: 3.4375rem;
+    max-width: 5rem;
+    max-height: 3.4375rem;
+
+}
+/* .consumer-main,.logo{
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 1;
+
+} */
+.consumerTitle{
+    width: 84%;
+    display: flex;
+    align-items: center;
+    padding-right: 0 !important;
+}
+
+.form-field{
+    width: 100%;
+}
+
+.phoneNo-main{
+    height: 5rem;
+}
+
+.verify{
+    padding-top: 0!important;
+}
+
+.offer-main img{
+    width: 100%;
+    height: 7rem;
+}
+
+.mat-form-field{
+    width: 100%;
+}
+
+.contacts-main .name{
+flex-basis: 90%;
+}
+
+.contacts-main img{
+    height: 1.5rem;
+}
+
+.contacts-main .content{
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+}
+.msgTxt{
+    color: #000;
+}
+/* border-bottom: 1px solid #f6f6f6; */
+@media(max-width:799px){
+
+    .consumerPhoneMobile{
+        display: block
+    }
+
+    .consumerPhoneWeb{
+        display: none !important
+    }
+}
+
+@media(min-width:800px){
+    .consumerPhoneMobile{
+        display:none
+    }
+
+    .consumerPhoneWeb{
+        display: block;
+    }
+
+    .web-container{
+    margin: 1.5rem;
+    margin-top:0rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 0 rgba(233, 233, 233, 0.5);
+    border: solid 1px #dbdbdb;
+    background-color: #fff;
+    }
+
+    .web-container-row{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .offer-main{
+        padding-bottom: 3rem !important;
+    }
+
+    .web-container-row .webCol1{
+        flex: 50%;
+        max-width: 50%;
+    }
+    .web-container-row .webCol2 button{
+      
+        width: 10.5625rem;
+    }
+
+    .offer-main img{
+        height: 204px;
+    }
+}
